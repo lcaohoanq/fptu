@@ -1,10 +1,16 @@
 package com.orchid.orchidbe.components;
 
 import com.orchid.orchidbe.exceptions.InvalidParamException;
+import com.orchid.orchidbe.exceptions.JwtAuthenticationException;
 import com.orchid.orchidbe.pojos.Account;
+import com.orchid.orchidbe.pojos.Token;
+import com.orchid.orchidbe.repositories.TokenRepository;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
@@ -23,6 +29,8 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class JwtTokenUtils {
+
+    private final TokenRepository tokenRepository;
 
     @Value("${jwt.expiration}")
     private int expiration; //save to an environment variable
@@ -92,32 +100,38 @@ public class JwtTokenUtils {
     public String extractEmail(String token) {
         return extractClaim(token, Claims::getSubject);
     }
+
     public boolean validateToken(String token, Account userDetails) {
+        try {
+            String email = extractEmail(token);
+            Token existingToken = tokenRepository.findByToken(token).orElseThrow(
+                () -> new JwtAuthenticationException("Token is invalid")
+            );
 
-        String email = extractEmail(token);
-        return (email.equals(userDetails.getEmail()))
-            && !isTokenExpired(token);
+            // Check token existence and revocation
+            if (existingToken == null || existingToken.isRevoked()) {
+                throw new JwtAuthenticationException("Token is invalid or has been revoked");
+            }
 
-//        try {
-//            String email = extractPhoneNumber(token);
-//            Token existingToken = tokenRepository.findByToken(token);
-//            if(existingToken == null ||
-//                    existingToken.isRevoked() == true ||
-//                    !userDetails.isActive()
-//            ) {
-//                return false;
-//            }
-//            return (email.equals(userDetails.getUsername()))
-//                    && !isTokenExpired(token);
-//        } catch (MalformedJwtException e) {
-//            logger.error("Invalid JWT token: {}", e.getMessage());
-//        } catch (ExpiredJwtException e) {
-//            logger.error("JWT token is expired: {}", e.getMessage());
-//        } catch (UnsupportedJwtException e) {
-//            logger.error("JWT token is unsupported: {}", e.getMessage());
-//        } catch (IllegalArgumentException e) {
-//            logger.error("JWT claims string is empty: {}", e.getMessage());
-//        }
-//        return false;
+            // Check token matches user
+            if (!email.equals(userDetails.getUsername())) {
+                throw new JwtAuthenticationException("Token does not match user");
+            }
+
+            // Check expiration
+            if (isTokenExpired(token)) {
+                throw new ExpiredJwtException(null, null, "Token has expired");
+            }
+
+            return true;
+        } catch (ExpiredJwtException e) {
+            throw new JwtAuthenticationException("JWT token has expired");
+        } catch (MalformedJwtException e) {
+            throw new JwtAuthenticationException("Invalid JWT token format");
+        } catch (UnsupportedJwtException e) {
+            throw new JwtAuthenticationException("Unsupported JWT token");
+        } catch (IllegalArgumentException e) {
+            throw new JwtAuthenticationException("JWT claims string is empty");
+        }
     }
 }

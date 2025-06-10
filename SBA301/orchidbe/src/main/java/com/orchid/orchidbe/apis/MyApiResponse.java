@@ -7,6 +7,8 @@ import java.time.Instant;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 public sealed interface MyApiResponse<T>
     permits Error, Success, ValidationError {
@@ -27,11 +29,12 @@ public sealed interface MyApiResponse<T>
         @Override public Instant getTimestamp() { return timestamp; }
     }
 
-    // ✅ Error record
+    // ✅ Enhanced Error record with path tracking
     record Error<T>(
         int statusCode,
         String message,
         String reason,
+        String path,
         Instant timestamp
     ) implements MyApiResponse<T> {
         @Override public int getStatusCode() { return statusCode; }
@@ -39,10 +42,12 @@ public sealed interface MyApiResponse<T>
         @Override public Instant getTimestamp() { return timestamp; }
     }
 
+    // ✅ Enhanced ValidationError record with path tracking
     record ValidationError<T>(
         int statusCode,
         String message,
         Map<String, String> fieldErrors,
+        String path,
         Instant timestamp
     ) implements MyApiResponse<T> {
         @Override public int getStatusCode() { return statusCode; }
@@ -50,7 +55,18 @@ public sealed interface MyApiResponse<T>
         @Override public Instant getTimestamp() { return timestamp; }
     }
 
-    // ✅ Helper methods
+    // ✅ Helper method to get current request path
+    private static String getCurrentPath() {
+        try {
+            ServletRequestAttributes attributes =
+                (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+            return attributes.getRequest().getRequestURI();
+        } catch (IllegalStateException e) {
+            return "unknown";
+        }
+    }
+
+    // ✅ Helper methods (updated to include path)
     static <T> ResponseEntity<MyApiResponse<T>> success(T data) {
         return ResponseEntity.ok(new Success<>(
             200, "Success", data, Instant.now()
@@ -83,7 +99,7 @@ public sealed interface MyApiResponse<T>
 
     static <T> ResponseEntity<MyApiResponse<T>> badRequest(String reason) {
         return ResponseEntity.badRequest().body(new Error<>(
-            400, "Bad Request", reason, Instant.now()
+            400, "Bad Request", reason, getCurrentPath(), Instant.now()
         ));
     }
 
@@ -94,13 +110,14 @@ public sealed interface MyApiResponse<T>
                 400,
                 "Validation failed",
                 errors,
+                getCurrentPath(),
                 Instant.now()
             ));
     }
 
     static <T> ResponseEntity<MyApiResponse<T>> notFound(String reason) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Error<>(
-            404, "Not Found", reason, Instant.now()
+            404, "Not Found", reason, getCurrentPath(), Instant.now()
         ));
     }
 
@@ -115,8 +132,43 @@ public sealed interface MyApiResponse<T>
     ) {
         return ResponseEntity.status(status)
             .body(new Error<>(
-                status.value(), message, reason, Instant.now()
+                status.value(), message, reason, getCurrentPath(), Instant.now()
+            ));
+    }
+
+    // ✅ Overloaded methods for explicit path specification
+    static <T> ResponseEntity<MyApiResponse<T>> badRequest(String reason, String path) {
+        return ResponseEntity.badRequest().body(new Error<>(
+            400, "Bad Request", reason, path, Instant.now()
+        ));
+    }
+
+    static ResponseEntity<MyApiResponse<Object>> validationError(
+        Map<String, String> errors, String path
+    ) {
+        return ResponseEntity
+            .badRequest()
+            .body(new ValidationError<>(
+                400,
+                "Validation failed",
+                errors,
+                path,
+                Instant.now()
+            ));
+    }
+
+    static <T> ResponseEntity<MyApiResponse<T>> notFound(String reason, String path) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Error<>(
+            404, "Not Found", reason, path, Instant.now()
+        ));
+    }
+
+    static <T> ResponseEntity<MyApiResponse<T>> error(
+        HttpStatus status, String message, String reason, String path
+    ) {
+        return ResponseEntity.status(status)
+            .body(new Error<>(
+                status.value(), message, reason, path, Instant.now()
             ));
     }
 }
-
