@@ -1,0 +1,166 @@
+.counter-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.counter-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.counter-display {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.counter-display h2 {
+  font-size: 48px;
+  margin: 0;
+  color: #3498db;
+}
+
+.counter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.btn-action {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #e9ecef;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-action:hover {
+  background-color: #dee2e6;
+}
+
+.btn-reset {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #f8d7da;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-reset:hover {
+  background-color: #f5c2c7;
+}
+
+.calculator {
+  margin-bottom: 30px;
+}
+
+.calculator-inputs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.operation-select {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.number-input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+}
+
+.btn-calculate {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-calculate:hover {
+  background-color: #2980b9;
+}
+
+.history-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.history-header h3 {
+  margin: 0;
+  color: #495057;
+  font-size: 18px;
+}
+
+.btn-clear {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #e9ecef;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-clear:hover {
+  background-color: #dee2e6;
+}
+
+.history-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.history-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #dee2e6;
+  color: #495057;
+}
+
+.history-list li:last-child {
+  border-bottom: none;
+}
+
+.no-history {
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+}
