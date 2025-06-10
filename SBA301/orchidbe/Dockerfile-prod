@@ -1,0 +1,19 @@
+FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
+WORKDIR /app
+COPY . /app/orchidbe
+# RUN mvn package -f /app/orchidbe/pom.xml
+RUN mvn package -Dspring.profiles.active=prod -DskipTests -f /app/orchidbe/pom.xml
+
+#multi-staging
+FROM openjdk:21-slim
+WORKDIR /app
+COPY --from=build /app/orchidbe/target/*.jar app.jar
+
+EXPOSE 8080
+CMD ["java","-jar","app.jar"]
+
+#docker build -t shopapp-spring:1.0.0 -f ./DockerfileJavaSpring .
+#docker login
+#create sunlight4d/shopapp-spring:1.0.0 repository on DockerHub
+#docker tag shopapp-spring:1.0.0 sunlight4d/shopapp-spring:1.0.0
+#docker push sunlight4d/shopapp-spring:1.0.0

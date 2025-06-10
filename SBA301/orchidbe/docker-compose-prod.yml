@@ -3,11 +3,9 @@ services:
     container_name: orchidbe
     build:
       context: .
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile-prod
     ports:
       - "4007:8080"
-    volumes:
-      - ./stores:/stores
     networks:
       - sba
 

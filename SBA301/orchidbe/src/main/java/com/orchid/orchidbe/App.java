@@ -13,6 +13,7 @@ import com.orchid.orchidbe.repositories.OrderDetailRepository;
 import com.orchid.orchidbe.repositories.OrderRepository;
 import com.orchid.orchidbe.repositories.RoleRepository;
 import io.github.lcaohoanq.JavaBrowserLauncher;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -47,66 +48,141 @@ public class App implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        // Roles
-//        Role role1 = new Role(0, "Admin");
-//        Role role2 = new Role(0, "User");
-//        Role role3 = new Role(0, "Manager");
-//        roleRepository.saveAll(Arrays.asList(role1, role2, role3));
-//
-//        // Categories
-//        Category cat1 = new Category(0, "Orchids");
-//        Category cat2 = new Category(0, "Exotic Flowers");
-//        Category cat3 = new Category(0, "Indoor Plants");
-//        categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
-//
-//        // Accounts - save and get managed entities
-//        Account acc1 = new Account(0, "Alice", "alice@example.com", "pass1", role1);
-//        Account acc2 = new Account(0, "Bob", "bob@example.com", "pass2", role2);
-//        Account acc3 = new Account(0, "Charlie", "charlie@example.com", "pass3", role3);
-//        List<Account> savedAccounts = accountRepository.saveAll(Arrays.asList(acc1, acc2, acc3));
-//        acc1 = savedAccounts.get(0);
-//        acc2 = savedAccounts.get(1);
-//        acc3 = savedAccounts.get(2);
-//
-//        // Orchids
-//        Orchid o1 = new Orchid(0, true, "Natural orchid", "Phalaenopsis", "http://img1", 10.0,
-//                               cat1);
-//        Orchid o2 = new Orchid(0, false, "Hybrid orchid", "Cattleya", "http://img2", 15.0, cat2);
-//        Orchid o3 = new Orchid(0, true, "Random orchid", "Dendrobium", "http://img3", 20.0, cat3);
-//        List<Orchid> savedOrchids = orchidRepository.saveAll(Arrays.asList(o1, o2, o3));
-//        o1 = savedOrchids.get(0);
-//        o2 = savedOrchids.get(1);
-//        o3 = savedOrchids.get(2);
-//
-//        // Orders - don't set ID explicitly if using auto-generation
-//        Order ord1 = new Order();
-//        ord1.setTotalAmount(99.9);
-//        ord1.setOrderDate(new Date());
-//        ord1.setOrderStatus(Order.OrderStatus.PENDING);
-//        ord1.setAccount(acc1);
-//
-//        Order ord2 = new Order();
-//        ord2.setTotalAmount(149.5);
-//        ord2.setOrderDate(new Date());
-//        ord2.setOrderStatus(Order.OrderStatus.PROCESSING);
-//        ord2.setAccount(acc2);
-//
-//        Order ord3 = new Order();
-//        ord3.setTotalAmount(199.0);
-//        ord3.setOrderDate(new Date());
-//        ord3.setOrderStatus(Order.OrderStatus.COMPLETED);
-//        ord3.setAccount(acc3);
-//
-//        List<Order> savedOrders = orderRepository.saveAll(Arrays.asList(ord1, ord2, ord3));
-//        ord1 = savedOrders.get(0);
-//        ord2 = savedOrders.get(1);
-//        ord3 = savedOrders.get(2);
-//
-//        // OrderDetails
-//        OrderDetail d1 = new OrderDetail(0, 10.0, 2, o1, ord1);
-//        OrderDetail d2 = new OrderDetail(0, 15.0, 1, o2, ord2);
-//        OrderDetail d3 = new OrderDetail(0, 20.0, 3, o3, ord3);
-//        orderDetailRepository.saveAll(Arrays.asList(d1, d2, d3));
+        // Create roles if empty
+        List<Role> roles;
+        if (roleRepository.findAll().isEmpty()) {
+            var role1 = Role.builder().name("Admin").build();
+            var role2 = Role.builder().name("User").build();
+            var role3 = Role.builder().name("Manager").build();
+            roles = roleRepository.saveAll(Arrays.asList(role1, role2, role3));
+        } else {
+            roles = roleRepository.findAll();
+        }
+
+        // Create categories if empty
+        List<Category> categories;
+        if (categoryRepository.findAll().isEmpty()) {
+            var cat1 = Category.builder().name("Orchids").build();
+            var cat2 = Category.builder().name("Exotic Flowers").build();
+            var cat3 = Category.builder().name("Indoor Plants").build();
+            categories = categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
+        } else {
+            categories = categoryRepository.findAll();
+        }
+
+        // Create orchids if empty
+        List<Orchid> orchids;
+        if (orchidRepository.findAll().isEmpty()) {
+            var o1 = Orchid.builder()
+                .isNatural(true)
+                .description("Natural orchid")
+                .name("Phalaenopsis")
+                .url("http://img1")
+                .price(10.0)
+                .category(categories.isEmpty() ? null : categories.get(0))
+                .build();
+
+            var o2 = Orchid.builder()
+                .isNatural(false)
+                .description("Hybrid orchid")
+                .name("Cattleya")
+                .url("http://img2")
+                .price(15.0)
+                .category(categories.size() > 1 ? categories.get(1) : null)
+                .build();
+
+            var o3 = Orchid.builder()
+                .isNatural(true)
+                .description("Random orchid")
+                .name("Dendrobium")
+                .url("http://img3")
+                .price(20.0)
+                .category(categories.size() > 2 ? categories.get(2) : null)
+                .build();
+
+            orchids = orchidRepository.saveAll(Arrays.asList(o1, o2, o3));
+        } else {
+            orchids = orchidRepository.findAll();
+        }
+
+        // Create accounts if empty
+        List<Account> accounts;
+        if (accountRepository.findAll().isEmpty()) {
+            var acc1 = Account.builder()
+                .name("Alice")
+                .email("alice@example.com")
+                .password("pass1")
+                .role(roles.isEmpty() ? null : roles.get(0))
+                .build();
+
+            var acc2 = Account.builder()
+                .name("Bob")
+                .email("bob@example.com")
+                .password("pass2")
+                .role(roles.size() > 1 ? roles.get(1) : null)
+                .build();
+
+            var acc3 = Account.builder()
+                .name("Charlie")
+                .email("charlie@example.com")
+                .password("pass3")
+                .role(roles.size() > 2 ? roles.get(2) : null)
+                .build();
+
+            accounts = accountRepository.saveAll(Arrays.asList(acc1, acc2, acc3));
+        } else {
+            accounts = accountRepository.findAll();
+        }
+
+        // Create orders and order details if empty
+        if (orderRepository.findAll().isEmpty()) {
+            Order ord1 = Order.builder()
+                .totalAmount(99.9)
+                .orderDate(new Date())
+                .orderStatus(Order.OrderStatus.PENDING)
+                .account(accounts.isEmpty() ? null : accounts.get(0))
+                .build();
+
+            Order ord2 = Order.builder()
+                .totalAmount(149.5)
+                .orderDate(new Date())
+                .orderStatus(Order.OrderStatus.PROCESSING)
+                .account(accounts.size() > 1 ? accounts.get(1) : null)
+                .build();
+
+            Order ord3 = Order.builder()
+                .totalAmount(199.0)
+                .orderDate(new Date())
+                .orderStatus(Order.OrderStatus.COMPLETED)
+                .account(accounts.size() > 2 ? accounts.get(2) : null)
+                .build();
+
+            List<Order> savedOrders = orderRepository.saveAll(Arrays.asList(ord1, ord2, ord3));
+
+            // OrderDetails
+            OrderDetail d1 = OrderDetail.builder()
+                .price(10.0)
+                .quantity(2)
+                .orchid(orchids.isEmpty() ? null : orchids.get(0))
+                .order(savedOrders.get(0))
+                .build();
+
+            OrderDetail d2 = OrderDetail.builder()
+                .price(15.0)
+                .quantity(1)
+                .orchid(orchids.size() > 1 ? orchids.get(1) : null)
+                .order(savedOrders.get(1))
+                .build();
+
+            OrderDetail d3 = OrderDetail.builder()
+                .price(20.0)
+                .quantity(3)
+                .orchid(orchids.size() > 2 ? orchids.get(2) : null)
+                .order(savedOrders.get(2))
+                .build();
+
+            orderDetailRepository.saveAll(Arrays.asList(d1, d2, d3));
+        }
     }
 
 }
