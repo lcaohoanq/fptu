@@ -26,7 +26,7 @@ public class AuthenticationEntryPointImpl implements AuthenticationEntryPoint {
         response.setStatus(HttpStatus.UNAUTHORIZED.value());
 
         MyApiResponse<Object> errorResponse = new MyApiResponse.Error<>(
-            HttpStatus.FORBIDDEN.value(),
+            HttpStatus.UNAUTHORIZED.value(),
             "Authentication Required",
             ex.getMessage(),
             request.getRequestURI(),

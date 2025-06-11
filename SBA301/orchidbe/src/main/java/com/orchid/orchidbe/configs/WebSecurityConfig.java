@@ -52,20 +52,21 @@ public class WebSecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 // Authentication endpoints
                 .requestMatchers(
-                    String.format("%s/auth/login", apiPrefix),
-                    String.format("%s/auth/register", apiPrefix)
+                    String.format("%s/auth/login", apiPrefix)
                 ).permitAll()
 
                 // Public API endpoints
                 .requestMatchers(GET,
                                  String.format("%s/roles/**", apiPrefix),
-                                 String.format("%s/categories/**", apiPrefix)
+                                 String.format("%s/categories/**", apiPrefix),
+                                 String.format("%s/accounts/**", apiPrefix)
                 ).permitAll()
 
                 // Require ADMIN role for POST operations
                 .requestMatchers(POST,
                                  String.format("%s/roles/**", apiPrefix),
-                                 String.format("%s/categories/**", apiPrefix)
+                                 String.format("%s/categories/**", apiPrefix),
+                                 String.format("%s/accounts/register", apiPrefix)
                 ).permitAll()
                 //.hasAnyRole("ADMIN")
 
@@ -82,6 +83,11 @@ public class WebSecurityConfig {
                                  String.format("%s/categories/**", apiPrefix)
                 ).permitAll()
                 //.hasAnyRole("ADMIN")
+
+                // Required Authenticated User
+                .requestMatchers(GET,
+                                 String.format("%s/accounts/me", apiPrefix)
+                ).authenticated()
 
                 // Swagger UI and API docs
                 .requestMatchers(

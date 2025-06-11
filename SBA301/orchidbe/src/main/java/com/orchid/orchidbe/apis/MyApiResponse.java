@@ -1,5 +1,6 @@
 package com.orchid.orchidbe.apis;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.orchid.orchidbe.apis.MyApiResponse.Error;
 import com.orchid.orchidbe.apis.MyApiResponse.Success;
 import com.orchid.orchidbe.apis.MyApiResponse.ValidationError;
@@ -19,10 +20,10 @@ public sealed interface MyApiResponse<T>
 
     // ✅ Success record
     record Success<T>(
-        int statusCode,
+        @JsonIgnore int statusCode,
         String message,
         T data,
-        Instant timestamp
+        @JsonIgnore Instant timestamp
     ) implements MyApiResponse<T> {
         @Override public int getStatusCode() { return statusCode; }
         @Override public String getMessage() { return message; }
@@ -170,5 +171,17 @@ public sealed interface MyApiResponse<T>
             .body(new Error<>(
                 status.value(), message, reason, path, Instant.now()
             ));
+    }
+
+    static <T> ResponseEntity<MyApiResponse<T>> serverError(String reason) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Error<>(
+            500, "Internal Server Error", reason, getCurrentPath(), Instant.now()
+        ));
+    }
+
+    static <T> ResponseEntity<MyApiResponse<T>> unauthorized(String reason) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new Error<>(
+            401, "Unauthorized", reason, getCurrentPath(), Instant.now()
+        ));
     }
 }

@@ -8,9 +8,17 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("${api.prefix}/accounts")
 @RequiredArgsConstructor
 @Tag(name = "Account Api", description = "Operation related to Account")
+@Slf4j
 public class AccountController {
 
     private final AccountService accountService;
@@ -42,14 +51,28 @@ public class AccountController {
         return MyApiResponse.success(accountService.getById(id));
     }
 
-    @PostMapping("")
+    //Get user details from token
+    @GetMapping("/me")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF')")
+    public ResponseEntity<MyApiResponse<Account>> getUserDetails(HttpServletRequest request)
+        throws Exception {
+        String token = request.getHeader("Authorization");
+        if (token == null || !token.startsWith("Bearer ")) {
+            return MyApiResponse.unauthorized("Missing or invalid Authorization header");
+        }
+        token = token.substring(7); // Remove "Bearer " prefix
+        Account userDetail = accountService.getUserDetailsFromToken(token);
+        return MyApiResponse.success(userDetail);
+    }
+
+    @PostMapping("/register")
     @Operation(summary = "Create new account", description = "Creates a new account")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "201", description = "Account created successfully"),
         @ApiResponse(responseCode = "400", description = "Invalid input or email already exists")
     })
     public ResponseEntity<MyApiResponse<Object>> createAccount(
-        @RequestBody AccountDTO.AccountReq accountReq
+        @RequestBody @Valid AccountDTO.CreateAccountReq accountReq
     ) {
         accountService.add(accountReq);
         return MyApiResponse.created();
@@ -64,7 +87,7 @@ public class AccountController {
     })
     public ResponseEntity<MyApiResponse<Object>> updateAccount(
         @PathVariable int id,
-        @RequestBody AccountDTO.AccountReq accountReq
+        @RequestBody AccountDTO.UpdateAccountReq accountReq
     ) {
         accountService.update(id, accountReq);
         return MyApiResponse.updated();

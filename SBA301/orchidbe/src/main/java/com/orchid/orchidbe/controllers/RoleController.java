@@ -36,18 +36,8 @@ public class RoleController {
 
     @PostMapping
     public ResponseEntity<MyApiResponse<Object>> add(
-        @Valid @RequestBody RoleDTO.RoleReq req,
-        BindingResult bindingResult
+        @Valid @RequestBody RoleDTO.RoleReq req
     ) {
-        if (bindingResult.hasErrors()) {
-            Map<String, String> errors = bindingResult.getFieldErrors().stream()
-                .collect(Collectors.toMap(
-                    FieldError::getField,
-                    FieldError::getDefaultMessage
-                ));
-            return MyApiResponse.validationError(errors);
-        }
-
         roleService.add(req);
         return MyApiResponse.created();
     }
