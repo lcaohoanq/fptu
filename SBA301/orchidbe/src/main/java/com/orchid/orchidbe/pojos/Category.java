@@ -11,9 +11,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
-@Table(name = "categories")
+@Document(value = "categories")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,11 +23,8 @@ import lombok.Setter;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id", nullable = false)
-    private int id;
+    private String id;
 
-    @Column(name = "category_name", nullable = false, unique = true)
     private String name;
 
 }

@@ -41,7 +41,7 @@ public class CategoryController {
         @ApiResponse(responseCode = "200", description = "Category found"),
         @ApiResponse(responseCode = "404", description = "Category not found")
     })
-    public ResponseEntity<MyApiResponse<Category>> getCategoryById(@PathVariable int id) {
+    public ResponseEntity<MyApiResponse<Category>> getCategoryById(@PathVariable String id) {
         return MyApiResponse.success(categoryService.getById(id));
     }
 
@@ -66,7 +66,7 @@ public class CategoryController {
         @ApiResponse(responseCode = "404", description = "Category not found")
     })
     public ResponseEntity<MyApiResponse<Object>> updateCategory(
-        @PathVariable int id,
+        @PathVariable String id,
         @RequestBody CategoryDTO.CategoryReq categoryReq
     ) {
         categoryService.update(id, categoryReq);
@@ -79,7 +79,7 @@ public class CategoryController {
         @ApiResponse(responseCode = "204", description = "Category deleted successfully"),
         @ApiResponse(responseCode = "404", description = "Category not found")
     })
-    public ResponseEntity<MyApiResponse<Object>> deleteCategory(@PathVariable int id) {
+    public ResponseEntity<MyApiResponse<Object>> deleteCategory(@PathVariable String id) {
         categoryService.delete(id);
         return MyApiResponse.noContent();
     }

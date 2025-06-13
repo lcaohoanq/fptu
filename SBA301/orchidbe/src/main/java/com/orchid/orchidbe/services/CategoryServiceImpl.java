@@ -19,7 +19,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Category getById(int id) {
+    public Category getById(String id) {
         return categoryRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Category not found"));
     }
@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void update(int id, CategoryDTO.CategoryReq category) {
+    public void update(String id, CategoryDTO.CategoryReq category) {
 
         var existingCategory = getById(id);
 
@@ -53,7 +53,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
         var existingCategory = getById(id);
         categoryRepository.delete(existingCategory);
     }

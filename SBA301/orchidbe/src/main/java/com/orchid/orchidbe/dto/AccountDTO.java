@@ -28,13 +28,13 @@ public interface AccountDTO {
         String email,
 
         String password,
-        Integer roleId
+        String roleId
     ) {
 
     }
 
     record AccountResp(
-        int id,
+        String id,
         String name,
         String email
     ) {

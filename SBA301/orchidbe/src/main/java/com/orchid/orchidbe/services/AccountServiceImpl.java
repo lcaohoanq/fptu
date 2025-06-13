@@ -36,7 +36,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Account getById(int id) {
+    public Account getById(String id) {
         return accountRepository.findById(id)
             .orElseThrow(() -> new IllegalArgumentException("Account not found"));
     }
@@ -52,14 +52,14 @@ public class AccountServiceImpl implements AccountService {
         newAccount.setName(account.name());
         newAccount.setEmail(account.email());
         newAccount.setPassword(passwordEncoder.encode(account.password()));
-        newAccount.setRole(roleService.getById(2)); // Default role, can be changed later
+        newAccount.setRole(roleService.getByName("Admin")); // Default role, can be changed later
 
         log.info("New user registered successfully");
         accountRepository.save(newAccount);
     }
 
     @Override
-    public void update(int id, AccountDTO.UpdateAccountReq account) {
+    public void update(String id, AccountDTO.UpdateAccountReq account) {
 
         var role = roleService.getById(account.roleId());
         if(role == null) {
@@ -82,7 +82,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
         var existingAccount = getById(id);
         accountRepository.delete(existingAccount);
     }

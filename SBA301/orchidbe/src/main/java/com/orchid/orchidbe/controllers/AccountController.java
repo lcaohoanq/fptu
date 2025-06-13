@@ -43,7 +43,7 @@ public class AccountController {
     @GetMapping("/{id}")
     @Operation(summary = "Get all accounts", description = "Returns a list of all accounts")
     @ApiResponse(responseCode = "200", description = "Successfully retrieved all accounts")
-    public ResponseEntity<MyApiResponse<Account>> getAccountById(@PathVariable int id) {
+    public ResponseEntity<MyApiResponse<Account>> getAccountById(@PathVariable String id) {
         return MyApiResponse.success(accountService.getById(id));
     }
 
@@ -82,7 +82,7 @@ public class AccountController {
         @ApiResponse(responseCode = "404", description = "Account not found")
     })
     public ResponseEntity<MyApiResponse<Object>> updateAccount(
-        @PathVariable int id,
+        @PathVariable String id,
         @RequestBody AccountDTO.UpdateAccountReq accountReq
     ) {
         accountService.update(id, accountReq);
@@ -95,7 +95,7 @@ public class AccountController {
         @ApiResponse(responseCode = "204", description = "Account deleted successfully"),
         @ApiResponse(responseCode = "404", description = "Account not found")
     })
-    public ResponseEntity<MyApiResponse<Object>> deleteAccount(@PathVariable int id) {
+    public ResponseEntity<MyApiResponse<Object>> deleteAccount(@PathVariable String id) {
         accountService.delete(id);
         return MyApiResponse.noContent();
     }

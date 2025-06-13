@@ -13,9 +13,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
-@Table(name = "orchids")
+@Document(value = "orchids")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -24,27 +25,19 @@ import lombok.Setter;
 public class Orchid {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "orchid_id", nullable = false)
-    private int id;
+    private String id;
 
-    @Column(name = "is_natural")
     private boolean isNatural;
 
-    @Column(name = "orchid_description")
     private String description;
 
-    @Column(name = "orchid_name")
     private String name;
 
-    @Column(name = "orchid_url")
     private String url;
 
     private Double price;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
+    private String categoryId;
 
 
 }

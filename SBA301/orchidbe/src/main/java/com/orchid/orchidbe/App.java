@@ -78,7 +78,7 @@ public class App implements CommandLineRunner {
                 .name("Phalaenopsis")
                 .url("http://img1")
                 .price(10.0)
-                .category(categories.isEmpty() ? null : categories.get(0))
+                .categoryId(categories.isEmpty() ? null : categories.get(0).getId())
                 .build();
 
             var o2 = Orchid.builder()
@@ -87,7 +87,7 @@ public class App implements CommandLineRunner {
                 .name("Cattleya")
                 .url("http://img2")
                 .price(15.0)
-                .category(categories.size() > 1 ? categories.get(1) : null)
+                .categoryId(categories.size() > 1 ? categories.get(1).getId() : null)
                 .build();
 
             var o3 = Orchid.builder()
@@ -96,7 +96,7 @@ public class App implements CommandLineRunner {
                 .name("Dendrobium")
                 .url("http://img3")
                 .price(20.0)
-                .category(categories.size() > 2 ? categories.get(2) : null)
+                .categoryId(categories.size() > 2 ? categories.get(2).getId() : null)
                 .build();
 
             orchids = orchidRepository.saveAll(Arrays.asList(o1, o2, o3));
@@ -139,21 +139,21 @@ public class App implements CommandLineRunner {
                 .totalAmount(99.9)
                 .orderDate(new Date())
                 .orderStatus(Order.OrderStatus.PENDING)
-                .account(accounts.isEmpty() ? null : accounts.get(0))
+                .accountId(accounts.isEmpty() ? null : accounts.get(0).getId())
                 .build();
 
             Order ord2 = Order.builder()
                 .totalAmount(149.5)
                 .orderDate(new Date())
                 .orderStatus(Order.OrderStatus.PROCESSING)
-                .account(accounts.size() > 1 ? accounts.get(1) : null)
+                .accountId(accounts.size() > 1 ? accounts.get(1).getId() : null)
                 .build();
 
             Order ord3 = Order.builder()
                 .totalAmount(199.0)
                 .orderDate(new Date())
                 .orderStatus(Order.OrderStatus.COMPLETED)
-                .account(accounts.size() > 2 ? accounts.get(2) : null)
+                .accountId(accounts.size() > 2 ? accounts.get(2).getId() : null)
                 .build();
 
             List<Order> savedOrders = orderRepository.saveAll(Arrays.asList(ord1, ord2, ord3));
@@ -162,22 +162,22 @@ public class App implements CommandLineRunner {
             OrderDetail d1 = OrderDetail.builder()
                 .price(10.0)
                 .quantity(2)
-                .orchid(orchids.isEmpty() ? null : orchids.get(0))
-                .order(savedOrders.get(0))
+                .orchidId(orchids.isEmpty() ? null : orchids.get(0).getId())
+                .orderId(savedOrders.get(0).getId())
                 .build();
 
             OrderDetail d2 = OrderDetail.builder()
                 .price(15.0)
                 .quantity(1)
-                .orchid(orchids.size() > 1 ? orchids.get(1) : null)
-                .order(savedOrders.get(1))
+                .orchidId(orchids.size() > 1 ? orchids.get(1).getId() : null)
+                .orderId(savedOrders.get(1).getId())
                 .build();
 
             OrderDetail d3 = OrderDetail.builder()
                 .price(20.0)
                 .quantity(3)
-                .orchid(orchids.size() > 2 ? orchids.get(2) : null)
-                .order(savedOrders.get(2))
+                .orchidId(orchids.size() > 2 ? orchids.get(2).getId() : null)
+                .orderId(savedOrders.get(2).getId())
                 .build();
 
             orderDetailRepository.saveAll(Arrays.asList(d1, d2, d3));

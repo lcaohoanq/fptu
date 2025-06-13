@@ -3,7 +3,7 @@ spring:
     name: orchidbe
 
   profiles:
-    active: test
+    active: mongo
 
 springdoc:
   swagger-ui:

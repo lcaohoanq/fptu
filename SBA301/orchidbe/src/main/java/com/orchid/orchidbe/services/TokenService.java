@@ -5,7 +5,7 @@ import com.orchid.orchidbe.pojos.Token;
 
 public interface TokenService {
 
-    Token addToken(int userId, String token, boolean isMobileDevice);
+    Token addToken(String userId, String token, boolean isMobileDevice);
 
     Token refreshToken(String refreshToken, Account user) throws Exception;
 

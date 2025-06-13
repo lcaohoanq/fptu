@@ -64,7 +64,7 @@ public class TokenServiceImpl implements TokenService {
         }
 
         //check if token is attaching with user
-        if (!Objects.equals(existingToken.getAccount().getId(), user.getId())) {
+        if (!Objects.equals(existingToken.getId(), user.getId())) {
             throw new TokenNotFoundException("Token does not exist");
         }
         existingToken.setRevoked(true);
@@ -79,7 +79,7 @@ public class TokenServiceImpl implements TokenService {
 
     @Transactional
     @Override
-    public Token addToken(int userId, String token, boolean isMobileDevice) {
+    public Token addToken(String userId, String token, boolean isMobileDevice) {
         Account existingUser = accountService.getById(userId);
         List<Token> userTokens = tokenRepository.findByAccountId(existingUser.getId());
         int tokenCount = userTokens.size();
@@ -105,7 +105,7 @@ public class TokenServiceImpl implements TokenService {
         LocalDateTime expirationDateTime = LocalDateTime.now().plusSeconds(expirationInSeconds);
         // Tạo mới một token cho người dùng
         Token newToken = Token.builder()
-            .account(existingUser)
+            .accountId(existingUser.getId())
             .token(token)
             .revoked(false)
             .expired(false)

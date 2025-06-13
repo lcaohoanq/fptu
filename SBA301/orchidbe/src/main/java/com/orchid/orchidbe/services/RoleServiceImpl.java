@@ -19,8 +19,14 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public Role getById(int id) {
+    public Role getById(String id) {
         return roleRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Role not found"));
+    }
+
+    @Override
+    public Role getByName(String name) {
+        return roleRepository.findByName(name)
+                .orElseThrow(() -> new IllegalArgumentException("Role with name " + name + " not found"));
     }
 
     @Override
@@ -33,14 +39,14 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public void update(int id, RoleDTO.RoleReq role) {
+    public void update(String id, RoleDTO.RoleReq role) {
         var existingRole = getById(id);
         existingRole.setName(role.name());
         roleRepository.save(existingRole);
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
         var existingRole = getById(id);
         roleRepository.delete(existingRole);
     }

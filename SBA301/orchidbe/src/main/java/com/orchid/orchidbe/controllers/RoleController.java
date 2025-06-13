@@ -32,7 +32,7 @@ public class RoleController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<MyApiResponse<Role>> getById(@PathVariable int id) {
+    public ResponseEntity<MyApiResponse<Role>> getById(@PathVariable String id) {
         return MyApiResponse.success(roleService.getById(id));
     }
 
@@ -45,13 +45,13 @@ public class RoleController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable int id, @RequestBody RoleDTO.RoleReq req) {
+    public ResponseEntity<?> update(@PathVariable String id, @RequestBody RoleDTO.RoleReq req) {
         roleService.update(id, req);
         return MyApiResponse.updated();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable String id) {
         roleService.delete(id);
         return MyApiResponse.noContent();
     }

@@ -1,14 +1,8 @@
 package com.orchid.orchidbe.pojos;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -17,13 +11,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
 @Entity
-@Table(name = "accounts")
+@Document(value = "accounts")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -32,21 +27,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class Account implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "account_id", nullable = false)
-    private int id;
+    private String id;
 
-    @Column(name = "account_name")
     private String name;
 
-    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    @JsonIgnore
+    @Transient
     private Role role;
 
     //Spring Security

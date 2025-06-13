@@ -8,13 +8,13 @@ public interface AccountService {
 
     List<Account> getAll();
 
-    Account getById(int id);
+    Account getById(String id);
 
     void add(AccountDTO.CreateAccountReq account);
 
-    void update(int id, AccountDTO.UpdateAccountReq account);
+    void update(String id, AccountDTO.UpdateAccountReq account);
 
-    void delete(int id);
+    void delete(String id);
 
     String login(String email, String password) throws Exception;
 

@@ -10,16 +10,16 @@ public interface OrderDTO {
         Double totalAmount,
         Date orderDate,
         OrderStatus orderStatus,
-        Integer accountId
+        String accountId
     ) {
     }
 
     record OrderRes(
-        Integer id,
+        String id,
         Double totalAmount,
         Date orderDate,
         OrderStatus orderStatus,
-        Integer accountId
+        String accountId
     ) {
 
         public static OrderRes fromEntity(Order order) {
@@ -28,7 +28,7 @@ public interface OrderDTO {
                 order.getTotalAmount(),
                 order.getOrderDate(),
                 order.getOrderStatus(),
-                order.getAccount() != null ? order.getAccount().getId() : null
+                order.getAccountId() != null ? order.getAccountId() : null
             );
         }
     }

@@ -7,10 +7,10 @@ import java.util.List;
 public interface CategoryService {
 
     List<Category> getAll();
-    Category getById(int id);
+    Category getById(String id);
     void save(CategoryDTO.CategoryReq category);
-    void update(int id, CategoryDTO.CategoryReq category);
-    void delete(int id);
+    void update(String id, CategoryDTO.CategoryReq category);
+    void delete(String id);
 
 
 }

@@ -16,9 +16,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
-@Table(name = "orders")
+@Document(value = "orders")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,23 +28,15 @@ import lombok.Setter;
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    private String id;
 
-    @Column(name = "total_amount")
     private Double totalAmount;
 
-    @Column(name = "order_date")
     private Date orderDate;
 
-    @Column(name = "order_status")
-    @Enumerated(EnumType.ORDINAL)
     private OrderStatus orderStatus;
 
-    @ManyToOne
-    @JoinColumn(name = "account_id")
-    private Account account;
+    private String accountId;
 
     public enum OrderStatus {
         PENDING,
