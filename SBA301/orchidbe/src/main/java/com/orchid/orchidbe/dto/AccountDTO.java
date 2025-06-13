@@ -4,9 +4,9 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-public class AccountDTO {
+public interface AccountDTO {
 
-    public record CreateAccountReq(
+    record CreateAccountReq(
         String name,
 
         @Email(message = "Email is not valid")
@@ -19,7 +19,7 @@ public class AccountDTO {
 
     }
 
-    public record UpdateAccountReq(
+    record UpdateAccountReq(
         String name,
 
         @Email(message = "Email is not valid")
@@ -33,11 +33,11 @@ public class AccountDTO {
 
     }
 
-    public record AccountResp(
+    record AccountResp(
         int id,
         String name,
         String email
-    ){
+    ) {
 
     }
 

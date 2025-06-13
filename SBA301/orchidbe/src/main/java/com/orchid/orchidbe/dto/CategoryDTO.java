@@ -1,8 +1,8 @@
 package com.orchid.orchidbe.dto;
 
-public class CategoryDTO {
+public interface CategoryDTO {
 
-    public record CategoryReq(
+    record CategoryReq(
         String name
     ){
 

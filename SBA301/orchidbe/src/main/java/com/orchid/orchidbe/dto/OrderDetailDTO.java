@@ -1,8 +1,8 @@
 package com.orchid.orchidbe.dto;
 
-public class OrderDetailDTO {
+public interface OrderDetailDTO {
 
-    public record OrderDetailReq(
+    record OrderDetailReq(
         Integer orderId,
         Integer orchidId,
         Integer quantity,
@@ -10,7 +10,7 @@ public class OrderDetailDTO {
     ) {
     }
 
-    public record OrderDetailRes(
+    record OrderDetailRes(
         Integer id,
         Integer orderId,
         Integer orchidId,

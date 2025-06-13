@@ -1,8 +1,8 @@
 package com.orchid.orchidbe.dto;
 
-public class OrchidDTO {
+public interface OrchidDTO {
 
-    public record OrchidReq(
+    record OrchidReq(
         boolean isNatural,
         String description,
         String name,

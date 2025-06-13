@@ -2,15 +2,14 @@ package com.orchid.orchidbe.dto;
 
 import jakarta.validation.constraints.NotNull;
 
-public class RoleDTO {
+public interface RoleDTO {
 
-    @NotNull(message="Name is not blank")
-    public record RoleReq(
+    @NotNull(message = "Name is not blank")
+    record RoleReq(
         String name
-    ){
+    ) {
 
     }
-
 
 
 }

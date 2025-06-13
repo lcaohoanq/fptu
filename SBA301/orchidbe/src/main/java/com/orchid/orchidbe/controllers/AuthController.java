@@ -36,17 +36,7 @@ public class AuthController {
     public ResponseEntity<MyApiResponse<Object>> login(
         @RequestBody @Valid
         AuthPort.LoginReq loginReq,
-//        BindingResult result,
         HttpServletRequest request) throws Exception {
-
-//        if (result.hasErrors()) {
-//            Map<String, String> errors = result.getFieldErrors().stream()
-//                .collect(Collectors.toMap(
-//                    FieldError::getField,
-//                    FieldError::getDefaultMessage
-//                ));
-//            return MyApiResponse.validationError(errors);
-//        }
 
         String token = userService.login(loginReq.email(), loginReq.password());
         String userAgent = request.getHeader("User-Agent");

@@ -1,5 +1,6 @@
 package com.orchid.orchidbe.services;
 
+import com.orchid.orchidbe.dto.OrderDTO;
 import com.orchid.orchidbe.pojos.Order;
 import com.orchid.orchidbe.repositories.OrderRepository;
 import java.util.List;
@@ -8,13 +9,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
 
     @Override
-    public List<Order> getAll() {
-        return orderRepository.findAll();
+    public List<OrderDTO.OrderRes> getAll() {
+        return orderRepository.findAll()
+            .stream()
+            .map(OrderDTO.OrderRes::fromEntity)
+            .toList();
     }
 
     @Override

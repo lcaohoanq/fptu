@@ -5,7 +5,6 @@ import com.orchid.orchidbe.dto.AccountDTO;
 import com.orchid.orchidbe.exceptions.ExpiredTokenException;
 import com.orchid.orchidbe.exceptions.TokenNotFoundException;
 import com.orchid.orchidbe.pojos.Account;
-import com.orchid.orchidbe.pojos.Role;
 import com.orchid.orchidbe.pojos.Token;
 import com.orchid.orchidbe.repositories.AccountRepository;
 import com.orchid.orchidbe.repositories.TokenRepository;
