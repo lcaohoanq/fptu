@@ -96,7 +96,8 @@ public class WebSecurityConfig {
                     "/swagger-ui/**", "/swagger-ui.html",
                     apiPrefix + "/swagger-ui/**",
                     apiPrefix + "/swagger-ui.html",
-                    apiPrefix + "/api-docs/**"
+                    apiPrefix + "/api-docs/**",
+                    "/actuator/**"
                 ).permitAll()
 
                 // All other endpoints require authentication

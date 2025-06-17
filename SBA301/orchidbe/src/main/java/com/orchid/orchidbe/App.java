@@ -40,7 +40,9 @@ public class App implements CommandLineRunner {
         var env = context.getEnvironment();
         var activeProfiles = env.getActiveProfiles();
         if (!Arrays.asList(activeProfiles).contains("docker")) {
-            JavaBrowserLauncher.openHomePage("http://localhost:8080/swagger-ui.html");
+            JavaBrowserLauncher.doHealthCheckThenOpenHomePage(
+                "http://localhost:8080/actuator/health",
+                "http://localhost:8080/swagger-ui.html");
         }
 
     }
