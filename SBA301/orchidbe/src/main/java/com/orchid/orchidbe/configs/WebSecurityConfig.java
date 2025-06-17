@@ -114,10 +114,7 @@ public class WebSecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         // Allow your Vercel domain and localhost for development
-        configuration.setAllowedOrigins(Arrays.asList(
-            "https://shoppe-git-develop-lcaohoanqs-projects.vercel.app",
-            "http://localhost:4000",
-            "http://localhost:5173"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173"));
 
         // Allow common HTTP methods
         configuration.setAllowedMethods(Arrays.asList(

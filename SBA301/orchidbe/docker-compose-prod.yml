@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile-prod
     ports:
-      - "4007:8080"
+      - "4040:8080"
     networks:
       - sba
 

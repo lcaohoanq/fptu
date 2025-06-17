@@ -19,21 +19,35 @@ public class OrchidServiceImpl implements OrchidService  {
 
     @Override
     public Orchid getById(String id) {
-        return null;
+        return orchidRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Orchid not found with id: " + id));
     }
 
     @Override
     public void add(Orchid orchid) {
-
+        if (orchidRepository.existsByName(orchid.getName())) {
+            throw new IllegalArgumentException("Orchid with this name already exists");
+        }
+        orchidRepository.save(orchid);
     }
 
     @Override
-    public void update(Orchid orchid) {
+    public void update(String id, Orchid orchid) {
 
+        var existingOrchid = getById(id);
+
+        existingOrchid.setNatural(orchid.isNatural());
+        existingOrchid.setDescription(orchid.getDescription());
+        existingOrchid.setName(orchid.getName());
+        existingOrchid.setUrl(orchid.getUrl());
+        existingOrchid.setPrice(orchid.getPrice());
+
+        orchidRepository.save(existingOrchid);
     }
 
     @Override
     public void delete(Orchid orchid) {
-
+        var existingOrchid = getById(orchid.getId());
+        orchidRepository.delete(existingOrchid);
     }
 }

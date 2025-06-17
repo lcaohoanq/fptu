@@ -31,8 +31,10 @@ public class OrderDetail {
 
     private Integer quantity;
 
+    @Column(name = "orchid_id")
     private String orchidId;
 
+    @Column(name = "order_id")
     private String orderId;
 
 }

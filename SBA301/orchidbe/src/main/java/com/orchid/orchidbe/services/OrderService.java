@@ -9,7 +9,7 @@ public interface OrderService {
     List<OrderDTO.OrderRes> getAll();
     Order getById(String id);
     void add(Order order);
-    void update(Order order);
+    void update(String id, Order order);
     void delete(int id);
 
 }

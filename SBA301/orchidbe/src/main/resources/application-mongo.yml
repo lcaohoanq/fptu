@@ -16,8 +16,7 @@ spring:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 # Logging configuration
-
-jwt:
-  expiration: ${JWT_EXPIRATION} #1 day = 1 * 24 * 60 * 60
-  expiration-refresh-token: ${JWT_REFRESH_TOKEN_EXPIRATION} #60 days = 60 * 24 * 60 * 60
-  secretKey: ${JWT_SECRET_KEY}
+logging:
+  level:
+    org.springframework.data.mongodb: ${MONGO_LOG_LEVEL:INFO}
+    org.mongodb.driver: ${MONGO_DRIVER_LOG_LEVEL:WARN}
