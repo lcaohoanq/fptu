@@ -6,7 +6,7 @@ import java.util.List;
 public interface OrchidService {
 
     List<Orchid> getAll();
-    Orchid getById(int id);
+    Orchid getById(String id);
     void add(Orchid orchid);
     void update(Orchid orchid);
     void delete(Orchid orchid);

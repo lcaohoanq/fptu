@@ -18,7 +18,7 @@ public class OrchidServiceImpl implements OrchidService  {
     }
 
     @Override
-    public Orchid getById(int id) {
+    public Orchid getById(String id) {
         return null;
     }
 

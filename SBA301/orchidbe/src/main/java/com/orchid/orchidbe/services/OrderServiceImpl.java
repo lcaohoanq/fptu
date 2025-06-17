@@ -22,7 +22,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order getById(int id) {
+    public Order getById(String id) {
         return null;
     }
 
