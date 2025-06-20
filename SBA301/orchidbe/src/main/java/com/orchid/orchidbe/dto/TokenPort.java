@@ -27,7 +27,7 @@ public interface TokenPort {
         }
     )
     record TokenResponse(
-        Integer id,
+        String id,
         @JsonProperty("access_token") String token,
         @JsonProperty("refresh_token") String refreshToken,
         @JsonProperty("token_type") String tokenType,

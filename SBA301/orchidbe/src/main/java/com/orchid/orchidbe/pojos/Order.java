@@ -1,7 +1,5 @@
 package com.orchid.orchidbe.pojos;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import java.util.Date;
 import lombok.AllArgsConstructor;
@@ -11,7 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
 @Document(value = "orders")
 @Getter
 @Setter

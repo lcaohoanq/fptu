@@ -10,6 +10,8 @@ public interface AccountService {
 
     Account getById(String id);
 
+    Account getByEmail(String email);
+
     void add(AccountDTO.CreateAccountReq account);
 
     void update(String id, AccountDTO.UpdateAccountReq account);

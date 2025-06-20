@@ -1,6 +1,5 @@
 package com.orchid.orchidbe.pojos;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
 import java.util.ArrayList;
@@ -17,7 +16,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
-@Entity
 @Document(value = "accounts")
 @Getter
 @Setter

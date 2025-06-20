@@ -8,6 +8,7 @@ import com.orchid.orchidbe.dto.TokenPort.TokenResponse;
 import com.orchid.orchidbe.pojos.Account;
 import com.orchid.orchidbe.pojos.Token;
 import com.orchid.orchidbe.repositories.AccountRepository;
+import io.jsonwebtoken.ExpiredJwtException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +38,19 @@ public class AuthServiceImpl implements AuthService{
                 jwtToken.isRevoked(),
                 jwtToken.isExpired())
         );
+    }
+
+    @Override
+    public void logout(String token, Account account) {
+
+        if(jwtTokenUtils.isTokenExpired(token)){
+            throw new ExpiredJwtException(
+                null,
+                null,
+                "Token is expired"
+            );
+        }
+        tokenService.deleteToken(token, account);
+
     }
 }

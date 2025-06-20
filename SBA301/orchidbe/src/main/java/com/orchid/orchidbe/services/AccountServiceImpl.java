@@ -42,6 +42,12 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public Account getByEmail(String email) {
+        return accountRepository.findByEmail(email)
+            .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+    }
+
+    @Override
     public void add(AccountDTO.CreateAccountReq account) {
 
         if (accountRepository.existsByEmail(account.email())) {
