@@ -1,6 +1,7 @@
 package com.orchid.orchidbe.pojos;
 
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.Transient;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,11 +11,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 
 @Document(value = "accounts")
 @Getter
@@ -22,9 +24,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonPropertyOrder({
+    "id", "name", "email", "role", "createdAt", "updatedAt", "status", "enabled"
+})
 public class Account implements UserDetails {
 
     @Id
+    @Field("_id")
+    @JsonProperty("_id")
     private String id;
 
     private String name;
