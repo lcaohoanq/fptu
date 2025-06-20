@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.bson.types.ObjectId;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -31,8 +32,11 @@ public class AccountServiceImpl implements AccountService {
     private final RoleService roleService;
 
     @Override
-    public List<Account> getAll() {
-        return accountRepository.findAll();
+    public List<AccountDTO.AccountResp> getAll() {
+        return accountRepository.findAll()
+            .stream()
+            .map(AccountDTO.AccountResp::fromEntity)
+            .toList();
     }
 
     @Override

@@ -9,7 +9,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +17,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("${api.prefix}/accounts")
 @RequiredArgsConstructor
-@Tag(name = "Account Api", description = "Operation related to Account")
+@Tag(name = "accounts", description = "Operation related to Account")
 @Slf4j
 public class AccountController {
 
@@ -36,7 +34,7 @@ public class AccountController {
     @GetMapping("")
     @Operation(summary = "Get all accounts", description = "Returns a list of all accounts")
     @ApiResponse(responseCode = "200", description = "Successfully retrieved all accounts")
-    public ResponseEntity<MyApiResponse<List<Account>>> getAccounts() {
+    public ResponseEntity<MyApiResponse<List<AccountDTO.AccountResp>>> getAccounts() {
         return MyApiResponse.success(accountService.getAll());
     }
 
@@ -59,19 +57,6 @@ public class AccountController {
         token = token.substring(7); // Remove "Bearer " prefix
         Account userDetail = accountService.getUserDetailsFromToken(token);
         return MyApiResponse.success(userDetail);
-    }
-
-    @PostMapping("/register")
-    @Operation(summary = "Create new account", description = "Creates a new account")
-    @ApiResponses(value = {
-        @ApiResponse(responseCode = "201", description = "Account created successfully"),
-        @ApiResponse(responseCode = "400", description = "Invalid input or email already exists")
-    })
-    public ResponseEntity<MyApiResponse<Object>> createAccount(
-        @RequestBody @Valid AccountDTO.CreateAccountReq accountReq
-    ) {
-        accountService.add(accountReq);
-        return MyApiResponse.created();
     }
 
     @PutMapping("/{id}")

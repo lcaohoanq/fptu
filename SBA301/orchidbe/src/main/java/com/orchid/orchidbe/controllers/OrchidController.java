@@ -4,6 +4,7 @@ import com.orchid.orchidbe.pojos.Orchid;
 import com.orchid.orchidbe.services.OrchidService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("${api.prefix}/orchids")
 @RequiredArgsConstructor
-@Tag(name = "Orchid Api", description = "Operation related to Orchid")
+@Tag(name = "orchids", description = "Operation related to Orchid")
 public class OrchidController {
 
     private final OrchidService orchidService;

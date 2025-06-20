@@ -52,7 +52,8 @@ public class WebSecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 // Authentication endpoints
                 .requestMatchers(
-                    String.format("%s/auth/login", apiPrefix)
+                    String.format("%s/auth/login", apiPrefix),
+                    String.format("%s/auth/register", apiPrefix)
                 ).permitAll()
 
                 // Public API endpoints

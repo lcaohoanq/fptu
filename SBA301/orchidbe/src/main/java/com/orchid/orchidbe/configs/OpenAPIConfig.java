@@ -10,10 +10,6 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.annotations.servers.Server;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.License;
-import io.swagger.v3.oas.models.media.Content;
-import io.swagger.v3.oas.models.media.MediaType;
-import io.swagger.v3.oas.models.media.Schema;
-import io.swagger.v3.oas.models.responses.ApiResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -55,7 +51,8 @@ import org.springframework.context.annotation.Configuration;
     ),
     security = @SecurityRequirement(name = "bearer-jwt"),
     servers = {
-        @Server(url = "/", description = "Default Server URL")
+        @Server(url = "http://localhost:8080", description = "Local Dev (HTTP)"),
+        @Server(url = "https://api.example.com", description = "Production (HTTPS)")
     }
 )
 @SecurityScheme(

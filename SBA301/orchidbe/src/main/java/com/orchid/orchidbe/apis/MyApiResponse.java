@@ -1,6 +1,7 @@
 package com.orchid.orchidbe.apis;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.orchid.orchidbe.apis.MyApiResponse.Error;
 import com.orchid.orchidbe.apis.MyApiResponse.Success;
 import com.orchid.orchidbe.apis.MyApiResponse.ValidationError;
@@ -19,6 +20,7 @@ public sealed interface MyApiResponse<T>
     Instant getTimestamp();
 
     // ✅ Success record
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     record Success<T>(
         @JsonIgnore int statusCode,
         String message,

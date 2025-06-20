@@ -3,10 +3,11 @@ package com.orchid.orchidbe.services;
 import com.orchid.orchidbe.dto.AccountDTO;
 import com.orchid.orchidbe.pojos.Account;
 import java.util.List;
+import org.bson.types.ObjectId;
 
 public interface AccountService {
 
-    List<Account> getAll();
+    List<AccountDTO.AccountResp> getAll();
 
     Account getById(String id);
 

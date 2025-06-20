@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -20,10 +21,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Order {
 
     @Id
-    @Field("_id")
-    @JsonProperty(value = "_id")
     private String id;
-
     private Double totalAmount;
 
     private Date orderDate;

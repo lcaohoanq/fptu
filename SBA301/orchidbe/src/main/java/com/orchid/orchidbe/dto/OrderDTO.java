@@ -3,6 +3,7 @@ package com.orchid.orchidbe.dto;
 import com.orchid.orchidbe.pojos.Order;
 import com.orchid.orchidbe.pojos.Order.OrderStatus;
 import java.util.Date;
+import org.bson.types.ObjectId;
 
 public interface OrderDTO {
 

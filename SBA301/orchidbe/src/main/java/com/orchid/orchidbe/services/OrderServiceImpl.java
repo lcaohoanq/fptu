@@ -5,6 +5,7 @@ import com.orchid.orchidbe.pojos.Order;
 import com.orchid.orchidbe.repositories.OrderRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -55,7 +56,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
 
     }
 }
