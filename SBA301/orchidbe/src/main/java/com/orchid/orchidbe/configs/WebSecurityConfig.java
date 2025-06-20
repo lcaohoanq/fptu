@@ -97,6 +97,7 @@ public class WebSecurityConfig {
                     apiPrefix + "/swagger-ui/**",
                     apiPrefix + "/swagger-ui.html",
                     apiPrefix + "/api-docs/**",
+                    "/custom-swagger-ui/**",
                     "/actuator/**"
                 ).permitAll()
 

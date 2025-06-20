@@ -6,9 +6,16 @@ spring:
     active: mongo
 
 springdoc:
+  api-docs:
+    path: /v3/api-docs
   swagger-ui:
     operations-sorter: alpha
     tags-sorter: alpha
+    try-it-out-enabled: true
+    filter: true
+    doc-expansion: none
+    enabled: true
+    path: /swagger-ui.html
 
 # JWT configuration
 jwt:
