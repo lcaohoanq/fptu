@@ -64,8 +64,8 @@ public class TokenServiceImpl implements TokenService {
         }
 
         //check if token is attaching with user
-        if (!Objects.equals(existingToken.getId(), user.getId())) {
-            throw new TokenNotFoundException("Token does not exist");
+        if (!Objects.equals(existingToken.getAccountId(), user.getId())) {
+            throw new TokenNotFoundException("Token does not attach with current user");
         }
         existingToken.setRevoked(true);
         tokenRepository.save(existingToken);
