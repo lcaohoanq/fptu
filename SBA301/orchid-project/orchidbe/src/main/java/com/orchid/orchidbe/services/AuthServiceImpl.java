@@ -1,6 +1,7 @@
 package com.orchid.orchidbe.services;
 
 import com.orchid.orchidbe.components.JwtTokenUtils;
+import com.orchid.orchidbe.dto.AccountDTO.AccountCompactRes;
 import com.orchid.orchidbe.dto.AuthPort;
 import com.orchid.orchidbe.dto.AuthPort.LoginResponse;
 import com.orchid.orchidbe.dto.TokenPort.RefreshTokenDTO;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AuthServiceImpl implements AuthService{
+public class AuthServiceImpl implements AuthService {
 
     private final AccountService userService;
     private final TokenService tokenService;
@@ -36,14 +37,16 @@ public class AuthServiceImpl implements AuthService{
                 jwtToken.getRefreshExpirationDate(),
                 jwtToken.isMobile(),
                 jwtToken.isRevoked(),
-                jwtToken.isExpired())
+                jwtToken.isExpired()),
+            new AccountCompactRes(userDetail.getId(),
+                                  userDetail.getRole())
         );
     }
 
     @Override
     public void logout(String token, Account account) {
 
-        if(jwtTokenUtils.isTokenExpired(token)){
+        if (jwtTokenUtils.isTokenExpired(token)) {
             throw new ExpiredJwtException(
                 null,
                 null,

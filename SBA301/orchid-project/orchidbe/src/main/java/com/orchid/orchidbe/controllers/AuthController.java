@@ -8,6 +8,7 @@ import com.orchid.orchidbe.annotations.auth.RegisterApiResponses;
 import com.orchid.orchidbe.annotations.auth.RegisterOperation;
 import com.orchid.orchidbe.apis.MyApiResponse;
 import com.orchid.orchidbe.dto.AccountDTO;
+import com.orchid.orchidbe.dto.AccountDTO.AccountCompactRes;
 import com.orchid.orchidbe.dto.AuthPort.LoginResponse;
 import com.orchid.orchidbe.dto.LoginReq;
 import com.orchid.orchidbe.dto.TokenPort.TokenResponse;
@@ -62,16 +63,19 @@ public class AuthController {
         Token jwtToken = tokenService.addToken(userDetail.getId(), token,
                                                isMobileDevice(userAgent));
         log.info("User logged in successfully");
-        return MyApiResponse.success(new LoginResponse(new TokenResponse(
-            jwtToken.getId(),
-            jwtToken.getToken(),
-            jwtToken.getRefreshToken(),
-            jwtToken.getTokenType(),
-            jwtToken.getExpirationDate(),
-            jwtToken.getRefreshExpirationDate(),
-            jwtToken.isMobile(),
-            jwtToken.isRevoked(),
-            jwtToken.isExpired()))
+        return MyApiResponse.success(new LoginResponse(
+            new TokenResponse(
+                jwtToken.getId(),
+                jwtToken.getToken(),
+                jwtToken.getRefreshToken(),
+                jwtToken.getTokenType(),
+                jwtToken.getExpirationDate(),
+                jwtToken.getRefreshExpirationDate(),
+                jwtToken.isMobile(),
+                jwtToken.isRevoked(),
+                jwtToken.isExpired()),
+            new AccountCompactRes(userDetail.getId(),
+                                  userDetail.getRole()))
         );
     }
 
@@ -92,14 +96,15 @@ public class AuthController {
     @PostMapping("/logout")
     public ResponseEntity<MyApiResponse<Object>> logout(
         HttpServletRequest request
-    ){
+    ) {
         var authorization = request.getHeader("Authorization");
-        if(authorization == null || !authorization.startsWith("Bearer ")) {
+        if (authorization == null || !authorization.startsWith("Bearer ")) {
             throw new TokenNotFoundException("Token not found");
         }
 
         var token = authorization.substring(7);
-        var userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        var userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication()
+            .getPrincipal();
         var user = userService.getByEmail(userDetails.getUsername());
 
         authService.logout(token, user);

@@ -11,7 +11,8 @@ public interface AuthPort {
 
     @JsonInclude(Include.NON_NULL)
     record LoginResponse(
-        TokenResponse token
+        TokenResponse token,
+        AccountDTO.AccountCompactRes account
     ) {
 
     }

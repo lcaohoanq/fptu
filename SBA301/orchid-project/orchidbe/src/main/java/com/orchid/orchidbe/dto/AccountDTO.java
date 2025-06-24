@@ -1,6 +1,7 @@
 package com.orchid.orchidbe.dto;
 
 import com.orchid.orchidbe.pojos.Account;
+import com.orchid.orchidbe.pojos.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -47,6 +48,17 @@ public interface AccountDTO {
                                    account.getEmail());
         }
 
+    }
+
+    record AccountCompactRes(
+        String id,
+        Role role
+    ){
+        public static AccountCompactRes fromEntity(
+            Account account
+        ){
+            return new AccountCompactRes(account.getId(), account.getRole());
+        }
     }
 
 }
