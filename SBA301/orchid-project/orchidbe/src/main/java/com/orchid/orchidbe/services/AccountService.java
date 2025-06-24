@@ -13,6 +13,7 @@ public interface AccountService {
 
     Account getByEmail(String email);
 
+    void addEmployee(AccountDTO.CreateStaffReq account);
     void add(AccountDTO.CreateAccountReq account);
 
     void update(String id, AccountDTO.UpdateAccountReq account);

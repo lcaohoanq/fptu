@@ -3,8 +3,8 @@ import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { Alert, Form, Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { registerApi } from "../../apis/auth.api";
-import { useAuth } from "../../contexts/auth.context";
+import { useAuth } from "../../../contexts/auth.context";
+import { registerApi } from "../../../apis/auth.api";
 
 type RegisterFormData = {
   firstName: string;

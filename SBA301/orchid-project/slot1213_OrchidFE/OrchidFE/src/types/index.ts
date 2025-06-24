@@ -8,6 +8,11 @@ export type Orchid = {
   image: string;
 };
 
+export type ApiResponse<T> = {
+  message: string;
+  data: T;
+};
+
 export type Employee = {
   id: string;
   url: string;
@@ -16,7 +21,7 @@ export type Employee = {
   designation: string;
 };
 
-export type LoginRes = {
+export type LoginRes = ApiResponse<{
   token: {
     id: string;
     access_token: string;
@@ -33,7 +38,7 @@ export type LoginRes = {
       name: RoleName;
     };
   };
-};
+}>;
 
 export type RoleName = "Admin" | "User" | "Manager";
 export type Account = {

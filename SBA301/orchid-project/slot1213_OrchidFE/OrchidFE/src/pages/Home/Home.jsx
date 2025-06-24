@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import Container from "react-bootstrap/esm/Container";
 import { Link } from "react-router";
-import { orchidApi } from "../apis/api.config";
+import { orchidApi } from "../../apis/api.config";
 
 export default function HomeScreen() {
   const [data, setData] = useState([]);
@@ -12,7 +12,7 @@ export default function HomeScreen() {
 
   const fetchData = async () => {
     try {
-      const response = await orchidApi.get("/");
+      const response = await orchidApi.get("/orchids");
       const sortedData = response.data.sort(
         (a, b) => parseInt(b.empId) - parseInt(a.empId),
       );

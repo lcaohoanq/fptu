@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Row, Spinner, Table, Image, Form } from "react-bootstrap";
 import Container from "react-bootstrap/esm/Container";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { orchidApi } from "../../apis/api.config";
 
 export default function Cart() {

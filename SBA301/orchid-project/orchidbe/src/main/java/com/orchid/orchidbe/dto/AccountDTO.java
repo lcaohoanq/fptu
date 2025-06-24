@@ -1,5 +1,7 @@
 package com.orchid.orchidbe.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.orchid.orchidbe.pojos.Account;
 import com.orchid.orchidbe.pojos.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -21,14 +23,20 @@ public interface AccountDTO {
 
     }
 
-    record UpdateAccountReq(
+    record CreateStaffReq(
         String name,
 
         @Email(message = "Email is not valid")
         @NotBlank(message = "Email is required")
         @Schema(description = "User email", example = "mnhw.0612@gmail.com")
-        String email,
+        String email
+    ) {
 
+    }
+
+    record UpdateAccountReq(
+        String name,
+        String email,
         String password,
         String roleId
     ) {
@@ -38,14 +46,16 @@ public interface AccountDTO {
     record AccountResp(
         String id,
         String name,
-        String email
+        String email,
+        @JsonProperty(value = "role_name")
+        String roleName
     ) {
 
         public static AccountResp fromEntity(
             Account account
         ) {
             return new AccountResp(account.getId(), account.getName(),
-                                   account.getEmail());
+                                   account.getEmail(), account.getRole().getName());
         }
 
     }

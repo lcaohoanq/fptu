@@ -1,22 +1,10 @@
+import axios from "axios";
+import { LoginRes } from "../types";
+
 // Define interfaces for API requests and responses
 export interface LoginRequest {
   email: string;
   password: string;
-}
-
-export interface LoginResponse {
-  message: string;
-  data: {
-    token: {
-      id: string;
-      access_token: string;
-      refresh_token: string;
-      token_type: string;
-      expires: string;
-      expires_refresh_token: string;
-      is_mobile: boolean;
-    };
-  };
 }
 
 export interface RegisterRequest {
@@ -37,20 +25,17 @@ const API_BASE_URL = "http://localhost:8080/api/v1"; // Replace with your actual
 export const loginApi = async (
   email: string,
   password: string,
-): Promise<LoginResponse> => {
-  const response = await fetch(`${API_BASE_URL}/auth/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
+): Promise<LoginRes> => {
+  const response = await axios.post(`${API_BASE_URL}/auth/login`, {
+    email,
+    password,
   });
 
-  if (!response.ok) {
+  if (response.status !== 200) {
     throw new Error("Login failed");
   }
 
-  return response.json();
+  return response.data;
 };
 
 // Register API function

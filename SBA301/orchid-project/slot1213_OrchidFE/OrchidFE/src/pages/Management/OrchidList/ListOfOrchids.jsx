@@ -12,7 +12,7 @@ import Container from "react-bootstrap/esm/Container";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router";
-import { orchidApi } from "../apis/api.config";
+import { orchidApi } from "../../../apis/api.config";
 
 export default function ListOfOrchids() {
   const [data, setData] = useState([]);
@@ -98,7 +98,7 @@ export default function ListOfOrchids() {
           </Spinner>
         </div>
       ) : (
-        <Table striped bordered hover my-5>
+        <Table striped bordered hover className="my-5">
           <thead>
             <tr>
               <th>Image</th>
@@ -132,12 +132,13 @@ export default function ListOfOrchids() {
                 </td>
                 <td>
                   <Link to={`/edit/${a.id}`}>
-                    <span className="badge text-bg-primary rounded-2">
+                    <span className="badge text-bg-primary rounded-2 me-3">
                       <i className="bi bi-pencil-square"> Edit </i>
                     </span>
                   </Link>
 
                   <span
+                    role="button"
                     className="badge text-bg-danger rounded-2"
                     onClick={() => {
                       if (

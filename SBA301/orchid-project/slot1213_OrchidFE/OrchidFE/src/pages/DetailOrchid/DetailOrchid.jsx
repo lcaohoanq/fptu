@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge, Breadcrumb, Card, Image } from "react-bootstrap";
 import { useParams } from "react-router";
-import { orchidApi } from "../apis/api.config";
+import { orchidApi } from "../../apis/api.config";
 
 export default function DetailOrchid() {
   const [orchid, setOrchid] = React.useState({});
@@ -13,7 +13,7 @@ export default function DetailOrchid() {
   }, [id]);
   const fetchData = () => {
     orchidApi
-      .get(`/${id}`)
+      .get(`/orchids/${id}`)
       .then((response) => {
         setOrchid(response.data);
       })

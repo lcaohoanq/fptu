@@ -14,10 +14,10 @@ const createApiInstance = (baseURL) => {
   instance.interceptors.request.use(
     (config) => {
       // Example: attach token if needed
-      // const token = localStorage.getItem('token');
-      // if (token) {
-      //   config.headers.Authorization = `Bearer ${token}`;
-      // }
+      const token = localStorage.getItem("access_token");
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
 
       return config;
     },
@@ -41,4 +41,4 @@ const createApiInstance = (baseURL) => {
 
 // Instances
 export const orchidApi = createApiInstance(import.meta.env.VITE_API_URL);
-export const employeeApi = createApiInstance(import.meta.env.VITE_API_URL_EMPL);
+export const employeeApi = createApiInstance(import.meta.env.VITE_API_URL);

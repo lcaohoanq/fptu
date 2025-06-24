@@ -62,19 +62,31 @@ public class AccountServiceImpl implements AccountService {
         newAccount.setName(account.name());
         newAccount.setEmail(account.email());
         newAccount.setPassword(passwordEncoder.encode(account.password()));
-        newAccount.setRole(roleService.getByName("Admin")); // Default role, can be changed later
+        newAccount.setRole(roleService.getByName("User")); // Default role, can be changed later
 
         log.info("New user registered successfully");
         accountRepository.save(newAccount);
     }
 
     @Override
-    public void update(String id, AccountDTO.UpdateAccountReq account) {
+    public void addEmployee(AccountDTO.CreateStaffReq account) {
 
-        var role = roleService.getById(account.roleId());
-        if(role == null) {
-            throw new IllegalArgumentException("Role not found");
+        if (accountRepository.existsByEmail(account.email())) {
+            throw new IllegalArgumentException("Email already exists");
         }
+
+        var newAccount = new Account();
+        newAccount.setName(account.name());
+        newAccount.setEmail(account.email());
+        newAccount.setPassword(passwordEncoder.encode("1"));
+        newAccount.setRole(roleService.getByName("Staff"));
+
+        log.info("New staff registered successfully");
+        accountRepository.save(newAccount);
+    }
+
+    @Override
+    public void update(String id, AccountDTO.UpdateAccountReq account) {
 
         var existingAccount = accountRepository.findById(id)
             .orElseThrow(() -> new IllegalArgumentException("Account not found"));
@@ -83,11 +95,23 @@ public class AccountServiceImpl implements AccountService {
             throw new IllegalArgumentException("Email already exists");
         }
 
-        existingAccount.setName(account.name());
-        existingAccount.setEmail(account.email());
-        existingAccount.setPassword(account.password());
-        existingAccount.setRole(role);
-
+        if(account.password() != null && !account.password().isEmpty()) {
+            existingAccount.setPassword(passwordEncoder.encode(account.password()));
+        }
+        if(account.name() != null && !account.name().isEmpty()) {
+            existingAccount.setName(account.name());
+        }
+        if(account.email() != null && !account.email().isEmpty()) {
+            existingAccount.setEmail(account.email());
+        }
+        if(account.roleId() != null && !account.roleId().isEmpty()) {
+            var role = roleService.getById(account.roleId());
+            if(role == null) {
+                throw new IllegalArgumentException("Role not found");
+            }
+            role = roleService.getById(account.roleId());
+            existingAccount.setRole(role);
+        }
         accountRepository.save(existingAccount);
     }
 

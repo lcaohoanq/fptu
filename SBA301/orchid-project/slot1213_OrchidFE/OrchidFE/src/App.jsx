@@ -1,15 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import ListOfOrchids from "./components/ListOfOrchids";
-import EditOrchid from "./components/EditOrchid";
-import HomeScreen from "./components/HomeScreen";
-import NavBar from "./components/NavBar";
-import ListOfEmployees from "./components/ListOfEmployees";
-import DetailOrchid from "./components/DetailOrchid";
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
-import Cart from "./pages/Cart";
 import { AuthProvider } from "./contexts/auth.context";
+import NavBar from "./components/NavBar";
+import HomeScreen from "./pages/Home/Home";
+import ListOfEmployees from "./pages/Management/EmployeeList/ListOfEmployees";
+import ListOfOrchids from "./pages/Management/OrchidList/ListOfOrchids";
+import DetailOrchid from "./pages/DetailOrchid/DetailOrchid";
+import Login from "./pages/Auth/Login/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Register from "./pages/Auth/Register/Register";
+import Cart from "./pages/Cart/Cart";
+import EditOrchid from "./pages/Management/EditOrchid/EditOrchid";
 
 function App() {
   return (
@@ -17,14 +18,27 @@ function App() {
       <AuthProvider>
         <NavBar />
         <Routes>
-          <Route path="/" element={<ListOfOrchids />} />
-          <Route path="/manage/employees" element={<ListOfEmployees />} />
-          <Route path="/home" element={<HomeScreen />} />
+          <Route path="/" element={<HomeScreen />} />
+
+          <Route path="/manage">
+            <Route path="employees" element={<ListOfEmployees />} />
+            <Route path="orchids">
+              <Route index element={<ListOfOrchids />} />
+              <Route path="edit/:id" element={<EditOrchid />} />
+            </Route>
+          </Route>
+
           <Route path="/detail/:id" element={<DetailOrchid />} />
-          <Route path="/edit/:id" element={<EditOrchid />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/cart" element={<Cart/>} />
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

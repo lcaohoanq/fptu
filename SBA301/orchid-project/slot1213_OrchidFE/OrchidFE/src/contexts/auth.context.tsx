@@ -1,16 +1,17 @@
 import React, {
   createContext,
-  useContext,
-  useState,
-  useEffect,
   ReactNode,
+  useContext,
+  useEffect,
+  useState,
 } from "react";
-import { loginApi, LoginResponse } from "../apis/auth.api";
+import { loginApi } from "../apis/auth.api";
+import { LoginRes } from "../types";
 
 interface AuthContextProps {
   isAuthenticated: boolean;
   user: any | null;
-  login: (email: string, password: string) => Promise<LoginResponse>;
+  login: (email: string, password: string) => Promise<LoginRes>;
   logout: () => void;
 }
 
@@ -34,6 +35,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
         // For demonstration, we'll just set a placeholder user object
         setUser({
           email: localStorage.getItem("user_email") || "",
+          role: localStorage.getItem("user_role") || "User",
         });
       }
     };
@@ -41,10 +43,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     checkAuth();
   }, []);
 
-  const login = async (
-    email: string,
-    password: string,
-  ): Promise<LoginResponse> => {
+  const login = async (email: string, password: string): Promise<LoginRes> => {
     const response = await loginApi(email, password);
 
     // Store token data
@@ -53,9 +52,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     localStorage.setItem("token_expires", response.data.token.expires);
     localStorage.setItem("token_type", response.data.token.token_type);
     localStorage.setItem("user_email", email);
+    localStorage.setItem(
+      "user_role",
+      response.data.account.role.name || "User",
+    );
 
     setIsAuthenticated(true);
-    setUser({ email });
+    setUser({ email, role: response.data.account.role.name || "User" });
 
     return response;
   };

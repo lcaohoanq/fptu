@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
-import { Button, Form, Spinner, Alert } from "react-bootstrap";
+import { Button, Form, Spinner, Alert, Badge } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useAuth } from "../../contexts/auth.context";
+import { useAuth } from "../../../contexts/auth.context";
 
 type LoginFormData = {
   email: string;
@@ -12,13 +12,16 @@ type LoginFormData = {
 };
 
 const Login = () => {
-  const { login, isAuthenticated } = useAuth();
+  const { login, isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   // Redirect if already authenticated
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated && user.role === "User") {
       navigate("/");
+    } else if (isAuthenticated && user.role === "Admin") {
+      navigate("/manage/orchids");
     }
   }, [isAuthenticated, navigate]);
 
@@ -30,7 +33,7 @@ const Login = () => {
   } = useForm<LoginFormData>({
     defaultValues: {
       email: "",
-      password: "",
+      password: "string",
       rememberMe: false,
     },
   });
@@ -109,19 +112,29 @@ const Login = () => {
 
               <Form.Group className="mb-3" controlId="password">
                 <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Enter your password"
-                  isInvalid={!!errors.password}
-                  disabled={isLoading}
-                  {...register("password", {
-                    required: "Password is required",
-                    minLength: {
-                      value: 6,
-                      message: "Password must be at least 6 characters",
-                    },
-                  })}
-                />
+                <div className="d-flex">
+                  <Form.Control
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Enter your password"
+                    isInvalid={!!errors.password}
+                    disabled={isLoading}
+                    {...register("password", {
+                      required: "Password is required",
+                      minLength: {
+                        value: 6,
+                        message: "Password must be at least 6 characters",
+                      },
+                    })}
+                  />
+                  <Button
+                    variant="outline-secondary"
+                    onClick={() => setShowPassword((prev) => !prev)}
+                    className="ms-2"
+                    disabled={isLoading}
+                  >
+                    {showPassword ? "Hide" : "Show"}
+                  </Button>
+                </div>
                 <Form.Control.Feedback type="invalid">
                   {errors.password?.message}
                 </Form.Control.Feedback>

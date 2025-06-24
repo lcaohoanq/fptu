@@ -17,6 +17,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,6 +58,20 @@ public class AccountController {
         token = token.substring(7); // Remove "Bearer " prefix
         Account userDetail = accountService.getUserDetailsFromToken(token);
         return MyApiResponse.success(userDetail);
+    }
+
+    @PostMapping("/create-new-employee")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @Operation(summary = "Create new employee", description = "Creates a new employee account")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "201", description = "Employee created successfully"),
+        @ApiResponse(responseCode = "400", description = "Invalid input or email already exists")
+    })
+    public ResponseEntity<MyApiResponse<Object>> createNewEmployee(
+        @RequestBody AccountDTO.CreateStaffReq accountReq
+    ) {
+        accountService.addEmployee(accountReq);
+        return MyApiResponse.created();
     }
 
     @PutMapping("/{id}")

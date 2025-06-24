@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Button, Form, FormGroup, Image, Modal } from "react-bootstrap";
+import { Button, Form, Image, Modal } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/esm/Container";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
-import { employeeApi } from "../apis/api.config";
+import { employeeApi } from "../../../apis/api.config";
 
 export default function ListOfEmployees() {
   const [data, setData] = useState([]);
@@ -26,8 +26,8 @@ export default function ListOfEmployees() {
 
   const fetchData = async () => {
     try {
-      const response = await employeeApi.get("/");
-      const sortedData = response.data.sort(
+      const response = await employeeApi.get("/accounts");
+      const sortedData = response.data.data.sort(
         (a, b) => parseInt(b.empId) - parseInt(a.empId),
       );
       setData(sortedData);
@@ -38,17 +38,15 @@ export default function ListOfEmployees() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await employeeApi.post("/", data, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const response = await employeeApi.post("/accounts/create-new-employee", data);
       setShow(false);
       fetchData();
       reset();
       setValue("");
       toast.success("Employee added successfully!");
     } catch (error) {
-      console.log(error.message);
-      toast.error("Employee added fail!");
+      console.log(error);
+      toast.error(error.response.data.reason || "Failed to add employee");
     }
   };
   return (
@@ -60,7 +58,7 @@ export default function ListOfEmployees() {
         </button>
       </div>
 
-      <Table striped bordered hover my-5>
+      <Table striped bordered hover className="my-5">
         <thead>
           <tr>
             <th>Image</th>
@@ -77,25 +75,30 @@ export default function ListOfEmployees() {
               </td>
               <td>{a.name}</td>
               <td>
-                {a.gender ? (
+                {a.gender === "male" ? (
                   <span
                     className="badge"
                     style={{ backgroundColor: "#6ea8fe" }}
                   >
-                    {" "}
                     Male <i className="bi bi-gender-male"></i>
                   </span>
-                ) : (
+                ) : a.gender === "female" ? (
                   <span
                     className="badge"
                     style={{ backgroundColor: "#efadce" }}
                   >
-                    {" "}
                     Female <i className="bi bi-gender-female"></i>
+                  </span>
+                ) : (
+                  <span
+                    className="badge"
+                    style={{ backgroundColor: "#d3d3d3" }}
+                  >
+                    Other <i className="bi bi-gender-ambiguous"></i>
                   </span>
                 )}
               </td>
-              <td>{a.designation}</td>
+              <td>{a.role_name}</td>
             </tr>
           ))}
         </tbody>
@@ -103,57 +106,45 @@ export default function ListOfEmployees() {
       <Modal show={show} onHide={handleClose} backdrop="static">
         <Modal.Header closeButton>
           <Modal.Title>New Employee</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        </Modal.Header>        <Modal.Body>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="nameInput">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
+                placeholder="Enter employee name"
                 autoFocus
-                {...register("name", { required: true })}
-              />
-              {errors.name && errors.name.type === "required" && (
-                <p className="text-warning">Name is required</p>
-              )}
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Image</Form.Label>
-              <Form.Control
-                type="text"
-                {...register("url", {
-                  required: true,
-                  pattern:
-                    /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi,
+                {...register("name", { 
+                  required: "Name is required",
+                  minLength: {
+                    value: 2,
+                    message: "Name must be at least 2 characters"
+                  }
                 })}
               />
-              {errors.url && errors.url.type === "pattern" && (
-                <p className="text-warning">Image must be a valid URL</p>
+              {errors.name && (
+                <p className="text-warning">{errors.name.message}</p>
               )}
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Designation</Form.Label>
+            
+            <Form.Group className="mb-3" controlId="emailInput">
+              <Form.Label>Email</Form.Label>
               <Form.Control
-                type="text"
-                as="textarea"
-                rows={3}
-                {...register("designation", { required: true })}
+                type="email"
+                placeholder="Enter email address"
+                {...register("email", { 
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Email is not valid"
+                  }
+                })}
               />
-              {errors.designation && errors.designation.type === "required" && (
-                <p className="text-warning">Designation is required</p>
+              {errors.email && (
+                <p className="text-warning">{errors.email.message}</p>
               )}
             </Form.Group>
-            <FormGroup>
-              <Form.Check
-                type="switch"
-                id="custom-switch"
-                label="Male"
-                {...register("gender")}
-              />
-            </FormGroup>
+            
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close

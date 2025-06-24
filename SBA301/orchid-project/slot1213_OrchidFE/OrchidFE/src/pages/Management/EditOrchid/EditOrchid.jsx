@@ -4,7 +4,7 @@ import Container from "react-bootstrap/esm/Container";
 import { Controller, useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate, useParams } from "react-router";
-import { orchidApi } from "../apis/api.config";
+import { orchidApi } from "../../../apis/api.config";
 
 export default function EditOrchid() {
   const { id } = useParams();

@@ -13,7 +13,7 @@ function NavBar() {
   const navigate = useNavigate();
   
   // You can store cart count in state or get it from context/redux
-  const cartItemCount = 3; // Example count, replace with your actual cart count logic
+  const cartItemCount = 0; // Example count, replace with your actual cart count logic
   
   const handleLogout = () => {
     logout();
@@ -31,13 +31,13 @@ function NavBar() {
             {/* <Nav.Link href="/products">Products</Nav.Link> */}
             
             {/* Show admin/management options only if authenticated */}
-            {isAuthenticated && (
+            {isAuthenticated && user.role === "Admin" && (
               <NavDropdown title="Management" id="management-dropdown">
                 <NavDropdown.Item href="/manage/employees">
                   User Management
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/manage/products">
-                  Product Management
+                <NavDropdown.Item href="/manage/orchids">
+                  Orchid Management
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/manage/orders">
                   Order Management
@@ -67,6 +67,7 @@ function NavBar() {
 
             {/* Conditional rendering based on authentication state */}
             {isAuthenticated ? (
+              <div className="d-flex flex-column">
               <NavDropdown 
                 title={user?.email || "Account"} 
                 id="user-dropdown"
@@ -79,11 +80,12 @@ function NavBar() {
                   Logout
                 </NavDropdown.Item>
               </NavDropdown>
+              <Badge bg="secondary">{user?.role}</Badge>
+              </div>
             ) : (
-              <>
+              <div className="d-flex flex-column justify-content-center">
                 <Nav.Link href="/login">Login</Nav.Link>
-                <Nav.Link href="/register">Register</Nav.Link>
-              </>
+              </div>
             )}
           </Nav>
         </Navbar.Collapse>
