@@ -12,18 +12,18 @@ type LoginFormData = {
 };
 
 const Login = () => {
-  const { login, isAuthenticated, user } = useAuth();
+  const { login, isAuthenticated, user, isLoading: authLoading } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   // Redirect if already authenticated
   useEffect(() => {
-    if (isAuthenticated && user.role === "User") {
+    if (!authLoading && isAuthenticated && user?.role === "User") {
       navigate("/");
-    } else if (isAuthenticated && user.role === "Admin") {
+    } else if (!authLoading && isAuthenticated && user?.role === "Admin") {
       navigate("/manage/orchids");
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, authLoading, user, navigate]);
 
   const {
     register,

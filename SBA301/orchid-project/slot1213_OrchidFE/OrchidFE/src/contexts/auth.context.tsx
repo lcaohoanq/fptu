@@ -11,6 +11,7 @@ import { LoginRes } from "../types";
 interface AuthContextProps {
   isAuthenticated: boolean;
   user: any | null;
+  isLoading: boolean;
   login: (email: string, password: string) => Promise<LoginRes>;
   logout: () => void;
 }
@@ -22,6 +23,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<any | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Check if user is authenticated on initial load
   useEffect(() => {
@@ -36,8 +38,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
         setUser({
           email: localStorage.getItem("user_email") || "",
           role: localStorage.getItem("user_role") || "User",
+          id: localStorage.getItem("user_id") || "",
         });
       }
+      setIsLoading(false);
     };
 
     checkAuth();
@@ -52,13 +56,18 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     localStorage.setItem("token_expires", response.data.token.expires);
     localStorage.setItem("token_type", response.data.token.token_type);
     localStorage.setItem("user_email", email);
+    localStorage.setItem("user_id", response.data.account.id);
     localStorage.setItem(
       "user_role",
       response.data.account.role.name || "User",
     );
 
     setIsAuthenticated(true);
-    setUser({ email, role: response.data.account.role.name || "User" });
+    setUser({
+      email,
+      role: response.data.account.role.name || "User",
+      id: response.data.account.id,
+    });
 
     return response;
   };
@@ -69,6 +78,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     localStorage.removeItem("refresh_token");
     localStorage.removeItem("token_expires");
     localStorage.removeItem("token_type");
+    localStorage.removeItem("user_email");
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("user_role");
 
     // Keep remembered_email if needed
 
@@ -77,7 +89,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>
+    <AuthContext.Provider
+      value={{ isAuthenticated, user, isLoading, login, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );

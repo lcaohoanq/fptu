@@ -2,6 +2,7 @@ package com.orchid.orchidbe.controllers;
 
 import com.orchid.orchidbe.apis.MyApiResponse;
 import com.orchid.orchidbe.dto.OrderDTO;
+import com.orchid.orchidbe.pojos.Account;
 import com.orchid.orchidbe.pojos.Order;
 import com.orchid.orchidbe.services.OrderService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -11,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,6 +55,17 @@ public class OrderController {
         orderService.update(id, orderReq);
         return MyApiResponse.updated();
     }
+
+    @GetMapping("/me/orders")
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+    public ResponseEntity<MyApiResponse<List<OrderDTO.OrderRes>>> getMyOrders(
+        Authentication authentication) {
+        Account account = (Account) authentication.getPrincipal(); // principal là chính user từ token
+        String userId = account.getId();
+
+        return MyApiResponse.success(orderService.getByUserId(userId));
+    }
+
 
 
 }

@@ -73,8 +73,8 @@ function NavBar() {
                 id="user-dropdown"
                 align="end"
               >
-                <NavDropdown.Item href="/profile">My Profile</NavDropdown.Item>
-                <NavDropdown.Item href="/orders">My Orders</NavDropdown.Item>
+                <NavDropdown.Item href="/my-profile">My Profile</NavDropdown.Item>
+                <NavDropdown.Item href="/my-orders">My Orders</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={handleLogout}>
                   Logout

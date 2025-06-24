@@ -1,6 +1,7 @@
 package com.orchid.orchidbe.services;
 
 import com.orchid.orchidbe.dto.OrderDTO;
+import com.orchid.orchidbe.dto.OrderDTO.OrderRes;
 import com.orchid.orchidbe.pojos.Order;
 import com.orchid.orchidbe.repositories.OrderRepository;
 import java.util.List;
@@ -58,5 +59,13 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void delete(String id) {
 
+    }
+
+    @Override
+    public List<OrderRes> getByUserId(String userId) {
+        return orderRepository.findByAccountId(userId)
+            .stream()
+            .map(OrderDTO.OrderRes::fromEntity)
+            .toList();
     }
 }

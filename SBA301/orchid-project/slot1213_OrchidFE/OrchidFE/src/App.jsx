@@ -13,6 +13,8 @@ import Cart from "./pages/Cart/Cart";
 import EditOrchid from "./pages/Management/EditOrchid/EditOrchid";
 import { Orders } from "./pages/Management/Order";
 import { OrderDetail } from "./pages/Management/OrderDetail";
+import Profile from "./pages/Profile";
+import MyOrders from "./pages/MyOrders";
 
 function App() {
   return (
@@ -52,6 +54,25 @@ function App() {
           <Route path="/detail/:id" element={<DetailOrchid />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          
+          {/* User Profile and Orders */}
+          <Route
+            path="/my-profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/my-orders"
+            element={
+              <ProtectedRoute>
+                <MyOrders />
+              </ProtectedRoute>
+            }
+          />
+          
           <Route
             path="/cart"
             element={

@@ -12,5 +12,6 @@ public interface OrderService {
     void add(Order order);
     void update(String id, Order order);
     void delete(String id);
+    List<OrderDTO.OrderRes> getByUserId(String userId);
 
 }
