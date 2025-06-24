@@ -11,7 +11,7 @@ spring:
   # MongoDB configuration
   data:
     mongodb:
-      uri: ${MONGODB_URL_CLOUD}
+      uri: mongodb+srv://hoangclw:aDM2LxkZuiR94ly3@crud.u3idzpf.mongodb.net/orchidbe?retryWrites=true&w=majority&appName=Crud
       auto-index-creation: true
 
   # Disable JPA

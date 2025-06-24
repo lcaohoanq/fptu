@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
-import { Button, Form, Spinner } from "react-bootstrap";
+import { Button, Form, Spinner, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useAuth } from "../../contexts/auth.context";
 
 type LoginFormData = {
   email: string;
@@ -11,9 +12,20 @@ type LoginFormData = {
 };
 
 const Login = () => {
+  const { login, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/");
+    }
+  }, [isAuthenticated, navigate]);
+
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<LoginFormData>({
     defaultValues: {
@@ -24,30 +36,38 @@ const Login = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
+
+  // Load remembered email if available
+  useEffect(() => {
+    const rememberedEmail = localStorage.getItem("remembered_email");
+    if (rememberedEmail) {
+      setValue("email", rememberedEmail);
+      setValue("rememberMe", true);
+    }
+  }, [setValue]);
 
   const onSubmit = async (data: LoginFormData) => {
     setIsLoading(true);
+    setError(null);
 
     try {
-      // Replace with actual API call
-      // const response = await loginApi(data.email, data.password);
+      // Call the login function from auth context
+      const response = await login(data.email, data.password);
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      if (data.email === "admin@gmail.com" && data.password === "admin123") {
-        navigate("/");
-      } else if (
-        data.email === "user@gmail.com" &&
-        data.password === "user123"
-      ) {
-        navigate("/home");
+      // Handle remember me functionality
+      if (data.rememberMe) {
+        localStorage.setItem("remembered_email", data.email);
+      } else {
+        localStorage.removeItem("remembered_email");
       }
-      console.log("Login successful", data);
+
+      console.log("Login successful", response);
+
+      // Navigation will be handled by the useEffect that watches isAuthenticated
     } catch (error) {
       console.error("Login failed", error);
-      // Handle login error (show message, etc.)
+      setError("Invalid email or password. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -59,6 +79,12 @@ const Login = () => {
         <div className="card shadow-sm">
           <div className="card-body p-4 p-md-5">
             <h2 className="text-center mb-4">Login to Orchid</h2>
+
+            {error && (
+              <Alert variant="danger" className="mb-3">
+                {error}
+              </Alert>
+            )}
 
             <Form onSubmit={handleSubmit(onSubmit)}>
               <Form.Group className="mb-3" controlId="email">
