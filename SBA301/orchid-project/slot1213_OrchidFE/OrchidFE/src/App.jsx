@@ -11,6 +11,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Register from "./pages/Auth/Register/Register";
 import Cart from "./pages/Cart/Cart";
 import EditOrchid from "./pages/Management/EditOrchid/EditOrchid";
+import { Orders } from "./pages/Management/Order";
+import { OrderDetail } from "./pages/Management/OrderDetail";
 
 function App() {
   return (
@@ -20,11 +22,30 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeScreen />} />
 
+          {/* Public Orders Routes */}
+          <Route path="/orders">
+            <Route index element={
+              <ProtectedRoute>
+                <Orders />
+              </ProtectedRoute>
+            } />
+            <Route path=":orderId" element={
+              <ProtectedRoute>
+                <OrderDetail />
+              </ProtectedRoute>
+            } />
+          </Route>
+
+          {/* Management Routes (Admin only) */}
           <Route path="/manage">
             <Route path="employees" element={<ListOfEmployees />} />
             <Route path="orchids">
               <Route index element={<ListOfOrchids />} />
               <Route path="edit/:id" element={<EditOrchid />} />
+            </Route>
+            <Route path="orders">
+              <Route index element={<Orders />} />
+              <Route path=":orderId" element={<OrderDetail />} />
             </Route>
           </Route>
 
