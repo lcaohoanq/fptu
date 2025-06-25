@@ -1,30 +1,32 @@
 import React from "react";
-import { Badge, Breadcrumb, Card, Image, Button } from "react-bootstrap";
+import { Badge, Breadcrumb, Card, Image, Button, Alert, Spinner } from "react-bootstrap";
 import { useParams, Link } from "react-router";
 import { orchidApi } from "../../apis/api.config";
 import { useCart } from "../../contexts/cart.context";
+import { handleApiError } from "../../utils/errorHandler";
 
 export default function DetailOrchid() {
   const [orchid, setOrchid] = React.useState({});
   const [quantity, setQuantity] = React.useState(1);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
   const { addToCart, isInCart } = useCart();
   const params = useParams();
   const id = params.id;  console.log(params.id);
     React.useEffect(() => {
     fetchData();
   }, [fetchData]);
-  
-  const fetchData = React.useCallback(() => {
+    const fetchData = React.useCallback(() => {
     setIsLoading(true);
+    setError(null);
     orchidApi
       .get(`/orchids/${id}`)
       .then((response) => {
         setOrchid(response.data);
         setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
+      })      .catch((error) => {
+        const errorMessage = handleApiError(error, "Failed to load orchid details");
+        setError(errorMessage);
         setIsLoading(false);
       });
   }, [id]);
@@ -38,9 +40,40 @@ export default function DetailOrchid() {
       setQuantity(newQuantity);
     }
   };
-
   return (
     <div className="container py-5">
+      {/* Loading State */}
+      {isLoading && (
+        <div className="text-center py-5">
+          <Spinner animation="border" variant="primary" />
+          <p className="mt-2">Loading orchid details...</p>
+        </div>
+      )}
+
+      {/* Error State */}
+      {error && (
+        <Alert variant="danger">
+          <Alert.Heading>
+            <i className="bi bi-exclamation-triangle me-2"></i>
+            Unable to Load Orchid
+          </Alert.Heading>
+          <p>{error}</p>
+          <hr />
+          <div className="d-flex gap-2">
+            <Button variant="outline-danger" onClick={fetchData}>
+              <i className="bi bi-arrow-clockwise me-2"></i>
+              Try Again
+            </Button>
+            <Link to="/" className="btn btn-outline-secondary">
+              <i className="bi bi-house me-2"></i>
+              Go Home
+            </Link>
+          </div>
+        </Alert>
+      )}
+
+      {/* Success State - Show orchid details */}
+      {!isLoading && !error && orchid.id && (
       <div className="row">
         <div className="col-12 col-md-8 p-3">
           <Breadcrumb>
@@ -168,10 +201,10 @@ export default function DetailOrchid() {
                   </Link>
                 </div>
               </Card.Body>
-            </Card>
-          </div>
+            </Card>          </div>
         </div>
       </div>
+      )}
     </div>
   );
 }

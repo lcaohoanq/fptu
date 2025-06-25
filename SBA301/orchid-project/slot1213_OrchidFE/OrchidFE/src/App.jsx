@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "./contexts/auth.context";
 import { CartProvider } from "./contexts/cart.context";
 import NavBar from "./components/NavBar";
+import ErrorBoundary from "./components/ErrorBoundary";
 import HomeScreen from "./pages/Home/Home";
 import ListOfEmployees from "./pages/Management/EmployeeList/ListOfEmployees";
 import ListOfOrchids from "./pages/Management/OrchidList/ListOfOrchids";
@@ -20,9 +21,10 @@ import MyOrders from "./pages/MyOrders";
 
 function App() {
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <CartProvider>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <AuthProvider>
+          <CartProvider>
           <NavBar />
           <Toaster position="top-right" />
           <Routes>
@@ -89,6 +91,7 @@ function App() {
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 
