@@ -7,13 +7,12 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import { useAuth } from "../contexts/auth.context";
+import { useCart } from "../contexts/cart.context";
 
 function NavBar() {
   const { isAuthenticated, user, logout } = useAuth();
+  const { cartCount } = useCart();
   const navigate = useNavigate();
-  
-  // You can store cart count in state or get it from context/redux
-  const cartItemCount = 0; // Example count, replace with your actual cart count logic
   
   const handleLogout = () => {
     logout();
@@ -53,13 +52,13 @@ function NavBar() {
               <Button variant="outline-primary">
                 <i className="bi bi-cart3 me-1"></i>
                 Cart
-                {cartItemCount > 0 && (
+                {cartCount > 0 && (
                   <Badge 
                     bg="danger" 
                     pill 
                     className="position-absolute top-0 start-100 translate-middle"
                   >
-                    {cartItemCount}
+                    {cartCount}
                   </Badge>
                 )}
               </Button>

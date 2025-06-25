@@ -1,25 +1,42 @@
 import React from "react";
-import { Badge, Breadcrumb, Card, Image } from "react-bootstrap";
-import { useParams } from "react-router";
+import { Badge, Breadcrumb, Card, Image, Button } from "react-bootstrap";
+import { useParams, Link } from "react-router";
 import { orchidApi } from "../../apis/api.config";
+import { useCart } from "../../contexts/cart.context";
 
 export default function DetailOrchid() {
   const [orchid, setOrchid] = React.useState({});
+  const [quantity, setQuantity] = React.useState(1);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const { addToCart, isInCart } = useCart();
   const params = useParams();
-  const id = params.id;
-  console.log(params.id);
-  React.useEffect(() => {
+  const id = params.id;  console.log(params.id);
+    React.useEffect(() => {
     fetchData();
-  }, [id]);
-  const fetchData = () => {
+  }, [fetchData]);
+  
+  const fetchData = React.useCallback(() => {
+    setIsLoading(true);
     orchidApi
       .get(`/orchids/${id}`)
       .then((response) => {
         setOrchid(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
+        setIsLoading(false);
       });
+  }, [id]);
+
+  const handleAddToCart = () => {
+    addToCart(orchid, quantity);
+  };
+
+  const handleQuantityChange = (newQuantity) => {
+    if (newQuantity >= 1) {
+      setQuantity(newQuantity);
+    }
   };
 
   return (
@@ -56,9 +73,7 @@ export default function DetailOrchid() {
               )}
             </Card.Body>
           </Card>
-        </div>
-
-        <div className="col-12 col-md-4 p-3">
+        </div>        <div className="col-12 col-md-4 p-3">
           <div className="badge-container">
             <Badge className="badge-svg">
               <svg
@@ -75,12 +90,85 @@ export default function DetailOrchid() {
                 />
               </svg>
             </Badge>
+            
+            {/* Orchid Image */}
             <Image
               src={orchid.image}
               alt={orchid.orchidName || "Loading..."}
               fluid
               className="my-3"
             />
+            
+            {/* Cart Section */}
+            <Card className="mt-3">
+              <Card.Header>
+                <h5 className="mb-0">
+                  <i className="bi bi-cart me-2"></i>
+                  Add to Cart
+                </h5>
+              </Card.Header>
+              <Card.Body>
+                {/* Price Display */}
+                <div className="mb-3">
+                  <span className="text-muted">Price: </span>
+                  <span className="fs-5 fw-bold text-success">
+                    ${orchid.id ? (() => {
+                      // Generate consistent price based on orchid properties
+                      let basePrice = 25;
+                      if (orchid.isNatural) basePrice *= 1.5;
+                      const hash = orchid.id.split('').reduce((a, b) => {
+                        a = ((a << 5) - a) + b.charCodeAt(0);
+                        return a & a;
+                      }, 0);
+                      const variation = (Math.abs(hash) % 30) + 10;
+                      return (basePrice + variation).toFixed(2);
+                    })() : '0.00'}
+                  </span>
+                </div>
+                
+                {/* Quantity Selector */}
+                <div className="mb-3">
+                  <label className="form-label">Quantity:</label>
+                  <div className="d-flex align-items-center gap-2">
+                    <Button 
+                      variant="outline-secondary" 
+                      size="sm"
+                      onClick={() => handleQuantityChange(quantity - 1)}
+                      disabled={quantity <= 1}
+                    >
+                      <i className="bi bi-dash"></i>
+                    </Button>
+                    <span className="mx-3 fw-bold">{quantity}</span>
+                    <Button 
+                      variant="outline-secondary" 
+                      size="sm"
+                      onClick={() => handleQuantityChange(quantity + 1)}
+                    >
+                      <i className="bi bi-plus"></i>
+                    </Button>
+                  </div>
+                </div>
+                
+                {/* Add to Cart Button */}
+                <div className="d-grid gap-2">
+                  <Button 
+                    variant={isInCart(orchid.id) ? "outline-success" : "success"}
+                    size="lg"
+                    onClick={handleAddToCart}
+                    disabled={isInCart(orchid.id) || isLoading || !orchid.id}
+                  >
+                    <i className={`bi ${isInCart(orchid.id) ? 'bi-check-circle' : 'bi-cart-plus'} me-2`}></i>
+                    {isInCart(orchid.id) ? 'Already in Cart' : `Add ${quantity} to Cart`}
+                  </Button>
+                  
+                  {/* Link to Cart */}
+                  <Link to="/cart" className="btn btn-outline-primary">
+                    <i className="bi bi-cart me-2"></i>
+                    View Cart
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
           </div>
         </div>
       </div>

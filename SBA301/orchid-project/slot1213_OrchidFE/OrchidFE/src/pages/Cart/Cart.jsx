@@ -1,58 +1,20 @@
-import { useEffect, useState } from "react";
-import { Button, Card, Col, Row, Spinner, Table, Image, Form } from "react-bootstrap";
+import { useState } from "react";
+import { Button, Col, Row, Spinner, Table, Image, Form } from "react-bootstrap";
 import Container from "react-bootstrap/esm/Container";
 import { Link } from "react-router-dom";
-import { orchidApi } from "../../apis/api.config";
+import { useCart } from "../../contexts/cart.context";
 
 export default function Cart() {
-  const [loading, setLoading] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
-
-  useEffect(() => {
-    fetchCartData();
-  }, []);
-
-  // Calculate total whenever cart items change
-  useEffect(() => {
-    const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    setCartTotal(total);
-  }, [cartItems]);
-
-  const fetchCartData = async () => {
-    setLoading(true);
-    try {
-      // In a real app, you would fetch cart data from an API
-      // For now, we'll use the orchid API and add some mock cart properties
-      const response = await orchidApi.get("/");
-      
-      // Mock data for cart demonstration
-      const mockCartItems = response.data.slice(0, 3).map(orchid => ({
-        ...orchid,
-        quantity: Math.floor(Math.random() * 3) + 1, // Random quantity between 1-3
-        price: parseFloat((Math.random() * 50 + 20).toFixed(2)), // Random price between $20-$70
-      }));
-      
-      setCartItems(mockCartItems);
-    } catch (error) {
-      console.error("Error fetching cart data:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { cartItems, cartTotal, updateQuantity, removeFromCart } = useCart();
+  const [loading] = useState(false);
 
   const handleQuantityChange = (id, newQuantity) => {
     if (newQuantity < 1) return;
-    
-    setCartItems(prevItems => 
-      prevItems.map(item => 
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    );
+    updateQuantity(id, newQuantity);
   };
 
   const handleRemoveItem = (id) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+    removeFromCart(id);
   };
 
   if (loading) {
@@ -166,9 +128,6 @@ export default function Cart() {
             <Link to="/home" className="btn btn-outline-secondary">
               <i className="bi bi-arrow-left me-2"></i>Continue Shopping
             </Link>
-            <Button variant="outline-primary" onClick={() => fetchCartData()}>
-              <i className="bi bi-arrow-clockwise me-2"></i>Update Cart
-            </Button>
           </div>
         </Col>
         

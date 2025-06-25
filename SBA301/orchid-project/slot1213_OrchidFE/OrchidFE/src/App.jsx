@@ -1,6 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "./contexts/auth.context";
+import { CartProvider } from "./contexts/cart.context";
 import NavBar from "./components/NavBar";
 import HomeScreen from "./pages/Home/Home";
 import ListOfEmployees from "./pages/Management/EmployeeList/ListOfEmployees";
@@ -20,8 +22,10 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <NavBar />
-        <Routes>
+        <CartProvider>
+          <NavBar />
+          <Toaster position="top-right" />
+          <Routes>
           <Route path="/" element={<HomeScreen />} />
 
           {/* Public Orders Routes */}
@@ -82,6 +86,7 @@ function App() {
             }
           />
         </Routes>
+        </CartProvider>
       </AuthProvider>
     </BrowserRouter>
   );

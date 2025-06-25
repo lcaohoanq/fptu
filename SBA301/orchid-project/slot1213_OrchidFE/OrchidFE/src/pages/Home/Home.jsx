@@ -3,9 +3,12 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import Container from "react-bootstrap/esm/Container";
 import { Link } from "react-router";
 import { orchidApi } from "../../apis/api.config";
+import { useCart } from "../../contexts/cart.context";
 
 export default function HomeScreen() {
   const [data, setData] = useState([]);
+  const { addToCart, isInCart } = useCart();
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -33,19 +36,32 @@ export default function HomeScreen() {
                 src={item.image}
                 alt="example"
                 height={350}
-              />
-              <Card.Body>
+              />              <Card.Body>
                 <Card.Title>{item.orchidName}</Card.Title>
+                
+                {/* Display price and natural badge */}
+                <div className="mb-2">
+                  {item.isNatural ? (
+                    <span className="badge bg-success me-2">Natural</span>
+                  ) : (
+                    <span className="badge bg-warning me-2">Industry</span>
+                  )}
+                </div>
 
                 <div className="d-flex gap-2 mt-3">
                   <Link
                     to={`/detail/${item.id}`}
-                    className="btn btn-outline-primary"
+                    className="btn btn-outline-primary flex-grow-1"
                   >
                     View Details
                   </Link>
-                  <Button variant="success">
-                    <i className="bi bi-cart-plus me-1"></i>Buy Now
+                  <Button 
+                    variant={isInCart(item.id) ? "outline-success" : "success"}
+                    onClick={() => addToCart(item)}
+                    disabled={isInCart(item.id)}
+                  >
+                    <i className={`bi ${isInCart(item.id) ? 'bi-check-circle' : 'bi-cart-plus'} me-1`}></i>
+                    {isInCart(item.id) ? 'Added' : 'Add to Cart'}
                   </Button>
                 </div>
               </Card.Body>
