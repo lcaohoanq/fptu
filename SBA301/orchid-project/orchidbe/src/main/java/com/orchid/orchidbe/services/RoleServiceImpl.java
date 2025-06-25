@@ -3,13 +3,18 @@ package com.orchid.orchidbe.services;
 import com.orchid.orchidbe.dto.RoleDTO;
 import com.orchid.orchidbe.pojos.Role;
 import com.orchid.orchidbe.repositories.RoleRepository;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.bson.types.ObjectId;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class RoleServiceImpl implements RoleService {
 
     private final RoleRepository roleRepository;
@@ -21,7 +26,7 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Role getById(String id) {
-        return roleRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Role not found"));
+        return roleRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Role not found"));
     }
 
     @Override
@@ -32,21 +37,36 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public void add(RoleDTO.RoleReq role) {
-        if(roleRepository.existsByName(role.name())) {
-            throw new IllegalArgumentException("Role with name " + role.name() + " already exists");
+        String newName = StringUtils.trimToNull(role.name());
+        if (StringUtils.isBlank(newName)) {
+            throw new IllegalArgumentException("Role name must not be empty");
         }
 
-        roleRepository.save(new Role(role.name()));
+        if (roleRepository.existsByName(newName)) {
+            throw new IllegalArgumentException("Role with name " + newName + " already exists");
+        }
+
+        roleRepository.save(new Role(newName));
     }
 
     @Override
+    @Transactional
     public void update(String id, RoleDTO.RoleReq role) {
         var existingRole = getById(id);
-        existingRole.setName(role.name());
-        roleRepository.save(existingRole);
+        String newName = StringUtils.trimToNull(role.name());
+
+        if (StringUtils.isNotBlank(newName) &&
+            !StringUtils.equalsIgnoreCase(StringUtils.trim(existingRole.getName()), newName)) {
+
+            log.info("Updating role with id {}: name changed from {} to {}", id, existingRole.getName(), newName);
+            existingRole.setName(newName);
+            roleRepository.save(existingRole);
+        }
     }
 
+
     @Override
+    @Transactional
     public void delete(String id) {
         var existingRole = getById(id);
         roleRepository.delete(existingRole);

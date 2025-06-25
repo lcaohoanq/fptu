@@ -1,6 +1,5 @@
 package com.orchid.orchidbe.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.orchid.orchidbe.pojos.Account;
 import com.orchid.orchidbe.pojos.Role;

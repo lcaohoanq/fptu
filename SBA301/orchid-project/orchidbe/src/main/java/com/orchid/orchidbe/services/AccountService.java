@@ -3,7 +3,6 @@ package com.orchid.orchidbe.services;
 import com.orchid.orchidbe.dto.AccountDTO;
 import com.orchid.orchidbe.pojos.Account;
 import java.util.List;
-import org.bson.types.ObjectId;
 
 public interface AccountService {
 
@@ -21,9 +20,5 @@ public interface AccountService {
     void delete(String id);
 
     String login(String email, String password) throws Exception;
-
-    Account getUserDetailsFromToken(String token) throws Exception;
-
-    Account getUserDetailsFromRefreshToken(String refreshToken) throws Exception;
 
 }

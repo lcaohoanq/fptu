@@ -2,22 +2,22 @@ package com.orchid.orchidbe.services;
 
 import com.orchid.orchidbe.components.JwtTokenUtils;
 import com.orchid.orchidbe.dto.AccountDTO;
-import com.orchid.orchidbe.exceptions.ExpiredTokenException;
-import com.orchid.orchidbe.exceptions.TokenNotFoundException;
 import com.orchid.orchidbe.pojos.Account;
-import com.orchid.orchidbe.pojos.Token;
 import com.orchid.orchidbe.repositories.AccountRepository;
 import com.orchid.orchidbe.repositories.TokenRepository;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.bson.types.ObjectId;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 @RequiredArgsConstructor
@@ -42,13 +42,13 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account getById(String id) {
         return accountRepository.findById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Account not found"));
     }
 
     @Override
     public Account getByEmail(String email) {
         return accountRepository.findByEmail(email)
-            .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Account not found"));
     }
 
     @Override
@@ -69,6 +69,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Transactional
     public void addEmployee(AccountDTO.CreateStaffReq account) {
 
         if (accountRepository.existsByEmail(account.email())) {
@@ -86,28 +87,29 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Transactional
     public void update(String id, AccountDTO.UpdateAccountReq account) {
 
         var existingAccount = accountRepository.findById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Account not found"));
 
         if (accountRepository.existsByEmailAndIdNot(account.email(), id)) {
             throw new IllegalArgumentException("Email already exists");
         }
 
-        if(account.password() != null && !account.password().isEmpty()) {
+        if (StringUtils.isNotBlank(account.password())) {
             existingAccount.setPassword(passwordEncoder.encode(account.password()));
         }
-        if(account.name() != null && !account.name().isEmpty()) {
+        if (StringUtils.isNotBlank(account.name())) {
             existingAccount.setName(account.name());
         }
-        if(account.email() != null && !account.email().isEmpty()) {
+        if (StringUtils.isNotBlank(account.email())) {
             existingAccount.setEmail(account.email());
         }
-        if(account.roleId() != null && !account.roleId().isEmpty()) {
+        if (StringUtils.isNotBlank(account.roleId())) {
             var role = roleService.getById(account.roleId());
             if(role == null) {
-                throw new IllegalArgumentException("Role not found");
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Role not found");
             }
             role = roleService.getById(account.roleId());
             existingAccount.setRole(role);
@@ -116,29 +118,10 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Transactional
     public void delete(String id) {
         var existingAccount = getById(id);
         accountRepository.delete(existingAccount);
-    }
-
-    @Override
-    public Account getUserDetailsFromToken(String token) throws Exception {
-        if (jwtTokenUtils.isTokenExpired(token)) {
-            throw new ExpiredTokenException("Token is expired");
-        }
-        String email = jwtTokenUtils.extractEmail(token);
-        Optional<Account> user = accountRepository.findByEmail(email);
-        if (user.isEmpty()) {
-            throw new Exception("User not found with email: " + email);
-        }
-        return user.get();
-    }
-
-    @Override
-    public Account getUserDetailsFromRefreshToken(String refreshToken) throws Exception {
-        Token existingToken = tokenRepository.findByRefreshToken(refreshToken)
-            .orElseThrow(() -> new TokenNotFoundException("Refresh token does not exist"));
-        return getUserDetailsFromToken(existingToken.getToken());
     }
 
     @Override
@@ -158,6 +141,12 @@ public class AccountServiceImpl implements AccountService {
         }catch (Exception e){
             log.error("Login failed for user {}: {}", email, e.getMessage());
             throw new Exception("Login failed: " + e.getMessage(), e);
+        }
+    }
+
+    private void ensureEmailNotExists(String email) {
+        if (accountRepository.existsByEmail(email)) {
+            throw new IllegalArgumentException("Email already exists");
         }
     }
 }

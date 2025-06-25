@@ -2,8 +2,6 @@ package com.orchid.orchidbe.repositories;
 
 import com.orchid.orchidbe.pojos.Account;
 import java.util.Optional;
-import org.bson.types.ObjectId;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface AccountRepository extends MongoRepository<Account, String> {

@@ -3,6 +3,8 @@ package com.orchid.orchidbe.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.orchid.orchidbe.dto.TokenPort.TokenResponse;
+import com.orchid.orchidbe.pojos.Account;
+import com.orchid.orchidbe.pojos.Token;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -15,6 +17,25 @@ public interface AuthPort {
         AccountDTO.AccountCompactRes account
     ) {
 
+        public static LoginResponse from(
+            Token token,
+            Account account
+        ) {
+            return new LoginResponse(
+                new TokenResponse(
+                    token.getId(),
+                    token.getToken(),
+                    token.getRefreshToken(),
+                    token.getTokenType(),
+                    token.getExpirationDate(),
+                    token.getRefreshExpirationDate(),
+                    token.isMobile(),
+                    token.isRevoked(),
+                    token.isExpired()
+                ),
+                new AccountDTO.AccountCompactRes(account.getId(),
+                                                 account.getRole()));
+        }
     }
 
     record LoginReq(

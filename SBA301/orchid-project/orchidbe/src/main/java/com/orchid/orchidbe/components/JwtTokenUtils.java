@@ -14,6 +14,7 @@ import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.http.HttpServletRequest;
 import java.security.Key;
 import java.security.SecureRandom;
 import java.util.Date;
@@ -43,7 +44,7 @@ public class JwtTokenUtils {
     private static final Logger logger = LoggerFactory.getLogger(JwtTokenUtils.class);
 
     //    private final TokenRepository tokenRepository;
-    public String generateToken(Account user) throws Exception {
+    public String generateToken(Account user) {
         //properties => claims
         Map<String, Object> claims = new HashMap<>();
         //this.generateSecretKey();
@@ -99,6 +100,14 @@ public class JwtTokenUtils {
 
     public String extractEmail(String token) {
         return extractClaim(token, Claims::getSubject);
+    }
+
+    public String extractBearerToken(HttpServletRequest request) {
+        String header = request.getHeader("Authorization");
+        if (header == null || !header.startsWith("Bearer ")) {
+            throw new JwtAuthenticationException("Authorization header is missing or invalid");
+        }
+        return header.substring(7); // Remove "Bearer " prefix
     }
 
     public boolean validateToken(String token, Account userDetails) {

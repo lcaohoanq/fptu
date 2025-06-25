@@ -14,6 +14,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.server.ResponseStatusException;
 
 @Slf4j
 @RestControllerAdvice
@@ -85,6 +86,17 @@ public class GlobalExceptionHandler {
         HttpMessageNotReadableException ex) {
         log.error("JSON parse error: {}", ex.getMessage());
         return MyApiResponse.badRequest("Invalid JSON format in request body");
+    }
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<MyApiResponse<Object>> handleResponseStatusException(
+        ResponseStatusException ex) {
+        log.error("ResponseStatusException: {}", ex.getReason());
+        return MyApiResponse.error(
+            (HttpStatus) ex.getStatusCode(),
+            ex.getReason(),
+            ex.getMessage()
+        );
     }
 
 

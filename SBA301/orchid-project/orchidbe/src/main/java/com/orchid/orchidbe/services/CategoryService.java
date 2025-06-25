@@ -3,7 +3,6 @@ package com.orchid.orchidbe.services;
 import com.orchid.orchidbe.dto.CategoryDTO;
 import com.orchid.orchidbe.pojos.Category;
 import java.util.List;
-import org.bson.types.ObjectId;
 
 public interface CategoryService {
 

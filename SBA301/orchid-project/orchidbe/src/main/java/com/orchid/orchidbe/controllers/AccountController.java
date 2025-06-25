@@ -4,6 +4,7 @@ import com.orchid.orchidbe.apis.MyApiResponse;
 import com.orchid.orchidbe.dto.AccountDTO;
 import com.orchid.orchidbe.pojos.Account;
 import com.orchid.orchidbe.services.AccountService;
+import com.orchid.orchidbe.services.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -31,6 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountController {
 
     private final AccountService accountService;
+    private final AuthService authService;
 
     @GetMapping("")
     @Operation(summary = "Get all accounts", description = "Returns a list of all accounts")
@@ -56,7 +58,7 @@ public class AccountController {
             return MyApiResponse.unauthorized("Missing or invalid Authorization header");
         }
         token = token.substring(7); // Remove "Bearer " prefix
-        Account userDetail = accountService.getUserDetailsFromToken(token);
+        Account userDetail = authService.getUserDetailsFromToken(token);
         return MyApiResponse.success(userDetail);
     }
 
