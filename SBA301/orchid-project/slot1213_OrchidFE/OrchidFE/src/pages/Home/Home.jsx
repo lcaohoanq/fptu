@@ -10,7 +10,7 @@ export default function HomeScreen() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { addToCart, isInCart } = useCart();
+  const { addToCart, isInCart, isAuthenticated } = useCart();
   
   useEffect(() => {
     fetchData();
@@ -102,14 +102,26 @@ export default function HomeScreen() {
                   >
                     View Details
                   </Link>
-                  <Button 
-                    variant={isInCart(item.id) ? "outline-success" : "success"}
-                    onClick={() => addToCart(item)}
-                    disabled={isInCart(item.id)}
-                  >
-                    <i className={`bi ${isInCart(item.id) ? 'bi-check-circle' : 'bi-cart-plus'} me-1`}></i>
-                    {isInCart(item.id) ? 'Added' : 'Add to Cart'}
-                  </Button>
+                  {isAuthenticated ? (
+                    <Button 
+                      variant={isInCart(item.id) ? "outline-success" : "success"}
+                      onClick={() => addToCart(item)}
+                      disabled={isInCart(item.id)}
+                      title={isInCart(item.id) ? "Already in cart" : "Add to cart"}
+                    >
+                      <i className={`bi ${isInCart(item.id) ? 'bi-check-circle' : 'bi-cart-plus'} me-1`}></i>
+                      {isInCart(item.id) ? 'Added' : 'Add'}
+                    </Button>
+                  ) : (
+                    <Link 
+                      to="/login" 
+                      className="btn btn-outline-secondary"
+                      title="Login to add to cart"
+                    >
+                      <i className="bi bi-person-circle me-1"></i>
+                      Login
+                    </Link>
+                  )}
                 </div>
               </Card.Body>
             </Card>

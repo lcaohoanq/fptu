@@ -10,7 +10,7 @@ export default function DetailOrchid() {
   const [quantity, setQuantity] = React.useState(1);
   const [isLoading, setIsLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
-  const { addToCart, isInCart } = useCart();
+  const { addToCart, isInCart, isAuthenticated } = useCart();
   const params = useParams();
   const id = params.id;  console.log(params.id);
     React.useEffect(() => {
@@ -184,21 +184,38 @@ export default function DetailOrchid() {
                 
                 {/* Add to Cart Button */}
                 <div className="d-grid gap-2">
-                  <Button 
-                    variant={isInCart(orchid.id) ? "outline-success" : "success"}
-                    size="lg"
-                    onClick={handleAddToCart}
-                    disabled={isInCart(orchid.id) || isLoading || !orchid.id}
-                  >
-                    <i className={`bi ${isInCart(orchid.id) ? 'bi-check-circle' : 'bi-cart-plus'} me-2`}></i>
-                    {isInCart(orchid.id) ? 'Already in Cart' : `Add ${quantity} to Cart`}
-                  </Button>
-                  
-                  {/* Link to Cart */}
-                  <Link to="/cart" className="btn btn-outline-primary">
-                    <i className="bi bi-cart me-2"></i>
-                    View Cart
-                  </Link>
+                  {!isAuthenticated ? (
+                    // Show login prompt when not authenticated
+                    <div className="text-center">
+                      <Alert variant="info" className="mb-3">
+                        <i className="bi bi-info-circle me-2"></i>
+                        Please login to add items to your cart
+                      </Alert>
+                      <Link to="/login" className="btn btn-primary btn-lg">
+                        <i className="bi bi-person-circle me-2"></i>
+                        Login to Add to Cart
+                      </Link>
+                    </div>
+                  ) : (
+                    // Show add to cart button when authenticated
+                    <>
+                      <Button 
+                        variant={isInCart(orchid.id) ? "outline-success" : "success"}
+                        size="lg"
+                        onClick={handleAddToCart}
+                        disabled={isInCart(orchid.id) || isLoading || !orchid.id}
+                      >
+                        <i className={`bi ${isInCart(orchid.id) ? 'bi-check-circle' : 'bi-cart-plus'} me-2`}></i>
+                        {isInCart(orchid.id) ? 'Already in Cart' : `Add ${quantity} to Cart`}
+                      </Button>
+                      
+                      {/* Link to Cart */}
+                      <Link to="/cart" className="btn btn-outline-primary">
+                        <i className="bi bi-cart me-2"></i>
+                        View Cart
+                      </Link>
+                    </>
+                  )}
                 </div>
               </Card.Body>
             </Card>          </div>

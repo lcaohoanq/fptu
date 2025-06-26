@@ -4,8 +4,10 @@ import React, {
   useEffect,
   useState,
   ReactNode,
+  useCallback,
 } from "react";
 import toast from "react-hot-toast";
+import { useAuth } from "./auth.context";
 
 interface CartItem {
   id: string;
@@ -25,6 +27,7 @@ interface CartContextProps {
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
   isInCart: (id: string) => boolean;
+  isAuthenticated: boolean;
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -33,25 +36,142 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const { user, isAuthenticated } = useAuth();
+  const [isInitialized, setIsInitialized] = useState(false);
 
-  // Load cart from localStorage on mount
-  useEffect(() => {
-    const savedCart = localStorage.getItem("cart");
-    if (savedCart) {
-      try {
+  // Get cart key based on user
+  const getCartKey = useCallback((userId?: string | null) => {
+    return userId ? `cart_${userId}` : "cart_guest";
+  }, []);
+
+  // Load cart from localStorage
+  const loadCartFromStorage = useCallback((cartKey: string): CartItem[] => {
+    try {
+      const savedCart = localStorage.getItem(cartKey);
+      if (savedCart) {
         const parsedCart = JSON.parse(savedCart);
-        setCartItems(parsedCart);
+        console.log(`Loaded cart from ${cartKey}:`, parsedCart);
+        return Array.isArray(parsedCart) ? parsedCart : [];
+      }
+    } catch (error) {
+      console.error(`Error loading cart from ${cartKey}:`, error);
+      localStorage.removeItem(cartKey);
+    }
+    return [];
+  }, []);
+
+  // Save cart to localStorage
+  const saveCartToStorage = useCallback(
+    (cartKey: string, items: CartItem[]) => {
+      try {
+        localStorage.setItem(cartKey, JSON.stringify(items));
+        console.log(`Cart saved to ${cartKey}:`, items);
       } catch (error) {
-        console.error("Error loading cart from localStorage:", error);
-        localStorage.removeItem("cart");
+        console.error(`Error saving cart to ${cartKey}:`, error);
+      }
+    },
+    [],
+  );
+
+  // Merge guest cart with user cart
+  const mergeGuestCartWithUserCart = useCallback(
+    (userId: string) => {
+      const guestCartKey = getCartKey(null);
+      const userCartKey = getCartKey(userId);
+
+      const guestItems = loadCartFromStorage(guestCartKey);
+      const userItems = loadCartFromStorage(userCartKey);
+
+      if (guestItems.length === 0) {
+        // No guest items to merge, just load user cart
+        return userItems;
+      }
+
+      if (userItems.length === 0) {
+        // No user cart exists, use guest cart
+        saveCartToStorage(userCartKey, guestItems);
+        localStorage.removeItem(guestCartKey);
+        toast.success(
+          `Restored ${guestItems.length} item(s) from your session`,
+        );
+        return guestItems;
+      }
+
+      // Merge both carts
+      const mergedItems = [...userItems];
+      let mergedCount = 0;
+
+      guestItems.forEach((guestItem: CartItem) => {
+        const existingItem = mergedItems.find(
+          (item) => item.id === guestItem.id,
+        );
+        if (existingItem) {
+          existingItem.quantity += guestItem.quantity;
+        } else {
+          mergedItems.push(guestItem);
+          mergedCount++;
+        }
+      });
+
+      saveCartToStorage(userCartKey, mergedItems);
+      localStorage.removeItem(guestCartKey);
+
+      if (mergedCount > 0) {
+        toast.success(`Merged ${mergedCount} new item(s) from your session`);
+      }
+
+      return mergedItems;
+    },
+    [getCartKey, loadCartFromStorage, saveCartToStorage],
+  );
+
+  // Initialize cart when auth state changes
+  useEffect(() => {
+    if (!isInitialized) {
+      if (isAuthenticated && user?.id) {
+        // User is logged in - merge guest cart with user cart
+        const mergedItems = mergeGuestCartWithUserCart(user.id);
+        setCartItems(mergedItems);
+      } else {
+        // Guest user - keep cart empty until they login
+        setCartItems([]);
+      }
+      setIsInitialized(true);
+    } else {
+      // Cart is already initialized, handle user login/logout
+      if (isAuthenticated && user?.id) {
+        // User logged in after being a guest
+        const mergedItems = mergeGuestCartWithUserCart(user.id);
+        setCartItems(mergedItems);
+        toast.success("Welcome back! Your cart has been restored.");
+      } else {
+        // User logged out - clear cart completely
+        setCartItems([]);
       }
     }
-  }, []);
+  }, [
+    isAuthenticated,
+    user?.id,
+    isInitialized,
+    getCartKey,
+    loadCartFromStorage,
+    mergeGuestCartWithUserCart,
+  ]);
 
   // Save cart to localStorage whenever cartItems change
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  }, [cartItems]);
+    if (isInitialized && isAuthenticated && user?.id) {
+      const cartKey = getCartKey(user?.id);
+      saveCartToStorage(cartKey, cartItems);
+    }
+  }, [
+    cartItems,
+    user?.id,
+    isInitialized,
+    isAuthenticated,
+    getCartKey,
+    saveCartToStorage,
+  ]);
 
   // Calculate cart count
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
@@ -62,72 +182,8 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     0,
   );
 
-  // Add item to cart
-  const addToCart = (orchid: any, quantity = 1) => {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.id === orchid.id);
-
-      if (existingItem) {
-        // Update quantity if item already exists
-        toast.success(`Updated ${orchid.orchidName} quantity in cart`);
-        return prevItems.map((item) =>
-          item.id === orchid.id
-            ? { ...item, quantity: item.quantity + quantity }
-            : item,
-        );
-      } else {
-        // Add new item to cart
-        const newItem: CartItem = {
-          id: orchid.id,
-          orchidName: orchid.orchidName,
-          image: orchid.image,
-          price: generatePrice(orchid), // Generate a price for the orchid
-          quantity,
-          isNatural: orchid.isNatural,
-        };
-
-        toast.success(`Added ${orchid.orchidName} to cart`);
-        return [...prevItems, newItem];
-      }
-    });
-  };
-
-  // Remove item from cart
-  const removeFromCart = (id: string) => {
-    setCartItems((prevItems) => {
-      const item = prevItems.find((item) => item.id === id);
-      if (item) {
-        toast.success(`Removed ${item.orchidName} from cart`);
-      }
-      return prevItems.filter((item) => item.id !== id);
-    });
-  };
-
-  // Update item quantity
-  const updateQuantity = (id: string, quantity: number) => {
-    if (quantity < 1) {
-      removeFromCart(id);
-      return;
-    }
-
-    setCartItems((prevItems) =>
-      prevItems.map((item) => (item.id === id ? { ...item, quantity } : item)),
-    );
-  };
-
-  // Clear entire cart
-  const clearCart = () => {
-    setCartItems([]);
-    toast.success("Cart cleared");
-  };
-
-  // Check if item is in cart
-  const isInCart = (id: string) => {
-    return cartItems.some((item) => item.id === id);
-  };
-
   // Generate a price for orchid (since your API doesn't seem to have prices)
-  const generatePrice = (orchid: any) => {
+  const generatePrice = useCallback((orchid: any) => {
     // Generate price based on some factors
     let basePrice = 25; // Base price
 
@@ -144,7 +200,91 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
     const variation = (Math.abs(hash) % 30) + 10; // 10-40 variation
     return parseFloat((basePrice + variation).toFixed(2));
-  };
+  }, []);
+
+  // Add item to cart
+  const addToCart = useCallback(
+    (orchid: any, quantity = 1) => {
+      // Check if user is authenticated before allowing add to cart
+      if (!isAuthenticated) {
+        toast.error("Please login to add items to cart");
+        return;
+      }
+
+      setCartItems((prevItems) => {
+        const existingItem = prevItems.find((item) => item.id === orchid.id);
+
+        if (existingItem) {
+          // Update quantity if item already exists
+          toast.success(`Updated ${orchid.orchidName} quantity in cart`);
+          return prevItems.map((item) =>
+            item.id === orchid.id
+              ? { ...item, quantity: item.quantity + quantity }
+              : item,
+          );
+        } else {
+          // Add new item to cart
+          const newItem: CartItem = {
+            id: orchid.id,
+            orchidName: orchid.orchidName,
+            image: orchid.image,
+            price: generatePrice(orchid),
+            quantity,
+            isNatural: orchid.isNatural,
+          };
+
+          toast.success(`Added ${orchid.orchidName} to cart`);
+          return [...prevItems, newItem];
+        }
+      });
+    },
+    [generatePrice, isAuthenticated],
+  );
+
+  // Remove item from cart
+  const removeFromCart = useCallback((id: string) => {
+    setCartItems((prevItems) => {
+      const item = prevItems.find((item) => item.id === id);
+      if (item) {
+        toast.success(`Removed ${item.orchidName} from cart`);
+      }
+      return prevItems.filter((item) => item.id !== id);
+    });
+  }, []);
+
+  // Update item quantity
+  const updateQuantity = useCallback(
+    (id: string, quantity: number) => {
+      if (quantity < 1) {
+        removeFromCart(id);
+        return;
+      }
+
+      setCartItems((prevItems) =>
+        prevItems.map((item) =>
+          item.id === id ? { ...item, quantity } : item,
+        ),
+      );
+    },
+    [removeFromCart],
+  );
+
+  // Clear entire cart
+  const clearCart = useCallback(() => {
+    setCartItems([]);
+    // Also clear from localStorage
+    const cartKey = getCartKey(user?.id);
+    localStorage.removeItem(cartKey);
+    toast.success("Cart cleared");
+  }, [getCartKey, user?.id]);
+
+  // Check if item is in cart
+  const isInCart = useCallback(
+    (id: string) => {
+      return cartItems.some((item) => item.id === id);
+    },
+    [cartItems],
+  );
 
   return (
     <CartContext.Provider
@@ -157,6 +297,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
         updateQuantity,
         clearCart,
         isInCart,
+        isAuthenticated,
       }}
     >
       {children}

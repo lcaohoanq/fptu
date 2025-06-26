@@ -21,7 +21,7 @@ export const handleApiError = (error, customMessage) => {
 
   toast.error(errorMessage, {
     duration: 5000,
-    position: 'top-center',
+    position: "top-center",
   });
   return errorMessage;
 };
