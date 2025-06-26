@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Row, Alert, Spinner } from "react-bootstrap";
 import Container from "react-bootstrap/esm/Container";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { orchidApi } from "../../apis/api.config";
 import { useCart } from "../../contexts/cart.context";
 import { handleApiError } from "../../utils/errorHandler";
@@ -10,7 +10,8 @@ export default function HomeScreen() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { addToCart, isInCart, isAuthenticated } = useCart();
+  const { addToCart, isInCart } = useCart();
+  const navigate = useNavigate();
   
   useEffect(() => {
     fetchData();
@@ -102,26 +103,15 @@ export default function HomeScreen() {
                   >
                     View Details
                   </Link>
-                  {isAuthenticated ? (
-                    <Button 
-                      variant={isInCart(item.id) ? "outline-success" : "success"}
-                      onClick={() => addToCart(item)}
-                      disabled={isInCart(item.id)}
-                      title={isInCart(item.id) ? "Already in cart" : "Add to cart"}
-                    >
-                      <i className={`bi ${isInCart(item.id) ? 'bi-check-circle' : 'bi-cart-plus'} me-1`}></i>
-                      {isInCart(item.id) ? 'Added' : 'Add'}
-                    </Button>
-                  ) : (
-                    <Link 
-                      to="/login" 
-                      className="btn btn-outline-secondary"
-                      title="Login to add to cart"
-                    >
-                      <i className="bi bi-person-circle me-1"></i>
-                      Login
-                    </Link>
-                  )}
+                  <Button 
+                    variant={isInCart(item.id) ? "outline-success" : "success"}
+                    onClick={() => addToCart(item, 1, () => navigate('/login'))}
+                    disabled={isInCart(item.id)}
+                    title={isInCart(item.id) ? "Already in cart" : "Add to cart"}
+                  >
+                    <i className={`bi ${isInCart(item.id) ? 'bi-check-circle' : 'bi-cart-plus'} me-1`}></i>
+                    {isInCart(item.id) ? 'Added' : 'Add'}
+                  </Button>
                 </div>
               </Card.Body>
             </Card>

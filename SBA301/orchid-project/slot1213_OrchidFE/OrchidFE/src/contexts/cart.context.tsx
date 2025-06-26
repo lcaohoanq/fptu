@@ -22,7 +22,11 @@ interface CartContextProps {
   cartItems: CartItem[];
   cartCount: number;
   cartTotal: number;
-  addToCart: (orchid: any, quantity?: number) => void;
+  addToCart: (
+    orchid: any,
+    quantity?: number,
+    navigateToLogin?: () => void,
+  ) => void;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
@@ -143,7 +147,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
         // User logged in after being a guest
         const mergedItems = mergeGuestCartWithUserCart(user.id);
         setCartItems(mergedItems);
-        toast.success("Welcome back! Your cart has been restored.");
+        console.log("Welcome back! Your cart has been restored.");
       } else {
         // User logged out - clear cart completely
         setCartItems([]);
@@ -204,10 +208,14 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
   // Add item to cart
   const addToCart = useCallback(
-    (orchid: any, quantity = 1) => {
+    (orchid: any, quantity = 1, navigateToLogin?: () => void) => {
       // Check if user is authenticated before allowing add to cart
       if (!isAuthenticated) {
-        toast.error("Please login to add items to cart");
+        if (navigateToLogin) {
+          navigateToLogin();
+        } else {
+          toast.error("Please login to add items to cart");
+        }
         return;
       }
 
