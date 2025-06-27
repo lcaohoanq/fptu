@@ -20,8 +20,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -38,9 +36,7 @@ public class JwtTokenUtils {
 
     @Value("${jwt.secretKey}")
     private String secretKey;
-    private static final Logger logger = LoggerFactory.getLogger(JwtTokenUtils.class);
 
-    //    private final TokenRepository tokenRepository;
     public String generateToken(SystemAccount user) {
         //properties => claims
         Map<String, Object> claims = new HashMap<>();
@@ -48,13 +44,12 @@ public class JwtTokenUtils {
         claims.put("email", user.getEmail());
         claims.put("userId", user.getId());
         try {
-            String token = Jwts.builder()
-                .setClaims(claims) //how to extract claims from this ?
+            return Jwts.builder()
+                .setClaims(claims)
                 .setSubject(user.getEmail())
                 .setExpiration(new Date(System.currentTimeMillis() + expiration * 1000L))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
-            return token;
         } catch (Exception e) {
             //you can "inject" Logger, instead System.out.println
             throw new InvalidParamException("Cannot create jwt token, error: " + e.getMessage());

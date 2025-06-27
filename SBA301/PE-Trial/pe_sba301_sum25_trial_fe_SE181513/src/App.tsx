@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect, useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import BlindBoxManagement from "./pages/BlindBoxManagement";
-import { Container } from "react-bootstrap";
 import Home from "./pages/Home";
 
 function App() {

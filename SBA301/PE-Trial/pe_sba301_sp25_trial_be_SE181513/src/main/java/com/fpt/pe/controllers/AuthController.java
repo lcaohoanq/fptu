@@ -3,6 +3,7 @@ package com.fpt.pe.controllers;
 import com.fpt.pe.apis.MyApiResponse;
 import com.fpt.pe.models.SystemAccount;
 import com.fpt.pe.services.AccountService;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,9 @@ public class AuthController {
     private final AccountService accountService;
 
     public record LoginDTO(
+        @Schema(name = "email", description = "Email of the user", example = "admin@gmail.com")
         String email,
+        @Schema(name = "password", description = "Password of the user", example = "1")
         String password
     ){
 

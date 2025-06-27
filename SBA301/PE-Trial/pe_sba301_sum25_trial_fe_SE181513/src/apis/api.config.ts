@@ -43,6 +43,14 @@ export const blindBoxAPI = {
     return response.data.data;
   },
 
+  update: async (
+    id: number,
+    blindBox: Partial<BlindBox>
+  ): Promise<BlindBox> => {
+    const response = await api.put(`/blind-boxes/${id}`, blindBox);
+    return response.data.data;
+  },
+
   delete: async (id: number): Promise<void> => {
     await api.delete(`/blind-boxes/${id}`);
   },

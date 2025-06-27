@@ -1,4 +1,4 @@
-export interface BlindBox {
+export type BlindBox = {
   id: number;
   name: string;
   rarity: string;
@@ -7,38 +7,38 @@ export interface BlindBox {
   stock: number;
   categoryName: string;
   categoryId: number;
-}
+};
 
-export interface Category {
+export type Category = {
   id: number;
   name: string;
   description: string;
   rarityLevel: string;
   priceRange: string;
-}
+};
 
-export interface User {
+export type User = {
   id: number;
   username: string;
   email: string;
   role: string;
   isActive: boolean;
-}
+};
 
-export interface LoginRequest {
+export type LoginRequest = {
   email: string;
   password: string;
-}
+};
 
-export interface LoginResponse {
+export type LoginResponse = {
   accessToken: string;
   account: User;
-}
+};
 
-export interface CreateBlindBoxRequest {
+export type CreateBlindBoxRequest = {
   name: string;
   rarity: string;
   price: number;
   stock: number;
   categoryId: number;
-}
+};

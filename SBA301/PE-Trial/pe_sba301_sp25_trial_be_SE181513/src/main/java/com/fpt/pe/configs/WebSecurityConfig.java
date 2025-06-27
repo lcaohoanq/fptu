@@ -61,9 +61,6 @@ public class WebSecurityConfig {
                                  String.format("%s/blind-boxes/**", apiPrefix),
                                  String.format("%s/categories/**", apiPrefix),
                                  String.format("%s/sys-accounts/**", apiPrefix)
-
-//                                 String.format("%s/accounts/**", apiPrefix),
-//                                 String.format("%s/orchids/**", apiPrefix)
                 ).permitAll()
 
                 // Require ADMIN role for POST operations

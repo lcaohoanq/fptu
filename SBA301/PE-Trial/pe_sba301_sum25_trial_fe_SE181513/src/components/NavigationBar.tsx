@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Navbar, Nav, NavDropdown, Modal, Button, Form } from "react-bootstrap";
-import type { LoginRequest } from "../types";
+import { Button, Form, Modal, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { authAPI } from "../apis/api.config";
+import type { LoginRequest } from "../types";
 
 interface NavigationBarProps {
   user: any;
@@ -21,6 +22,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,6 +36,10 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
       onLogin(response.account, response.accessToken);
       setShowLoginModal(false);
       setLoginData({ email: "", password: "" });
+
+      if (response.account.role === "ADMINISTRATOR") {
+        navigate("/blind-boxes");
+      }
     } catch (err: any) {
       setError(err.response?.data?.reason || "Login failed");
     } finally {
@@ -62,6 +68,9 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
               >
                 <NavDropdown.Item href="/blind-boxes">
                   List all items
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/blind-boxes">
+                  Create a new blind box
                 </NavDropdown.Item>
               </NavDropdown>
             )}

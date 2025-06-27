@@ -19,7 +19,7 @@ springdoc:
     tags-sorter: alpha
     try-it-out-enabled: true
     filter: true
-    doc-expansion: none
+#    doc-expansion: none
     enabled: true
     path: /swagger-ui.html
 

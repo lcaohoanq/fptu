@@ -68,7 +68,15 @@ public class Application implements CommandLineRunner {
                 .password(passwordEncoder.encode(samplePassword))
                 .build();
 
-            systemAccountList = List.of(acc1, acc2, acc3, acc4);
+            var acc5 = SystemAccount.builder()
+                .username("member2")
+                .role(Role.MEMBER)
+                .email("member2@gmail.com")
+                .isActive(false)
+                .password(passwordEncoder.encode(samplePassword))
+                .build();
+
+            systemAccountList = List.of(acc1, acc2, acc3, acc4, acc5);
             accountRepository.saveAll(systemAccountList);
         }
 
