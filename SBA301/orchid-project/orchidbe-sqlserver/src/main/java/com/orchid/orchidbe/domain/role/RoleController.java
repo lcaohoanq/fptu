@@ -1,6 +1,7 @@
 package com.orchid.orchidbe.domain.role;
 
 import com.orchid.orchidbe.apis.MyApiResponse;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import java.util.List;
@@ -38,7 +39,17 @@ public class RoleController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     @PostMapping
-    public ResponseEntity<MyApiResponse<Object>> add(
+    @Operation(
+        summary = "Create a new role",
+        description = """
+            ** Create a new role **
+            
+            This endpoint allows you to create a new role in the system. The role must be one of the predefined values: STAFF, USER, MANAGER, ADMIN.
+            
+            **Note:** Ensure that the role name is one of the accepted values.
+            """
+    )
+    public ResponseEntity<MyApiResponse<Void>> add(
         @Valid @RequestBody RoleDTO.RoleReq req
     ) {
         roleService.add(req);

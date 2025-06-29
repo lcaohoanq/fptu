@@ -32,6 +32,7 @@ public class AccountController {
     private final AuthService authService;
 
     @GetMapping("")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     @Operation(summary = "Get all accounts", description = "Returns a list of all accounts")
     @ApiResponse(responseCode = "200", description = "Successfully retrieved all accounts")
     public ResponseEntity<MyApiResponse<List<AccountDTO.AccountResp>>> getAccounts() {
@@ -39,6 +40,7 @@ public class AccountController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     @Operation(summary = "Get all accounts", description = "Returns a list of all accounts")
     @ApiResponse(responseCode = "200", description = "Successfully retrieved all accounts")
     public ResponseEntity<MyApiResponse<Account>> getAccountById(@PathVariable Long id) {
@@ -47,7 +49,7 @@ public class AccountController {
 
     //Get user details from token
     @GetMapping("/me")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF', 'ROLE_MANAGER')")
     public ResponseEntity<MyApiResponse<Account>> getUserDetails(HttpServletRequest request)
         throws Exception {
         String token = request.getHeader("Authorization");
@@ -60,7 +62,7 @@ public class AccountController {
     }
 
     @PostMapping("/create-new-employee")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     @Operation(summary = "Create new employee", description = "Creates a new employee account")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "201", description = "Employee created successfully"),
@@ -74,6 +76,7 @@ public class AccountController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     @Operation(summary = "Update account", description = "Updates an existing account by ID")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Account updated successfully"),
@@ -89,6 +92,7 @@ public class AccountController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     @Operation(summary = "Delete account", description = "Deletes an account by ID")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "204", description = "Account deleted successfully"),

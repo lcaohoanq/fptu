@@ -2,6 +2,7 @@ package com.orchid.orchidbe.domain.order;
 
 import com.orchid.orchidbe.apis.MyApiResponse;
 import com.orchid.orchidbe.domain.account.Account;
+import com.orchid.orchidbe.domain.order.OrderDTO.OrderRes;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import java.util.List;
@@ -26,34 +27,37 @@ public class OrderController {
     private final OrderService orderService;
 
     @GetMapping("")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF', 'ROLE_MANAGER')")
     public ResponseEntity<MyApiResponse<List<OrderDTO.OrderRes>>> getOrders() {
         return MyApiResponse.success(orderService.getAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<MyApiResponse<Order>> getOrderById(@PathVariable Long id) {
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF', 'ROLE_MANAGER')")
+    public ResponseEntity<MyApiResponse<OrderRes>> getOrderById(@PathVariable Long id) {
         return MyApiResponse.success(orderService.getById(id));
     }
 
     @PostMapping
-    public ResponseEntity<MyApiResponse<Object>> createOrder(
-        @RequestBody @Valid Order orderReq
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF', 'ROLE_MANAGER')")
+    public ResponseEntity<MyApiResponse<Void>> createOrder(
+        @RequestBody @Valid OrderDTO.OrderReq orderReq
     ) {
         orderService.add(orderReq);
         return MyApiResponse.created();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<MyApiResponse<Object>> updateOrder(
-        @PathVariable Long id, @RequestBody Order orderReq
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF', 'ROLE_MANAGER')")
+    public ResponseEntity<MyApiResponse<Void>> updateOrder(
+        @PathVariable Long id, @RequestBody OrderDTO.OrderReq orderReq
     ) {
         orderService.update(id, orderReq);
         return MyApiResponse.updated();
     }
 
     @GetMapping("/me/orders")
-    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF', 'ROLE_MANAGER')")
     public ResponseEntity<MyApiResponse<List<OrderDTO.OrderRes>>> getMyOrders(
         Authentication authentication) {
         Account account = (Account) authentication.getPrincipal(); // principal là chính user từ token
@@ -61,7 +65,6 @@ public class OrderController {
 
         return MyApiResponse.success(orderService.getByUserId(userId));
     }
-
 
 
 }

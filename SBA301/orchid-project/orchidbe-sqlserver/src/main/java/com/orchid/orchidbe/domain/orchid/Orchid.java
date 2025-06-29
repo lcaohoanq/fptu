@@ -1,9 +1,16 @@
 package com.orchid.orchidbe.domain.orchid;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.orchid.orchidbe.domain.category.Category;
+import com.orchid.orchidbe.domain.orchid.OrchidDTO.OrchidRes;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,8 +25,10 @@ import lombok.Setter;
 @Builder
 public class Orchid {
 
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id", unique=true, nullable=false)
+    @JsonProperty("id")
     private Long id;
 
     private boolean isNatural;
@@ -34,7 +43,30 @@ public class Orchid {
 
     private Double price;
 
-    private Long categoryId;
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category;
 
+    public static OrchidRes from(Orchid orchid) {
+        return new OrchidRes(
+            orchid.getId(),
+            orchid.isNatural(),
+            orchid.getDescription(),
+            orchid.getName(),
+            orchid.getUrl(),
+            orchid.getPrice(),
+            orchid.getCategory().getId()
+        );
+    }
+
+    public static Orchid toEntity(OrchidDTO.OrchidReq dto) {
+        return Orchid.builder()
+            .isNatural(dto.isNatural())
+            .description(dto.description())
+            .name(dto.name())
+            .url(dto.url() == null ? "https://images.unsplash.com/photo-1610397648930-477b8c7f0943?q=80&w=730&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : dto.url()) // Ensure URL is not null
+            .price(dto.price())
+            .build();
+    }
 
 }

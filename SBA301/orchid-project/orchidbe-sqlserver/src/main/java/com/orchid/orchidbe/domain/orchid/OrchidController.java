@@ -1,8 +1,12 @@
 package com.orchid.orchidbe.domain.orchid;
 
+import com.orchid.orchidbe.apis.MyApiResponse;
+import com.orchid.orchidbe.domain.orchid.OrchidDTO.OrchidRes;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,27 +24,28 @@ public class OrchidController {
     private final OrchidService orchidService;
 
     @PostMapping("")
-    public ResponseEntity<?> createOrchid(@RequestBody Orchid orchid) {
-        try {
-            orchidService.add(orchid);
-            return ResponseEntity.status(201).body("Orchid created successfully");
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(400).body("Error: " + e.getMessage());
-        } catch (Exception e) {
-            return ResponseEntity.status(500).body("Internal server error: " + e.getMessage());
-        }
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
+    public ResponseEntity<MyApiResponse<OrchidRes>> createOrchid(
+        @Valid @RequestBody OrchidDTO.OrchidReq orchid
+    ) {
+        return MyApiResponse.created(orchidService.add(orchid));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateOrchid(@PathVariable("id") Long id, @RequestBody Orchid orchid) {
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
+    public ResponseEntity<MyApiResponse<Void>> updateOrchid(
+        @PathVariable("id") Long id,
+        @Valid @RequestBody OrchidDTO.OrchidReq orchid
+    ) {
         orchidService.update(id, orchid);
-        return ResponseEntity.ok("Orchid updated successfully");
+        return MyApiResponse.success();
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     public ResponseEntity<?> deleteOrchid(@PathVariable("id") Long id) {
         orchidService.deleteById(id);
-        return ResponseEntity.ok("Orchid deleted successfully");
+        return MyApiResponse.success();
     }
 
 }

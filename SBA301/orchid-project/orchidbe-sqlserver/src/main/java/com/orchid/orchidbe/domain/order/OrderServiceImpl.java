@@ -1,5 +1,6 @@
 package com.orchid.orchidbe.domain.order;
 
+import com.orchid.orchidbe.domain.account.AccountService;
 import com.orchid.orchidbe.domain.order.OrderDTO.OrderRes;
 import com.orchid.orchidbe.repositories.OrderRepository;
 import java.util.List;
@@ -11,46 +12,37 @@ import org.springframework.stereotype.Service;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
+    private final AccountService accountService;
 
     @Override
     public List<OrderDTO.OrderRes> getAll() {
         return orderRepository.findAll()
             .stream()
-            .map(OrderDTO.OrderRes::fromEntity)
+            .map(Order::fromEntity)
             .toList();
     }
 
     @Override
-    public Order getById(Long id) {
+    public OrderDTO.OrderRes getById(Long id) {
         return orderRepository.findById(id)
+            .map(Order::fromEntity)
             .orElseThrow(() -> new IllegalArgumentException("Order not found with id: " + id));
     }
 
     @Override
-    public void add(Order order) {
-        if (orderRepository.existsById(order.getId())) {
-            throw new IllegalArgumentException("Order with id " + order.getId() + " already exists");
-        }
-
-        orderRepository.save(order);
+    public void add(OrderDTO.OrderReq order) {
+        var account = accountService.getById(order.accountId());
+        orderRepository.save(Order.toEntity(order, account));
     }
 
     @Override
-    public void update(Long id, Order order) {
-
+    public void update(Long id, OrderDTO.OrderReq order) {
         var existingOrder = getById(id);
-
-        if (!existingOrder.getId().equals(order.getId())) {
+        if (!existingOrder.id().equals(order.id())) {
             throw new IllegalArgumentException("Cannot update order with different id");
         }
-
-        existingOrder.setOrderStatus(order.getOrderStatus());
-        existingOrder.setTotalAmount(order.getTotalAmount());
-        existingOrder.setOrderDate(order.getOrderDate());
-        existingOrder.setAccountId(order.getAccountId());
-
-        orderRepository.save(existingOrder);
-
+        var account = accountService.getById(order.accountId());
+        orderRepository.save(Order.toEntity(order, account));
     }
 
     @Override
@@ -62,7 +54,7 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderRes> getByUserId(Long userId) {
         return orderRepository.findByAccountId(userId)
             .stream()
-            .map(OrderDTO.OrderRes::fromEntity)
+            .map(Order::fromEntity)
             .toList();
     }
 }

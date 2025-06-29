@@ -64,7 +64,7 @@ public class TokenServiceImpl implements TokenService {
         }
 
         //check if token is attaching with user
-        if (!Objects.equals(existingToken.getAccountId(), user.getId())) {
+        if (!Objects.equals(existingToken.getAccount().getId(), user.getId())) {
             throw new TokenNotFoundException("Token does not attach with current user");
         }
         existingToken.setRevoked(true);
@@ -105,7 +105,7 @@ public class TokenServiceImpl implements TokenService {
         LocalDateTime expirationDateTime = LocalDateTime.now().plusSeconds(expirationInSeconds);
         // Tạo mới một token cho người dùng
         Token newToken = Token.builder()
-            .accountId(existingUser.getId())
+            .account(existingUser)
             .token(token)
             .revoked(false)
             .expired(false)

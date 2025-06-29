@@ -1,9 +1,21 @@
+api:
+  prefix: /api/v1
+
 spring:
   application:
     name: orchidbe
 
   profiles:
-    active: test
+    active: pg
+
+  # Flyway configuration
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    user: ${POSTGRES_USER:admin}
+    password: ${POSTGRES_PASSWORD:admin}
+    baseline-description: "Baseline init for notification service"
+    baseline-version: 0
 
 springdoc:
   api-docs:
@@ -35,7 +47,6 @@ logging:
     org.springframework.web: ${SPRING_WEB_LOG_LEVEL:INFO}
     org.springframework.security: ${SECURITY_LOG_LEVEL:INFO}
     org.springframework.data.mongodb: ${MONGO_LOG_LEVEL:INFO}
-    org.mongodb.driver: ${MONGO_DRIVER_LOG_LEVEL:WARN}
 
     # Root level
     root: ${ROOT_LOG_LEVEL:WARN}

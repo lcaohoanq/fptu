@@ -5,11 +5,11 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import java.util.List;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,8 +30,9 @@ public class CategoryController {
         @ApiResponse(responseCode = "201", description = "Category created successfully"),
         @ApiResponse(responseCode = "400", description = "Invalid input or category name already exists")
     })
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     public ResponseEntity<MyApiResponse<Object>> createCategory(
-        @RequestBody CategoryDTO.CategoryReq categoryReq
+        @Valid @RequestBody CategoryDTO.CategoryReq categoryReq
     ) {
         categoryService.save(categoryReq);
         return MyApiResponse.created();
@@ -44,9 +45,10 @@ public class CategoryController {
         @ApiResponse(responseCode = "400", description = "Invalid input or category name already exists"),
         @ApiResponse(responseCode = "404", description = "Category not found")
     })
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     public ResponseEntity<MyApiResponse<Object>> updateCategory(
         @PathVariable Long id,
-        @RequestBody CategoryDTO.CategoryReq categoryReq
+        @Valid @RequestBody CategoryDTO.CategoryReq categoryReq
     ) {
         categoryService.update(id, categoryReq);
         return MyApiResponse.updated();
@@ -58,6 +60,7 @@ public class CategoryController {
         @ApiResponse(responseCode = "204", description = "Category deleted successfully"),
         @ApiResponse(responseCode = "404", description = "Category not found")
     })
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     public ResponseEntity<MyApiResponse<Object>> deleteCategory(@PathVariable Long id) {
         categoryService.delete(id);
         return MyApiResponse.noContent();

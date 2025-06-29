@@ -2,6 +2,7 @@ package com.orchid.orchidbe.domain.account;
 
 import com.orchid.orchidbe.components.JwtTokenUtils;
 import com.orchid.orchidbe.domain.account.AccountDTO.UpdateAccountReq;
+import com.orchid.orchidbe.domain.role.Role;
 import com.orchid.orchidbe.domain.role.Role.RoleName;
 import com.orchid.orchidbe.domain.role.RoleService;
 import com.orchid.orchidbe.repositories.AccountRepository;
@@ -55,6 +56,8 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void add(AccountDTO.CreateAccountReq account) {
 
+        var defaultRole = roleService.getByName(RoleName.USER);
+
         if (accountRepository.existsByEmail(account.email())) {
             throw new IllegalArgumentException("Email already exists");
         }
@@ -63,7 +66,7 @@ public class AccountServiceImpl implements AccountService {
         newAccount.setName(account.name());
         newAccount.setEmail(account.email());
         newAccount.setPassword(passwordEncoder.encode(account.password()));
-        newAccount.setRole(roleService.getByName(RoleName.USER)); // Default role, can be changed later
+        newAccount.setRole(defaultRole);
 
         log.info("New user registered successfully");
         accountRepository.save(newAccount);

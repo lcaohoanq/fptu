@@ -61,12 +61,12 @@ public interface AccountDTO {
 
     record AccountCompactRes(
         Long id,
-        Role role
+        RoleName role
     ){
         public static AccountCompactRes fromEntity(
             Account account
         ){
-            return new AccountCompactRes(account.getId(), account.getRole());
+            return new AccountCompactRes(account.getId(), account.getRole().getName());
         }
     }
 

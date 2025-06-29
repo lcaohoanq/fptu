@@ -1,14 +1,14 @@
 package com.orchid.orchidbe.domain.orchid;
 
+import com.orchid.orchidbe.domain.orchid.OrchidDTO.OrchidReq;
 import java.util.List;
 
 public interface OrchidService {
 
-    List<Orchid> getAll();
-    Orchid getById(Long id);
-    void add(Orchid orchid);
-    void update(Long id, Orchid orchid);
-    void delete(Orchid orchid);
+    List<OrchidDTO.OrchidRes> getAll();
+    OrchidDTO.OrchidRes getById(Long id);
+    OrchidDTO.OrchidRes add(OrchidDTO.OrchidReq orchid);
+    void update(Long id, OrchidReq orchid);
     void deleteById(Long id);
 
 }
