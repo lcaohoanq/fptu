@@ -1,11 +1,12 @@
 package com.orchid.orchidbe;
 
-import com.orchid.orchidbe.pojos.Account;
-import com.orchid.orchidbe.pojos.Category;
-import com.orchid.orchidbe.pojos.Orchid;
-import com.orchid.orchidbe.pojos.Order;
-import com.orchid.orchidbe.pojos.OrderDetail;
-import com.orchid.orchidbe.pojos.Role;
+import com.orchid.orchidbe.domain.account.Account;
+import com.orchid.orchidbe.domain.category.Category;
+import com.orchid.orchidbe.domain.orchid.Orchid;
+import com.orchid.orchidbe.domain.orchid.OrderDetail;
+import com.orchid.orchidbe.domain.order.Order;
+import com.orchid.orchidbe.domain.role.Role;
+import com.orchid.orchidbe.domain.role.Role.RoleName;
 import com.orchid.orchidbe.repositories.AccountRepository;
 import com.orchid.orchidbe.repositories.CategoryRepository;
 import com.orchid.orchidbe.repositories.OrchidRepository;
@@ -20,10 +21,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
 @RequiredArgsConstructor
+@EnableJpaRepositories(basePackages = "com.orchid.orchidbe.repositories")
+@EntityScan(basePackages = "com.orchid.orchidbe.domain")
 public class App implements CommandLineRunner {
 
     private final RoleRepository roleRepository;
@@ -53,10 +58,11 @@ public class App implements CommandLineRunner {
         // Create roles if empty
         List<Role> roles;
         if (roleRepository.findAll().isEmpty()) {
-            var role1 = Role.builder().name("Admin").build();
-            var role2 = Role.builder().name("User").build();
-            var role3 = Role.builder().name("Manager").build();
-            roles = roleRepository.saveAll(Arrays.asList(role1, role2, role3));
+            var role1 = Role.builder().name(RoleName.ADMIN).build();
+            var role2 = Role.builder().name(RoleName.MANAGER).build();
+            var role3 = Role.builder().name(RoleName.USER).build();
+            var role4 = Role.builder().name(RoleName.STAFF).build();
+            roles = roleRepository.saveAll(Arrays.asList(role1, role2, role3, role4));
         } else {
             roles = roleRepository.findAll();
         }

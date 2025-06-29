@@ -1,12 +1,13 @@
 package com.orchid.orchidbe.repositories;
 
-import com.orchid.orchidbe.pojos.Role;
+import com.orchid.orchidbe.domain.role.Role;
+import com.orchid.orchidbe.domain.role.Role.RoleName;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Long> {
 
-    boolean existsByName(String name);
-    Optional<Role> findByName(String name);
+    boolean existsByName(RoleName name);
+    Optional<Role> findByName(RoleName name);
 
 }

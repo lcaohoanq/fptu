@@ -6,7 +6,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:h2:file:./stores/h2/auth_data/mydb;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+    url: jdbc:h2:file:./stores/h2/app_data/mydb;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
     driver-class-name: org.h2.Driver
     username: sa
     password: password

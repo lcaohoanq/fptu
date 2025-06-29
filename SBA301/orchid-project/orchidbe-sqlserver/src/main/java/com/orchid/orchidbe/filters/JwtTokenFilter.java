@@ -1,7 +1,7 @@
 package com.orchid.orchidbe.filters;
 
 import com.orchid.orchidbe.components.JwtTokenUtils;
-import com.orchid.orchidbe.pojos.Account;
+import com.orchid.orchidbe.domain.account.Account;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

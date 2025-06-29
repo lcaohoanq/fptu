@@ -1,6 +1,6 @@
 package com.orchid.orchidbe.repositories;
 
-import com.orchid.orchidbe.pojos.Category;
+import com.orchid.orchidbe.domain.category.Category;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface CategoryRepository extends MongoRepository<Category, String> {
