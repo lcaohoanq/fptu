@@ -82,7 +82,7 @@ public class SampleSeeder implements CommandLineRunner {
                 .isNatural(true)
                 .description("Natural orchid")
                 .name("Phalaenopsis")
-                .url("http://img1")
+                .url("https://images.unsplash.com/photo-1610397648930-477b8c7f0943?q=80&w=730&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
                 .price(10.0)
                 .category(categories.isEmpty() ? null : categories.get(0))
                 .build();
@@ -91,7 +91,7 @@ public class SampleSeeder implements CommandLineRunner {
                 .isNatural(false)
                 .description("Hybrid orchid")
                 .name("Cattleya")
-                .url("http://img2")
+                .url("https://plus.unsplash.com/premium_photo-1673931249523-69dcbace086b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
                 .price(15.0)
                 .category(categories.size() > 1 ? categories.get(1) : null)
                 .build();
@@ -100,7 +100,7 @@ public class SampleSeeder implements CommandLineRunner {
                 .isNatural(true)
                 .description("Random orchid")
                 .name("Dendrobium")
-                .url("http://img3")
+                .url("https://images.unsplash.com/photo-1562133558-4a3906179c67?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
                 .price(20.0)
                 .category(categories.size() > 2 ? categories.get(2) : null)
                 .build();

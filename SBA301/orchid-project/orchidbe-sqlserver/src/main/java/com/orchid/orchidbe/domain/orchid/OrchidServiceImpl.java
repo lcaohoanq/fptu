@@ -1,5 +1,6 @@
 package com.orchid.orchidbe.domain.orchid;
 
+import com.orchid.orchidbe.domain.category.CategoryService;
 import com.orchid.orchidbe.repositories.OrchidRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class OrchidServiceImpl implements OrchidService {
 
     private final OrchidRepository orchidRepository;
+    private final CategoryService categoryService;
 
     @Override
     public List<OrchidDTO.OrchidRes> getAll() {
@@ -44,6 +46,7 @@ public class OrchidServiceImpl implements OrchidService {
         orchid.setName(orchidDto.name());
         orchid.setUrl(orchidDto.url());
         orchid.setPrice(orchidDto.price());
+        orchid.setCategory(categoryService.getById(orchidDto.categoryId()));
 
         orchidRepository.save(orchid);
     }

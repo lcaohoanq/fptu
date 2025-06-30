@@ -35,6 +35,7 @@ public interface AuthPort {
                     token.isExpired()
                 ),
                 new AccountDTO.AccountCompactRes(account.getId(),
+                                                 account.getEmail(),
                                                  account.getRole().getName()));
         }
     }

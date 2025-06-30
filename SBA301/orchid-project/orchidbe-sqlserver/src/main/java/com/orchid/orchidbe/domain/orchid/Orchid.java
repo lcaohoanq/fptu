@@ -27,7 +27,7 @@ public class Orchid {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id", unique=true, nullable=false)
+    @Column(name = "id", unique = true, nullable = false)
     @JsonProperty("id")
     private Long id;
 
@@ -64,8 +64,11 @@ public class Orchid {
             .isNatural(dto.isNatural())
             .description(dto.description())
             .name(dto.name())
-            .url(dto.url() == null ? "https://images.unsplash.com/photo-1610397648930-477b8c7f0943?q=80&w=730&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : dto.url()) // Ensure URL is not null
+            .url(dto.url() == null
+                     ? "https://images.unsplash.com/photo-1610397648930-477b8c7f0943?q=80&w=730&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                     : dto.url()) // Ensure URL is not null
             .price(dto.price())
+            .category(Category.builder().id(dto.categoryId()).build())
             .build();
     }
 

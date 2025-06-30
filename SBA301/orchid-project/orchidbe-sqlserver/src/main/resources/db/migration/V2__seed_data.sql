@@ -55,9 +55,9 @@ INSERT INTO public.categories VALUES (3, 'Indoor Plants');
 -- Data for Name: orchids; Type: TABLE DATA; Schema: public; Owner: admin
 --
 
-INSERT INTO public.orchids VALUES (1, 'Natural orchid', true, 'Phalaenopsis', 10, 'http://img1', 1);
-INSERT INTO public.orchids VALUES (2, 'Hybrid orchid', false, 'Cattleya', 15, 'http://img2', 2);
-INSERT INTO public.orchids VALUES (3, 'Random orchid', true, 'Dendrobium', 20, 'http://img3', 3);
+INSERT INTO public.orchids VALUES (1, 'Natural orchid', true, 'Phalaenopsis', 10, 'https://images.unsplash.com/photo-1610397648930-477b8c7f0943?q=80&w=730&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 1);
+INSERT INTO public.orchids VALUES (2, 'Hybrid orchid', false, 'Cattleya', 15, 'https://plus.unsplash.com/premium_photo-1673931249523-69dcbace086b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 2);
+INSERT INTO public.orchids VALUES (3, 'Random orchid', true, 'Dendrobium', 20, 'https://images.unsplash.com/photo-1562133558-4a3906179c67?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 3);
 
 
 --

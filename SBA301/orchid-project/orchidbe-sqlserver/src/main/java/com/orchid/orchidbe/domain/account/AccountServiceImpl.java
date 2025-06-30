@@ -83,7 +83,7 @@ public class AccountServiceImpl implements AccountService {
         var newAccount = new Account();
         newAccount.setName(account.name());
         newAccount.setEmail(account.email());
-        newAccount.setPassword(passwordEncoder.encode("1"));
+        newAccount.setPassword(passwordEncoder.encode("123456"));
         newAccount.setRole(roleService.getByName(RoleName.STAFF));
 
         log.info("New staff registered successfully");

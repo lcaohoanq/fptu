@@ -40,7 +40,7 @@ public class AccountController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_STAFF', 'ROLE_MANAGER')")
     @Operation(summary = "Get all accounts", description = "Returns a list of all accounts")
     @ApiResponse(responseCode = "200", description = "Successfully retrieved all accounts")
     public ResponseEntity<MyApiResponse<Account>> getAccountById(@PathVariable Long id) {
