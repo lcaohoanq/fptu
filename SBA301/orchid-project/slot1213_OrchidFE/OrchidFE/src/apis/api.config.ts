@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const createApiInstance = (baseURL) => {
+const createApiInstance = (baseURL: string) => {
   const instance = axios.create({
     baseURL,
     headers: {
@@ -40,5 +40,6 @@ const createApiInstance = (baseURL) => {
 };
 
 // Instances
-export const orchidApi = createApiInstance(import.meta.env.VITE_API_URL);
-export const employeeApi = createApiInstance(import.meta.env.VITE_API_URL);
+export const orchidApi = createApiInstance(
+  import.meta.env.VITE_API_URL || "http://localhost:8080/api/v1",
+);

@@ -1,19 +1,15 @@
-import React, {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import type { ReactNode } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { loginApi } from "../apis/auth.api";
-import { LoginRes } from "../types";
+import type { AccountRes, LoginRes } from "../types";
 
 interface AuthContextProps {
   isAuthenticated: boolean;
-  user: any | null;
+  user: AccountRes | null;
   isLoading: boolean;
   login: (email: string, password: string) => Promise<LoginRes>;
   logout: () => void;
+  setUser: (user: AccountRes) => void;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -22,7 +18,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<any | null>(null);
+  const [user, setUser] = useState<AccountRes | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   // Check if user is authenticated on initial load
@@ -37,8 +33,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
         // For demonstration, we'll just set a placeholder user object
         setUser({
           email: localStorage.getItem("user_email") || "",
-          role: localStorage.getItem("user_role") || "User",
-          id: localStorage.getItem("user_id") || "",
+          role: localStorage.getItem("user_role") || "USER",
+          id: Number(localStorage.getItem("user_id")) || 0,
         });
       }
       setIsLoading(false);
@@ -56,16 +52,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     localStorage.setItem("token_expires", response.data.token.expires);
     localStorage.setItem("token_type", response.data.token.token_type);
     localStorage.setItem("user_email", email);
-    localStorage.setItem("user_id", response.data.account.id);
-    localStorage.setItem(
-      "user_role",
-      response.data.account.role.name || "User",
-    );
+    localStorage.setItem("user_email", response.data.account.email);
+    localStorage.setItem("user_id", response.data.account.id.toString());
+    localStorage.setItem("user_role", response.data.account.role || "User");
 
     setIsAuthenticated(true);
     setUser({
-      email,
-      role: response.data.account.role.name || "User",
+      email: response.data.account.email,
+      role: response.data.account.role,
       id: response.data.account.id,
     });
 
@@ -90,7 +84,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, user, isLoading, login, logout }}
+      value={{ isAuthenticated, user, isLoading, login, logout, setUser }}
     >
       {children}
     </AuthContext.Provider>

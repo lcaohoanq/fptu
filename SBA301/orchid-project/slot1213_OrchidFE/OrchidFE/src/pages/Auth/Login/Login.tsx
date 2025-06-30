@@ -1,8 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router";
+import {
+  Alert,
+  Box,
+  Button,
+  Checkbox,
+  CircularProgress,
+  Container,
+  FormControlLabel,
+  Grid,
+  IconButton,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useForm } from "react-hook-form";
-import { Button, Form, Spinner, Alert, Badge } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../../contexts/auth.context";
 
 type LoginFormData = {
@@ -11,19 +24,26 @@ type LoginFormData = {
   rememberMe: boolean;
 };
 
-const Login = () => {
-  const { login, isAuthenticated, user, isLoading: authLoading } = useAuth();
+export default function Login() {
+  const { login, isAuthenticated, isLoading: authLoading, user } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  // Redirect if already authenticated
   useEffect(() => {
-    if (!authLoading && isAuthenticated && user?.role === "User") {
+    if (!authLoading && isAuthenticated && user?.role === "USER") {
       navigate("/");
-    } else if (!authLoading && isAuthenticated && user?.role === "Admin") {
+    } else if (
+      !authLoading &&
+      isAuthenticated &&
+      (user?.role === "ADMIN" ||
+        user?.role === "STAFF" ||
+        user?.role === "MANAGER")
+    ) {
       navigate("/manage/orchids");
     }
-  }, [isAuthenticated, authLoading, user, navigate]);
+  }, [authLoading, isAuthenticated, user, navigate]);
 
   const {
     register,
@@ -33,15 +53,11 @@ const Login = () => {
   } = useForm<LoginFormData>({
     defaultValues: {
       email: "",
-      password: "string",
+      password: "Iloveyou123^^", // demo
       rememberMe: false,
     },
   });
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  // Load remembered email if available
   useEffect(() => {
     const rememberedEmail = localStorage.getItem("remembered_email");
     if (rememberedEmail) {
@@ -53,23 +69,14 @@ const Login = () => {
   const onSubmit = async (data: LoginFormData) => {
     setIsLoading(true);
     setError(null);
-
     try {
-      // Call the login function from auth context
-      const response = await login(data.email, data.password);
-
-      // Handle remember me functionality
+      await login(data.email, data.password);
       if (data.rememberMe) {
         localStorage.setItem("remembered_email", data.email);
       } else {
         localStorage.removeItem("remembered_email");
       }
-
-      console.log("Login successful", response);
-
-      // Navigation will be handled by the useEffect that watches isAuthenticated
-    } catch (error) {
-      console.error("Login failed", error);
+    } catch (err) {
       setError("Invalid email or password. Please try again.");
     } finally {
       setIsLoading(false);
@@ -77,120 +84,101 @@ const Login = () => {
   };
 
   return (
-    <div className="container-fluid bg-light min-vh-100 d-flex align-items-center justify-content-center py-5">
-      <div className="col-12 col-md-6 col-lg-4">
-        <div className="card shadow-sm">
-          <div className="card-body p-4 p-md-5">
-            <h2 className="text-center mb-4">Login to Orchid</h2>
+    <Container maxWidth="sm">
+      <Box sx={{ py: 6 }}>
+        <Typography variant="h4" align="center" gutterBottom>
+          Login to Orchid
+        </Typography>
 
-            {error && (
-              <Alert variant="danger" className="mb-3">
-                {error}
-              </Alert>
-            )}
+        {error && (
+          <Alert severity="error" sx={{ mb: 2 }}>
+            {error}
+          </Alert>
+        )}
 
-            <Form onSubmit={handleSubmit(onSubmit)}>
-              <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter your email"
-                  isInvalid={!!errors.email}
-                  disabled={isLoading}
-                  {...register("email", {
-                    required: "Email is required",
-                    pattern: {
-                      value: /\S+@\S+\.\S+/,
-                      message: "Email is invalid",
-                    },
-                  })}
-                />
-                <Form.Control.Feedback type="invalid">
-                  {errors.email?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                label="Email"
+                fullWidth
+                error={!!errors.email}
+                helperText={errors.email?.message}
+                disabled={isLoading}
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /\S+@\S+\.\S+/,
+                    message: "Email is invalid",
+                  },
+                })}
+              />
+            </Grid>
 
-              <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Password</Form.Label>
-                <div className="d-flex">
-                  <Form.Control
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
-                    isInvalid={!!errors.password}
-                    disabled={isLoading}
-                    {...register("password", {
-                      required: "Password is required",
-                      minLength: {
-                        value: 6,
-                        message: "Password must be at least 6 characters",
-                      },
-                    })}
-                  />
-                  <Button
-                    variant="outline-secondary"
-                    onClick={() => setShowPassword((prev) => !prev)}
-                    className="ms-2"
-                    disabled={isLoading}
-                  >
-                    {showPassword ? "Hide" : "Show"}
-                  </Button>
-                </div>
-                <Form.Control.Feedback type="invalid">
-                  {errors.password?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
+            <Grid item xs={12}>
+              <TextField
+                label="Password"
+                type={showPassword ? "text" : "password"}
+                fullWidth
+                error={!!errors.password}
+                helperText={errors.password?.message}
+                disabled={isLoading}
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "Minimum 6 characters",
+                  },
+                })}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={() => setShowPassword((prev) => !prev)}
+                        edge="end"
+                        disabled={isLoading}
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Grid>
 
-              <div className="d-flex justify-content-between mb-4">
-                <Form.Group controlId="rememberMe">
-                  <Form.Check
-                    type="checkbox"
-                    label="Remember me"
-                    disabled={isLoading}
-                    {...register("rememberMe")}
-                  />
-                </Form.Group>
-                <a href="/forgot-password" className="text-decoration-none">
-                  Forgot Password?
-                </a>
-              </div>
+            <Grid item xs={12} sm={6}>
+              <FormControlLabel
+                control={
+                  <Checkbox {...register("rememberMe")} disabled={isLoading} />
+                }
+                label="Remember me"
+              />
+            </Grid>
 
-              <div className="d-grid">
-                <Button
-                  type="submit"
-                  variant="primary"
-                  className="py-2"
-                  disabled={isLoading}
-                >
-                  {isLoading ? (
-                    <>
-                      <Spinner
-                        as="span"
-                        animation="border"
-                        size="sm"
-                        role="status"
-                        aria-hidden="true"
-                        className="me-2"
-                      />
-                      Logging in...
-                    </>
-                  ) : (
-                    "Login"
-                  )}
-                </Button>
-              </div>
-            </Form>
+            <Grid item xs={12} sm={6} textAlign="right">
+              <a href="/forgot-password">Forgot Password?</a>
+            </Grid>
 
-            <div className="text-center mt-4">
-              Don't have an account?{" "}
-              <a href="/register" className="text-decoration-none">
-                Sign up
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <Grid item xs={12}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                disabled={isLoading}
+                startIcon={isLoading ? <CircularProgress size={20} /> : null}
+              >
+                {isLoading ? "Logging in..." : "Login"}
+              </Button>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Typography align="center" variant="body2">
+                Don&apos;t have an account? <a href="/register">Sign up</a>
+              </Typography>
+            </Grid>
+          </Grid>
+        </form>
+      </Box>
+    </Container>
   );
-};
-
-export default Login;
+}

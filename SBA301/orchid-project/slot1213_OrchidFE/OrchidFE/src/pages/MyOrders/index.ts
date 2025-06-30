@@ -1,1 +1,3 @@
-export { default } from "./MyOrders";
+import MyOrders from "./MyOrders";
+
+export default MyOrders;

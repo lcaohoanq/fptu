@@ -1,10 +1,29 @@
 import toast from "react-hot-toast";
 
 // Global error handler for API errors
-export const handleApiError = (error, customMessage) => {
+interface ApiErrorResponse {
+  data?: {
+    message?: string;
+    [key: string]: any;
+  };
+  status?: number;
+  [key: string]: any;
+}
+
+interface ApiError {
+  response?: ApiErrorResponse;
+  request?: any;
+  message?: string;
+  [key: string]: any;
+}
+
+export const handleApiError = (
+  error: ApiError,
+  customMessage?: string,
+): string => {
   console.error("API Error:", error);
 
-  let errorMessage = customMessage || "Something went wrong";
+  let errorMessage: string = customMessage || "Something went wrong";
 
   if (error.response) {
     // Server responded with error status
@@ -27,7 +46,13 @@ export const handleApiError = (error, customMessage) => {
 };
 
 // Check if API server is available
-export const checkApiConnection = async (apiInstance) => {
+interface ApiInstance {
+  get: (url: string) => Promise<any>;
+}
+
+export const checkApiConnection = async (
+  apiInstance: ApiInstance,
+): Promise<boolean> => {
   try {
     await apiInstance.get("/health-check");
     return true;

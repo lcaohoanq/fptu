@@ -3,16 +3,17 @@ import React, {
   useContext,
   useEffect,
   useState,
-  ReactNode,
   useCallback,
 } from "react";
+import type { ReactNode } from "react";
 import toast from "react-hot-toast";
 import { useAuth } from "./auth.context";
+import type { Orchid } from "../types";
 
 interface CartItem {
-  id: string;
-  orchidName: string;
-  image: string;
+  id: number;
+  name: string;
+  url: string;
   price: number;
   quantity: number;
   isNatural: boolean;
@@ -44,7 +45,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   const [isInitialized, setIsInitialized] = useState(false);
 
   // Get cart key based on user
-  const getCartKey = useCallback((userId?: string | null) => {
+  const getCartKey = useCallback((userId?: number | null) => {
     return userId ? `cart_${userId}` : "cart_guest";
   }, []);
 
@@ -79,7 +80,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
   // Merge guest cart with user cart
   const mergeGuestCartWithUserCart = useCallback(
-    (userId: string) => {
+    (userId: number) => {
       const guestCartKey = getCartKey(null);
       const userCartKey = getCartKey(userId);
 
@@ -197,10 +198,12 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     }
 
     // Add some randomness but keep it consistent per orchid
-    const hash = orchid.id.split("").reduce((a, b) => {
-      a = (a << 5) - a + b.charCodeAt(0);
-      return a & a;
-    }, 0);
+    const hash: number = String(orchid.id)
+      .split("")
+      .reduce((a: number, b: string) => {
+        a = (a << 5) - a + b.charCodeAt(0);
+        return a & a;
+      }, 0);
 
     const variation = (Math.abs(hash) % 30) + 10; // 10-40 variation
     return parseFloat((basePrice + variation).toFixed(2));
@@ -208,7 +211,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
   // Add item to cart
   const addToCart = useCallback(
-    (orchid: any, quantity = 1, navigateToLogin?: () => void) => {
+    (orchid: Orchid, quantity = 1, navigateToLogin?: () => void) => {
       // Check if user is authenticated before allowing add to cart
       if (!isAuthenticated) {
         if (navigateToLogin) {
@@ -224,7 +227,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
         if (existingItem) {
           // Update quantity if item already exists
-          toast.success(`Updated ${orchid.orchidName} quantity in cart`);
+          toast.success(`Updated ${orchid.name} quantity in cart`);
           return prevItems.map((item) =>
             item.id === orchid.id
               ? { ...item, quantity: item.quantity + quantity }
@@ -234,14 +237,14 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
           // Add new item to cart
           const newItem: CartItem = {
             id: orchid.id,
-            orchidName: orchid.orchidName,
-            image: orchid.image,
+            name: orchid.name,
+            url: orchid.url,
             price: generatePrice(orchid),
             quantity,
             isNatural: orchid.isNatural,
           };
 
-          toast.success(`Added ${orchid.orchidName} to cart`);
+          toast.success(`Added ${orchid.name} to cart`);
           return [...prevItems, newItem];
         }
       });
@@ -252,11 +255,11 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   // Remove item from cart
   const removeFromCart = useCallback((id: string) => {
     setCartItems((prevItems) => {
-      const item = prevItems.find((item) => item.id === id);
+      const item = prevItems.find((item) => String(item.id) === id);
       if (item) {
-        toast.success(`Removed ${item.orchidName} from cart`);
+        toast.success(`Removed ${item.name} from cart`);
       }
-      return prevItems.filter((item) => item.id !== id);
+      return prevItems.filter((item) => String(item.id) !== id);
     });
   }, []);
 
@@ -270,7 +273,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
       setCartItems((prevItems) =>
         prevItems.map((item) =>
-          item.id === id ? { ...item, quantity } : item,
+          String(item.id) === id ? { ...item, quantity } : item,
         ),
       );
     },
@@ -289,7 +292,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   // Check if item is in cart
   const isInCart = useCallback(
     (id: string) => {
-      return cartItems.some((item) => item.id === id);
+      return cartItems.some((item) => String(item.id) === id);
     },
     [cartItems],
   );

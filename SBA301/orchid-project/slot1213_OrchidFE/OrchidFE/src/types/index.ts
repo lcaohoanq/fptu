@@ -1,11 +1,11 @@
 export type Orchid = {
-  id: string;
-  orchidName: string;
+  id: number;
+  name: string;
   isNatural: boolean;
   description: string;
-  categoryId: string;
-  isAttractive: boolean;
-  image: string;
+  categoryId: number;
+  price: number;
+  url: string;
 };
 
 export type ApiResponse<T> = {
@@ -31,21 +31,22 @@ export type LoginRes = ApiResponse<{
     expires_refresh_token: string;
     is_mobile: boolean;
   };
-  account: {
-    id: string;
-    role: {
-      id: string;
-      name: RoleName;
-    };
-  };
+  account: AccountRes;
 }>;
 
-export type RoleName = "Admin" | "User" | "Manager";
+export type RoleName = "ADMIN" | "MANAGER" | "USER" | "STAFF";
 export type Account = {
   id: string;
   name: string;
   email: string;
   password: string;
+  role_name: number;
+};
+
+export type AccountRes = {
+  id: number;
+  email: string;
+  role: string;
 };
 
 export type Category = {
