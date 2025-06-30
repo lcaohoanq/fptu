@@ -39,7 +39,9 @@ const createApiInstance = (baseURL: string) => {
   return instance;
 };
 
+const isDevelopment = import.meta.env.MODE === "development";
+
 // Instances
 export const orchidApi = createApiInstance(
-  import.meta.env.VITE_API_URL || "http://localhost:8080/api/v1",
+  isDevelopment ? "http://localhost:8080/api" : "https://orchid.lch.id.vn/api",
 );

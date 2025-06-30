@@ -85,99 +85,154 @@ export default function Login() {
 
   return (
     <Container maxWidth="sm">
-      <Box sx={{ py: 6 }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Login to Orchid
-        </Typography>
+      <Box
+        sx={{
+          mt: 15,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: 420,
+            p: 5,
+            borderRadius: 4,
+            boxShadow: "0px 10px 30px rgba(0,0,0,0.1)",
+            bgcolor: "white",
+          }}
+        >
+          <Typography
+            variant="h4"
+            align="center"
+            fontWeight="bold"
+            sx={{ mb: 4, color: "#3f51b5" }}
+          >
+            Login to Orchid
+          </Typography>
 
-        {error && (
-          <Alert severity="error" sx={{ mb: 2 }}>
-            {error}
-          </Alert>
-        )}
+          {error && (
+            <Alert severity="error" sx={{ mb: 2 }}>
+              {error}
+            </Alert>
+          )}
 
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                label="Email"
-                fullWidth
-                error={!!errors.email}
-                helperText={errors.email?.message}
-                disabled={isLoading}
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /\S+@\S+\.\S+/,
-                    message: "Email is invalid",
-                  },
-                })}
-              />
-            </Grid>
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <TextField
+                  label="Email"
+                  fullWidth
+                  error={!!errors.email}
+                  helperText={errors.email?.message}
+                  disabled={isLoading}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /\S+@\S+\.\S+/,
+                      message: "Email is invalid",
+                    },
+                  })}
+                />
+              </Grid>
 
-            <Grid item xs={12}>
-              <TextField
-                label="Password"
-                type={showPassword ? "text" : "password"}
-                fullWidth
-                error={!!errors.password}
-                helperText={errors.password?.message}
-                disabled={isLoading}
-                {...register("password", {
-                  required: "Password is required",
-                  minLength: {
-                    value: 6,
-                    message: "Minimum 6 characters",
-                  },
-                })}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={() => setShowPassword((prev) => !prev)}
-                        edge="end"
-                        disabled={isLoading}
-                      >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
+              <Grid item xs={12}>
+                <TextField
+                  label="Password"
+                  type={showPassword ? "text" : "password"}
+                  fullWidth
+                  error={!!errors.password}
+                  helperText={errors.password?.message}
+                  disabled={isLoading}
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message: "Minimum 6 characters",
+                    },
+                  })}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => setShowPassword((prev) => !prev)}
+                          edge="end"
+                          disabled={isLoading}
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
                 }}
-              />
-            </Grid>
-
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox {...register("rememberMe")} disabled={isLoading} />
-                }
-                label="Remember me"
-              />
-            </Grid>
-
-            <Grid item xs={12} sm={6} textAlign="right">
-              <a href="/forgot-password">Forgot Password?</a>
-            </Grid>
-
-            <Grid item xs={12}>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                disabled={isLoading}
-                startIcon={isLoading ? <CircularProgress size={20} /> : null}
               >
-                {isLoading ? "Logging in..." : "Login"}
-              </Button>
-            </Grid>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      {...register("rememberMe")}
+                      disabled={isLoading}
+                      size="small"
+                    />
+                  }
+                  label="Remember me"
+                />
+                <Typography variant="body2">
+                  <a
+                    href="/forgot-password"
+                    style={{
+                      color: "#3f51b5",
+                      textDecoration: "none",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Forgot Password?
+                  </a>
+                </Typography>
+              </Grid>
 
-            <Grid item xs={12}>
-              <Typography align="center" variant="body2">
-                Don&apos;t have an account? <a href="/register">Sign up</a>
-              </Typography>
+              <Grid item xs={12}>
+                <Button
+                  type="submit"
+                  fullWidth
+                  color="primary"
+                  variant="contained"
+                  size="large"
+                  disabled={isLoading}
+                  startIcon={isLoading ? <CircularProgress size={20} /> : null}
+                >
+                  {isLoading ? "Logging in..." : "Login"}
+                </Button>
+              </Grid>
+
+              <Grid item xs={12}>
+                <Typography align="center" variant="body2">
+                  Don&apos;t have an account?{" "}
+                  <a
+                    href="/register"
+                    style={{
+                      color: "primary.main",
+                      fontWeight: 500,
+                      textDecoration: "none",
+                    }}
+                  >
+                    Sign up
+                  </a>
+                </Typography>
+              </Grid>
             </Grid>
-          </Grid>
-        </form>
+          </form>
+        </Box>
       </Box>
     </Container>
   );

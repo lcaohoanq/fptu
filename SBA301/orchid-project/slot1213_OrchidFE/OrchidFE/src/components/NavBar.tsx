@@ -73,7 +73,7 @@ const NavBar = () => {
             sx={{ cursor: "pointer" }}
             onClick={() => navigate("/")}
           >
-            Orchids
+            Orchids Shop
           </Typography>
 
           {isAuthenticated && user?.role !== "USER" && (
@@ -177,7 +177,7 @@ const NavBar = () => {
           ) : (
             <Button
               variant="outlined"
-              color="primary"
+              color="inherit"
               onClick={() => navigate("/login")}
             >
               Login
