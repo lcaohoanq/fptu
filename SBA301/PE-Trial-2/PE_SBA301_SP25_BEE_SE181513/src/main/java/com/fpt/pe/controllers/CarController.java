@@ -20,7 +20,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -41,6 +40,7 @@ public class CarController {
         String name,
 
         @NotNull(message = "Price is required")
+        @Min(value = 0, message = "Price must be at least 0")
         Double price,
 
         @NotNull(message = "Stock is required")
@@ -57,6 +57,7 @@ public class CarController {
         @Size(min = 11, message = "Name must be greater than 10 characters")
         String name,
 
+        @Min(value = 0, message = "Price must be at least 0")
         Double price,
 
         @Min(value = 1, message = "Stock must be at least 1")

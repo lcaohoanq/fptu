@@ -1,5 +1,6 @@
 package com.fpt.pe.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -46,6 +47,7 @@ public class AccountMember implements UserDetails {
     private Integer id;
 
     @Column(name = "MemberPassword", nullable = false)
+    @JsonIgnore
     private String password;
 
     @Column(name = "EmailAddress", nullable = false)
