@@ -1,0 +1,20 @@
+2025-06-24 08:03:20.246 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:16:58.343 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:18:46.572 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:19:22.873 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:23:00.292 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:25:18.352 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:26:34.911 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:27:06.952 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:31:05.609 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:33:38.290 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:34:45.652 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:34:48.693 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use 
+2025-06-24 08:49:09.102 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 08:49:12.499 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use 
+2025-06-24 10:17:19.264 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 10:17:23.079 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use 
+2025-06-24 10:31:05.886 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 10:31:09.822 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use 
+2025-06-24 10:33:22.171 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7 
+2025-06-24 10:33:26.392 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use 

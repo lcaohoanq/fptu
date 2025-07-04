@@ -1,0 +1,543 @@
+2025-06-24 08:03:20.243 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 552 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:03:20.246 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:03:20.248 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:03:25.331 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:16:58.339 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 5488 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:16:58.343 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:16:58.344 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:17:04.741 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:18:46.569 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 3988 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:18:46.572 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:18:46.574 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:18:51.420 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:19:22.871 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 14040 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:19:22.873 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:19:22.874 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:19:27.740 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:23:00.290 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 7092 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:23:00.292 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:23:00.294 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:23:04.148 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:25:18.351 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 2472 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:25:18.352 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:25:18.354 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:25:20.699 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:26:34.908 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 5552 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:26:34.911 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:26:34.912 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:26:37.441 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:27:06.950 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 3272 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:27:06.952 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:27:06.952 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:27:09.596 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:27:09.736 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:27:10.133 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [BufferPoolPruner-1-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:27:10.134 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6859feed71ec0eca92191f58', description='Crud'}-srv-crud.u3idzpf.mongodb.net] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Thread.sleep0(Native Method)
+ java.base/java.lang.Thread.sleep(Thread.java:509)
+ com.mongodb.internal.connection.DefaultDnsSrvRecordMonitor$DnsSrvRecordMonitorRunnable.run(DefaultDnsSrvRecordMonitor.java:108)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:27:10.134 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6859feed71ec0eca92191f58', description='Crud'}-ac-h9mqxxm-shard-00-02.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:249)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+2025-06-24 08:27:10.134 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6859feed71ec0eca92191f58', description='Crud'}-ac-h9mqxxm-shard-00-00.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:249)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+2025-06-24 08:27:10.134 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6859feed71ec0eca92191f58', description='Crud'}-ac-h9mqxxm-shard-00-01.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:249)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+2025-06-24 08:27:10.135 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='6859feed71ec0eca92191f58', description='Crud'}-ac-h9mqxxm-shard-00-01.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:448)
+ com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:100)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:49)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:79)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.initialize(DefaultServerMonitor.java:482)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.run(DefaultServerMonitor.java:458)
+2025-06-24 08:27:10.135 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='6859feed71ec0eca92191f58', description='Crud'}-ac-h9mqxxm-shard-00-02.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:448)
+ com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:100)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:49)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:79)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.initialize(DefaultServerMonitor.java:482)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.run(DefaultServerMonitor.java:458)
+2025-06-24 08:27:10.135 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='6859feed71ec0eca92191f58', description='Crud'}-ac-h9mqxxm-shard-00-00.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:448)
+ com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:100)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:49)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:79)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.initialize(DefaultServerMonitor.java:482)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.run(DefaultServerMonitor.java:458)
+2025-06-24 08:27:10.136 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [MaintenanceTimer-3-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:27:10.136 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [MaintenanceTimer-4-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:27:10.136 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [MaintenanceTimer-2-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:27:10.139 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:31:05.608 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 11076 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:31:05.609 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:31:05.610 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:31:08.540 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:31:08.660 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:31:09.009 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [BufferPoolPruner-1-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:31:09.010 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6859ffdcc37ded0df9230d5f', description='Crud'}-srv-crud.u3idzpf.mongodb.net] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Thread.sleep0(Native Method)
+ java.base/java.lang.Thread.sleep(Thread.java:509)
+ com.mongodb.internal.connection.DefaultDnsSrvRecordMonitor$DnsSrvRecordMonitorRunnable.run(DefaultDnsSrvRecordMonitor.java:108)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:31:09.010 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6859ffdcc37ded0df9230d5f', description='Crud'}-ac-h9mqxxm-shard-00-02.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:448)
+ com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:100)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:49)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:79)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:219)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+2025-06-24 08:31:09.011 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6859ffdcc37ded0df9230d5f', description='Crud'}-ac-h9mqxxm-shard-00-00.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:448)
+ com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:100)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:49)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:79)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:219)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+2025-06-24 08:31:09.011 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6859ffdcc37ded0df9230d5f', description='Crud'}-ac-h9mqxxm-shard-00-01.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:448)
+ com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:100)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:49)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:79)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:219)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+2025-06-24 08:31:09.014 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:33:38.288 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 8528 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:33:38.290 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:33:38.291 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:33:40.923 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:33:41.037 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:33:41.372 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [BufferPoolPruner-1-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:33:41.372 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='685a0074232df8de5700f149', description='Crud'}-srv-crud.u3idzpf.mongodb.net] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Thread.sleep0(Native Method)
+ java.base/java.lang.Thread.sleep(Thread.java:509)
+ com.mongodb.internal.connection.DefaultDnsSrvRecordMonitor$DnsSrvRecordMonitorRunnable.run(DefaultDnsSrvRecordMonitor.java:108)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:33:41.373 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='685a0074232df8de5700f149', description='Crud'}-ac-h9mqxxm-shard-00-02.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:249)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+2025-06-24 08:33:41.373 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='685a0074232df8de5700f149', description='Crud'}-ac-h9mqxxm-shard-00-00.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:249)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+2025-06-24 08:33:41.373 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='685a0074232df8de5700f149', description='Crud'}-ac-h9mqxxm-shard-00-01.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+ java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+ java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+ java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+ java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+ java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+ java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+ java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+ java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+ java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+ com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:249)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+2025-06-24 08:33:41.373 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='685a0074232df8de5700f149', description='Crud'}-ac-h9mqxxm-shard-00-01.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:548)
+ java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+ java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+ java.base/java.net.Socket.connect(Socket.java:751)
+ java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+ com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76)
+ com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104)
+ com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.initialize(DefaultServerMonitor.java:482)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.run(DefaultServerMonitor.java:458)
+2025-06-24 08:33:41.374 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='685a0074232df8de5700f149', description='Crud'}-ac-h9mqxxm-shard-00-02.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:548)
+ java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+ java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+ java.base/java.net.Socket.connect(Socket.java:751)
+ java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+ com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76)
+ com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104)
+ com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.initialize(DefaultServerMonitor.java:482)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.run(DefaultServerMonitor.java:458)
+2025-06-24 08:33:41.374 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='685a0074232df8de5700f149', description='Crud'}-ac-h9mqxxm-shard-00-00.u3idzpf.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.poll(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+ java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:548)
+ java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+ java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+ java.base/java.net.Socket.connect(Socket.java:751)
+ java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+ com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76)
+ com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104)
+ com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.initialize(DefaultServerMonitor.java:482)
+ com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeMonitor.run(DefaultServerMonitor.java:458)
+2025-06-24 08:33:41.374 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [MaintenanceTimer-3-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:33:41.374 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [MaintenanceTimer-4-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:33:41.375 [main] WARN  o.a.c.loader.WebappClassLoaderBase - - The web application [ROOT] appears to have started a thread named [MaintenanceTimer-2-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 08:33:41.377 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-24 08:34:45.651 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 6656 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:34:45.652 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:34:45.653 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:34:48.220 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:34:48.346 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:34:48.693 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use
+2025-06-24 08:34:48.939 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-24 08:34:48.939 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-24 08:34:50.075 [main] INFO  com.orchid.orchidbe.App - - Started App in 5.023 seconds (process running for 6.128)
+2025-06-24 08:34:51.299 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Initializing Servlet 'dispatcherServlet'
+2025-06-24 08:34:51.301 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Completed initialization in 2 ms
+2025-06-24 08:34:53.702 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - - Init duration for springdoc-openapi is: 551 ms
+2025-06-24 08:37:19.942 [http-nio-8080-exec-9] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 08:37:20.641 [http-nio-8080-exec-9] INFO  c.o.o.controllers.AuthController - - User logged in successfully
+2025-06-24 08:38:02.981 [http-nio-8080-exec-10] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 08:38:03.351 [http-nio-8080-exec-10] INFO  c.o.o.controllers.AuthController - - User logged in successfully
+2025-06-24 08:49:09.100 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 12284 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 08:49:09.102 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 08:49:09.102 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 08:49:12.035 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:49:12.181 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 08:49:12.499 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use
+2025-06-24 08:49:12.794 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-24 08:49:12.795 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-24 08:49:13.991 [main] INFO  com.orchid.orchidbe.App - - Started App in 5.582 seconds (process running for 7.366)
+2025-06-24 08:49:16.226 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Initializing Servlet 'dispatcherServlet'
+2025-06-24 08:49:16.228 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Completed initialization in 1 ms
+2025-06-24 08:49:18.390 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - - Init duration for springdoc-openapi is: 519 ms
+2025-06-24 08:51:05.287 [http-nio-8080-exec-1] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 08:51:05.835 [http-nio-8080-exec-1] INFO  c.o.o.controllers.AuthController - - User logged in successfully
+2025-06-24 09:06:15.127 [http-nio-8080-exec-3] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 09:06:16.164 [http-nio-8080-exec-3] INFO  c.o.o.controllers.AuthController - - User logged in successfully
+2025-06-24 10:17:19.263 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 4480 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 10:17:19.264 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 10:17:19.264 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 10:17:22.637 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 10:17:22.783 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 10:17:23.079 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use
+2025-06-24 10:17:23.325 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-24 10:17:23.325 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-24 10:17:24.502 [main] INFO  com.orchid.orchidbe.App - - Started App in 5.877 seconds (process running for 7.586)
+2025-06-24 10:17:25.417 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Initializing Servlet 'dispatcherServlet'
+2025-06-24 10:17:25.418 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Completed initialization in 1 ms
+2025-06-24 10:17:28.098 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - - Init duration for springdoc-openapi is: 569 ms
+2025-06-24 10:20:16.715 [http-nio-8080-exec-7] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 10:20:17.354 [http-nio-8080-exec-7] INFO  c.o.o.controllers.AuthController - - User logged in successfully
+2025-06-24 10:20:27.928 [http-nio-8080-exec-9] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 10:20:28.382 [http-nio-8080-exec-9] INFO  c.o.o.controllers.AuthController - - User logged in successfully
+2025-06-24 10:31:05.885 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 876 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 10:31:05.886 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 10:31:05.887 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 10:31:09.383 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 10:31:09.509 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 10:31:09.822 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use
+2025-06-24 10:31:10.043 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-24 10:31:10.043 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-24 10:31:11.040 [main] INFO  com.orchid.orchidbe.App - - Started App in 5.734 seconds (process running for 6.87)
+2025-06-24 10:31:11.940 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Initializing Servlet 'dispatcherServlet'
+2025-06-24 10:31:11.942 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Completed initialization in 1 ms
+2025-06-24 10:31:14.386 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - - Init duration for springdoc-openapi is: 476 ms
+2025-06-24 10:31:25.639 [http-nio-8080-exec-1] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 10:31:26.137 [http-nio-8080-exec-1] INFO  c.o.o.controllers.AuthController - - User logged in successfully
+2025-06-24 10:33:22.170 [main] INFO  com.orchid.orchidbe.App - - Starting App using Java 21.0.6 with PID 10024 (C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe\target\classes started by Admin in C:\Users\Admin\Documents\fptu\FPTU\SBA301\orchid-project\orchidbe)
+2025-06-24 10:33:22.171 [main] DEBUG com.orchid.orchidbe.App - - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-24 10:33:22.172 [main] INFO  com.orchid.orchidbe.App - - The following 1 profile is active: "mongo"
+2025-06-24 10:33:25.924 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 10:33:26.071 [main] WARN  o.s.data.convert.CustomConversions - - Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-24 10:33:26.392 [main] DEBUG c.o.orchidbe.filters.JwtTokenFilter - - Filter 'jwtTokenFilter' configured for use
+2025-06-24 10:33:26.643 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-24 10:33:26.645 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-24 10:33:27.752 [main] INFO  com.orchid.orchidbe.App - - Started App in 6.196 seconds (process running for 7.315)
+2025-06-24 10:33:28.633 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Initializing Servlet 'dispatcherServlet'
+2025-06-24 10:33:28.635 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - - Completed initialization in 2 ms
+2025-06-24 10:33:31.163 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - - Init duration for springdoc-openapi is: 519 ms
+2025-06-24 10:33:37.354 [http-nio-8080-exec-1] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 10:33:38.051 [http-nio-8080-exec-1] INFO  c.o.o.controllers.AuthController - - User logged in successfully
+2025-06-24 10:42:13.481 [http-nio-8080-exec-1] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 10:42:22.695 [http-nio-8080-exec-1] INFO  c.o.o.controllers.AuthController - - User logged in successfully
+2025-06-24 10:42:35.068 [http-nio-8080-exec-2] INFO  c.o.o.controllers.AuthController - - Login body received: LoginReq[email=mnhw.0612@gmail.com, password=string]
+2025-06-24 10:42:35.713 [http-nio-8080-exec-2] INFO  c.o.o.controllers.AuthController - - User logged in successfully
