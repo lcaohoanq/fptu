@@ -1,10 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router";
+import {
+  Alert,
+  Box,
+  Button,
+  Checkbox,
+  CircularProgress,
+  Container,
+  FormControlLabel,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Alert, Form, Button, Spinner } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useAuth } from "../../../contexts/auth.context";
+import { useNavigate } from "react-router-dom";
 import { registerApi } from "../../../apis/auth.api";
+import { useAuth } from "../../../contexts/auth.context";
 
 type RegisterFormData = {
   firstName: string;
@@ -15,38 +25,24 @@ type RegisterFormData = {
   acceptTerms: boolean;
 };
 
-const Register = () => {
+export default function Register() {
   const { isAuthenticated, isLoading: authLoading } = useAuth();
   const navigate = useNavigate();
 
-  // Redirect if already authenticated
   useEffect(() => {
-    if (!authLoading && isAuthenticated) {
-      navigate("/");
-    }
-  }, [isAuthenticated, authLoading, navigate]);
+    if (!authLoading && isAuthenticated) navigate("/");
+  }, [authLoading, isAuthenticated, navigate]);
 
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<RegisterFormData>({
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-      acceptTerms: false,
-    },
-  });
+  } = useForm<RegisterFormData>({ defaultValues: { acceptTerms: false } });
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
-
-  // Used to compare password and confirm password
   const password = watch("password");
 
   const onSubmit = async (data: RegisterFormData) => {
@@ -55,95 +51,84 @@ const Register = () => {
     setSuccess(null);
 
     try {
-      // Combine first and last name for the API
       const fullName = `${data.firstName} ${data.lastName}`.trim();
-
-      // Call the register API
-      const response = await registerApi(fullName, data.email, data.password);
-
-      console.log("Registration successful", response);
-
-      // Show success message
-      setSuccess("Registration successful! Redirecting to login page...");
-
-      // Redirect to login page after 2 seconds
-      setTimeout(() => {
-        navigate("/login");
-      }, 2000);
-    } catch (error) {
-      console.error("Registration failed", error);
-      setError(
-        "Registration failed. Please try again or use a different email.",
-      );
+      await registerApi(fullName, data.email, data.password);
+      setSuccess("Registration successful! Redirecting...");
+      setTimeout(() => navigate("/login"), 2000);
+    } catch (err) {
+      setError("Registration failed. Please try again.");
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="container-fluid bg-light min-vh-100 d-flex align-items-center justify-content-center py-5">
-      <div className="col-12 col-md-6 col-lg-4">
-        <div className="card shadow-sm">
-          <div className="card-body p-4 p-md-5">
-            <h2 className="text-center mb-4">Create an Account</h2>
+    <Container maxWidth="sm">
+      <Box
+        sx={{
+          mt: 5,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: 420,
+            p: 5,
+            borderRadius: 4,
+            boxShadow: "0px 10px 30px rgba(0,0,0,0.1)",
+            bgcolor: "white",
+          }}
+        >
+          <Typography variant="h4" align="center" gutterBottom>
+            Create an Account
+          </Typography>
 
-            {error && (
-              <Alert variant="danger" className="mb-3">
-                {error}
-              </Alert>
-            )}
+          {error && (
+            <Alert severity="error" sx={{ mb: 2 }}>
+              {error}
+            </Alert>
+          )}
+          {success && (
+            <Alert severity="success" sx={{ mb: 2 }}>
+              {success}
+            </Alert>
+          )}
 
-            {success && (
-              <Alert variant="success" className="mb-3">
-                {success}
-              </Alert>
-            )}
-
-            <Form onSubmit={handleSubmit(onSubmit)}>
-              <div className="row mb-3">
-                <div className="col-md-6 mb-3 mb-md-0">
-                  <Form.Group controlId="firstName">
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="First name"
-                      isInvalid={!!errors.firstName}
-                      disabled={isLoading}
-                      {...register("firstName", {
-                        required: "First name is required",
-                      })}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {errors.firstName?.message}
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </div>
-
-                <div className="col-md-6">
-                  <Form.Group controlId="lastName">
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Last name"
-                      isInvalid={!!errors.lastName}
-                      disabled={isLoading}
-                      {...register("lastName", {
-                        required: "Last name is required",
-                      })}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {errors.lastName?.message}
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </div>
-              </div>
-
-              <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter your email"
-                  isInvalid={!!errors.email}
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                <TextField
+                  label="First Name"
+                  fullWidth
+                  error={!!errors.firstName}
+                  helperText={errors.firstName?.message}
+                  disabled={isLoading}
+                  {...register("firstName", {
+                    required: "First name is required",
+                  })}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                  label="Last Name"
+                  fullWidth
+                  error={!!errors.lastName}
+                  helperText={errors.lastName?.message}
+                  disabled={isLoading}
+                  {...register("lastName", {
+                    required: "Last name is required",
+                  })}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Email"
+                  fullWidth
+                  error={!!errors.email}
+                  helperText={errors.email?.message}
                   disabled={isLoading}
                   {...register("email", {
                     required: "Email is required",
@@ -153,101 +138,74 @@ const Register = () => {
                     },
                   })}
                 />
-                <Form.Control.Feedback type="invalid">
-                  {errors.email?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Password"
                   type="password"
-                  placeholder="Enter your password"
-                  isInvalid={!!errors.password}
+                  fullWidth
+                  error={!!errors.password}
+                  helperText={errors.password?.message}
                   disabled={isLoading}
                   {...register("password", {
                     required: "Password is required",
-                    minLength: {
-                      value: 6,
-                      message: "Password must be at least 6 characters",
-                    },
+                    minLength: { value: 6, message: "Minimum 6 characters" },
                   })}
                 />
-                <Form.Control.Feedback type="invalid">
-                  {errors.password?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="confirmPassword">
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Confirm Password"
                   type="password"
-                  placeholder="Confirm your password"
-                  isInvalid={!!errors.confirmPassword}
+                  fullWidth
+                  error={!!errors.confirmPassword}
+                  helperText={errors.confirmPassword?.message}
                   disabled={isLoading}
                   {...register("confirmPassword", {
-                    required: "Please confirm your password",
+                    required: "Please confirm password",
                     validate: (value) =>
                       value === password || "Passwords do not match",
                   })}
                 />
-                <Form.Control.Feedback type="invalid">
-                  {errors.confirmPassword?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
-
-              <Form.Group className="mb-4" controlId="acceptTerms">
-                <Form.Check
-                  type="checkbox"
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      {...register("acceptTerms", {
+                        required: "You must accept the terms",
+                      })}
+                      disabled={isLoading}
+                    />
+                  }
                   label="I agree to the terms and conditions"
-                  isInvalid={!!errors.acceptTerms}
-                  disabled={isLoading}
-                  {...register("acceptTerms", {
-                    required: "You must accept the terms and conditions",
-                  })}
                 />
-                <Form.Control.Feedback type="invalid">
-                  {errors.acceptTerms?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
-
-              <div className="d-grid">
+                {errors.acceptTerms && (
+                  <Typography color="error" variant="caption">
+                    {errors.acceptTerms.message}
+                  </Typography>
+                )}
+              </Grid>
+              <Grid item xs={12}>
                 <Button
+                  fullWidth
+                  variant="contained"
                   type="submit"
-                  variant="primary"
-                  className="py-2"
                   disabled={isLoading}
+                  startIcon={isLoading ? <CircularProgress size={20} /> : null}
                 >
-                  {isLoading ? (
-                    <>
-                      <Spinner
-                        as="span"
-                        animation="border"
-                        size="sm"
-                        role="status"
-                        aria-hidden="true"
-                        className="me-2"
-                      />
-                      Registering...
-                    </>
-                  ) : (
-                    "Register"
-                  )}
+                  {isLoading ? "Registering..." : "Register"}
                 </Button>
-              </div>
-            </Form>
-
-            <div className="text-center mt-4">
-              Already have an account?{" "}
-              <a href="/login" className="text-decoration-none">
-                Sign in
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography align="center" variant="body2">
+                  Already have an account? <a href="/login">Sign in</a>
+                </Typography>
+              </Grid>
+            </Grid>
+          </form>
+        </Box>
+      </Box>
+    </Container>
   );
-};
-
-export default Register;
+}

@@ -1,1 +1,3 @@
-export { default as OrderDetail } from "./OrderDetail";
+import OrderDetail from "./OrderDetail";
+
+export default OrderDetail;

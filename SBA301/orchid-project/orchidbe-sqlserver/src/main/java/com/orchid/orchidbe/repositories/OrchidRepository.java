@@ -1,6 +1,6 @@
 package com.orchid.orchidbe.repositories;
 
-import com.orchid.orchidbe.pojos.Orchid;
+import com.orchid.orchidbe.domain.orchid.Orchid;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

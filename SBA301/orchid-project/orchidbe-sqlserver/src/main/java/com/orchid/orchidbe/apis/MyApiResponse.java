@@ -76,6 +76,12 @@ public sealed interface MyApiResponse<T>
         ));
     }
 
+    static <T> ResponseEntity<MyApiResponse<T>> success() {
+        return ResponseEntity.ok(new Success<>(
+            200, "Success", null, Instant.now()
+        ));
+    }
+
     static <T> ResponseEntity<MyApiResponse<T>> created(T data) {
         return ResponseEntity.status(HttpStatus.CREATED).body(new Success<>(
             201, "Created successfully", data, Instant.now()

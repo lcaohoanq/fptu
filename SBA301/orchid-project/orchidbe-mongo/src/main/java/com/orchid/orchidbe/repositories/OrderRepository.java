@@ -1,6 +1,6 @@
 package com.orchid.orchidbe.repositories;
 
-import com.orchid.orchidbe.pojos.Order;
+import com.orchid.orchidbe.domain.order.Order;
 import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

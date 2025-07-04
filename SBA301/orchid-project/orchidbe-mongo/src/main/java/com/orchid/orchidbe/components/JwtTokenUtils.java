@@ -2,8 +2,8 @@ package com.orchid.orchidbe.components;
 
 import com.orchid.orchidbe.exceptions.InvalidParamException;
 import com.orchid.orchidbe.exceptions.JwtAuthenticationException;
-import com.orchid.orchidbe.pojos.Account;
-import com.orchid.orchidbe.pojos.Token;
+import com.orchid.orchidbe.domain.account.Account;
+import com.orchid.orchidbe.domain.token.Token;
 import com.orchid.orchidbe.repositories.TokenRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

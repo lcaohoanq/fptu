@@ -1,6 +1,6 @@
 package com.orchid.orchidbe.repositories;
 
-import com.orchid.orchidbe.pojos.Token;
+import com.orchid.orchidbe.domain.token.Token;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

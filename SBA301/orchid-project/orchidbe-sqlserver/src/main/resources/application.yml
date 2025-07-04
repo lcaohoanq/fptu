@@ -1,9 +1,12 @@
+api:
+  prefix: /api
+
 spring:
   application:
     name: orchidbe
 
   profiles:
-    active: test
+    active: pg
 
 springdoc:
   api-docs:
@@ -19,9 +22,9 @@ springdoc:
 
 # JWT configuration
 jwt:
-  expiration: ${JWT_EXPIRATION} #1 day = 1 * 24 * 60 * 60
-  expiration-refresh-token: ${JWT_REFRESH_TOKEN_EXPIRATION} #60 days = 60 * 24 * 60 * 60
-  secretKey: ${JWT_SECRET_KEY}
+  expiration: ${JWT_EXPIRATION:86400} #1 day = 1 * 24 * 60 * 60
+  expiration-refresh-token: ${JWT_REFRESH_TOKEN_EXPIRATION:5184000} #60 days = 60 * 24 * 60 * 60
+  secretKey: ${JWT_SECRET_KEY:LuuCaoHoangLuuCaoHoangLuuCaoHoangLuuCaoHoangLuuCaoHoang}
 
 # Logging configuration
 logging:
@@ -35,7 +38,6 @@ logging:
     org.springframework.web: ${SPRING_WEB_LOG_LEVEL:INFO}
     org.springframework.security: ${SECURITY_LOG_LEVEL:INFO}
     org.springframework.data.mongodb: ${MONGO_LOG_LEVEL:INFO}
-    org.mongodb.driver: ${MONGO_DRIVER_LOG_LEVEL:WARN}
 
     # Root level
     root: ${ROOT_LOG_LEVEL:WARN}

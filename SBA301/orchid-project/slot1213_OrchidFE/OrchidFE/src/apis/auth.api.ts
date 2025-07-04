@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LoginRes } from "../types";
+import type { LoginRes } from "../types";
 
 // Define interfaces for API requests and responses
 export interface LoginRequest {

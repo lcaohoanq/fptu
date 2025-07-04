@@ -50,49 +50,14 @@ public class WebSecurityConfig {
                 .authenticationEntryPoint(authenticationEntryPoint)
                 .accessDeniedHandler(accessDeniedHandler))
             .authorizeHttpRequests(auth -> auth
-                // Authentication endpoints
+                // === PUBLIC ENDPOINTS (No authentication required) ===
+
+                // Public endpoints
                 .requestMatchers(
                     String.format("%s/auth/login", apiPrefix),
-                    String.format("%s/auth/register", apiPrefix)
+                    String.format("%s/auth/register", apiPrefix),
+                    String.format("%s/public/**", apiPrefix)
                 ).permitAll()
-
-                // Public API endpoints
-                .requestMatchers(GET,
-                                 String.format("%s/roles/**", apiPrefix),
-                                 String.format("%s/categories/**", apiPrefix),
-                                 String.format("%s/accounts/**", apiPrefix),
-                                 String.format("%s/orchids/**", apiPrefix)
-                ).permitAll()
-
-                // Require ADMIN role for POST operations
-                .requestMatchers(POST,
-                                 String.format("%s/roles/**", apiPrefix),
-                                 String.format("%s/categories/**", apiPrefix),
-                                 String.format("%s/accounts/register", apiPrefix),
-                                 String.format("%s/orchids/**", apiPrefix)
-                ).permitAll()
-                //.hasAnyRole("ADMIN")
-
-                // Require ADMIN role for PUT operations
-                .requestMatchers(PUT,
-                                 String.format("%s/roles/**", apiPrefix),
-                                 String.format("%s/categories/**", apiPrefix),
-                                 String.format("%s/orchids/**", apiPrefix)
-                ).permitAll()
-                //.hasAnyRole("ADMIN")
-
-                // Require ADMIN role for DELETE operations
-                .requestMatchers(DELETE,
-                                 String.format("%s/roles/**", apiPrefix),
-                                 String.format("%s/categories/**", apiPrefix),
-                                 String.format("%s/orchids/**", apiPrefix)
-                ).permitAll()
-                //.hasAnyRole("ADMIN")
-
-                // Required Authenticated User
-                .requestMatchers(GET,
-                                 String.format("%s/accounts/me", apiPrefix)
-                ).authenticated()
 
                 // Swagger UI and API docs
                 .requestMatchers(
@@ -109,7 +74,7 @@ public class WebSecurityConfig {
                 // All other endpoints require authentication
                 .anyRequest().authenticated())
 
-            // Add JWT token filter
+            // Add JWT token filter before the username/password authentication filter
             .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
@@ -124,7 +89,9 @@ public class WebSecurityConfig {
             "http://localhost:5173", 
             "http://localhost:3000",
             "http://127.0.0.1:5173",
-            "http://127.0.0.1:3000"
+            "http://127.0.0.1:3000",
+            "https://orchid-project-vert.vercel.app",
+            "https://vercel.com/lcaohoanqs-projects/orchid-project/5htCDU8U65i2NjaypLCaXibFVVf1"
         ));
 
         // Allow common HTTP methods
