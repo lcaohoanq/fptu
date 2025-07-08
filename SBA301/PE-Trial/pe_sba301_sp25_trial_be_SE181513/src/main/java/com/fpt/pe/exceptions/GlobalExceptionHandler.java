@@ -99,5 +99,17 @@ public class GlobalExceptionHandler {
         );
     }
 
+    @ExceptionHandler(InvalidParamException.class)
+    public ResponseEntity<MyApiResponse<Object>> handleInvalidParamException(
+        InvalidParamException ex
+    ){
+        log.error("InvalidParamException: {}", ex.getMessage());
+        return MyApiResponse.error(
+            HttpStatus.BAD_REQUEST,
+            ex.getMessage(),
+            ex.getCause().getMessage()
+        );
+    }
+
 
 }

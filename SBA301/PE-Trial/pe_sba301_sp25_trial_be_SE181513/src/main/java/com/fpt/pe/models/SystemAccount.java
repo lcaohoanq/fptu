@@ -7,6 +7,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -19,7 +20,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-@Entity(name = "SystemAccounts")
+@Entity
+@Table(name = "system_accounts")
 @Getter
 @Setter
 @Builder
@@ -43,20 +45,15 @@ public class SystemAccount implements UserDetails {
     @Column(nullable = false, updatable = false, unique = true, name = "AccountID")
     private Integer id;
 
-    @Column(name = "Username")
     private String username;
 
-    @Column(unique = true, nullable = false, name = "Email")
     private String email;
 
-    @Column(name = "Password")
     private String password;
 
     @Enumerated(EnumType.ORDINAL)
-    @Column(name = "Role")
     private Role role;
 
-    @Column(name = "IsActive")
     private Boolean isActive;
 
     @Override

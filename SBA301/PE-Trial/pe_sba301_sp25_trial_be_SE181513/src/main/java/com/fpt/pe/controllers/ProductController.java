@@ -1,7 +1,7 @@
 package com.fpt.pe.controllers;
 
 import com.fpt.pe.apis.MyApiResponse;
-import com.fpt.pe.models.BlindBox;
+import com.fpt.pe.models.BlindBox.*;
 import com.fpt.pe.services.BlindBoxService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -31,67 +31,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Tag(name = "blind-boxes", description = "Blind Box API")
 public class ProductController {
-
-    public record BlindBoxRequest(
-        @NotBlank(message = "Name is required")
-        @Size(min = 10, message = "Name must be greater than 10 characters")
-        String name,
-
-        @NotBlank(message = "Rarity is required")
-        String rarity,
-
-        @NotNull(message = "Price is required")
-        Double price,
-
-        @NotNull(message = "Stock is required")
-        @Min(value = 1, message = "Stock must be at least 1")
-        @Max(value = 100, message = "Stock must be at most 100")
-        Integer stock,
-
-        @NotNull(message = "Category ID is required")
-        Integer categoryId
-    ) {}
-
-    // For partial updates (inline editing)
-    public record BlindBoxUpdateRequest(
-        @Size(min = 10, message = "Name must be greater than 10 characters")
-        String name,
-
-        String rarity,
-
-        Double price,
-
-        @Min(value = 1, message = "Stock must be at least 1")
-        @Max(value = 100, message = "Stock must be at most 100")
-        Integer stock,
-
-        Integer categoryId
-    ) {}
-
-    public record BlindBoxResponse(
-        Integer id,
-        String name,
-        String rarity,
-        Double price,
-        Date releaseDate,
-        Integer stock,
-        String categoryName,
-        Integer categoryId) {
-
-        public static BlindBoxResponse from(BlindBox blindBox) {
-            return new BlindBoxResponse(
-                blindBox.getId(),
-                blindBox.getName(),
-                blindBox.getRarity(),
-                blindBox.getPrice(),
-                blindBox.getReleaseDate(),
-                blindBox.getStock(),
-                blindBox.getCategory() != null ? blindBox.getCategory().getName() : null,
-                blindBox.getCategory() != null ? blindBox.getCategory().getId() : null
-            );
-        }
-
-    }
 
     private final BlindBoxService productService;
 

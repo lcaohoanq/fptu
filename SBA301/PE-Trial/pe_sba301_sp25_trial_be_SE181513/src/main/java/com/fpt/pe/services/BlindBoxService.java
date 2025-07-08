@@ -1,9 +1,6 @@
 package com.fpt.pe.services;
 
-import com.fpt.pe.controllers.ProductController.BlindBoxRequest;
-import com.fpt.pe.controllers.ProductController.BlindBoxResponse;
-import com.fpt.pe.controllers.ProductController.BlindBoxUpdateRequest;
-import com.fpt.pe.models.BlindBox;
+import com.fpt.pe.models.BlindBox.*;
 import java.util.List;
 
 public interface BlindBoxService {

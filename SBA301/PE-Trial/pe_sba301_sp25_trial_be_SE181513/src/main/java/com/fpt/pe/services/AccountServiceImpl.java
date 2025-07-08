@@ -38,7 +38,7 @@ public class AccountServiceImpl implements AccountService {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Wrong email or password");
         }
 
-        UsernamePasswordAuthenticationToken authenticationToken =
+        var authenticationToken =
             new UsernamePasswordAuthenticationToken(email, password,
                                                     user.getAuthorities());
         authenticationManager.authenticate(authenticationToken);

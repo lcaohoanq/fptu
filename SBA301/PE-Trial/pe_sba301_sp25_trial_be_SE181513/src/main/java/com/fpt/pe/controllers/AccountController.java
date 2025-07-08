@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/sys-accounts")
 @RestController
 @RequiredArgsConstructor
+@Deprecated
 @Tag(name = "sys-accounts", description = "System Account API")
 public class AccountController {
 

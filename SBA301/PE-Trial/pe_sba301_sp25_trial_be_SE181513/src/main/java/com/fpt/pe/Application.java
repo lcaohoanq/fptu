@@ -7,7 +7,7 @@ import com.fpt.pe.models.SystemAccount.Role;
 import com.fpt.pe.repositories.AccountRepository;
 import com.fpt.pe.repositories.CategoryRepository;
 import com.fpt.pe.repositories.ProductRepository;
-import io.github.lcaohoanq.JavaBrowserLauncher;
+import io.github.lcaohoanq.annotations.BrowserLauncher;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -17,6 +17,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 @RequiredArgsConstructor
+@BrowserLauncher(
+    value = "http://localhost:8080/swagger-ui.html"
+)
 public class Application implements CommandLineRunner {
 
     private final AccountRepository accountRepository;
@@ -27,8 +30,6 @@ public class Application implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-
-        JavaBrowserLauncher.openHomePage("http://localhost:8080/swagger-ui.html");
     }
 
     @Override

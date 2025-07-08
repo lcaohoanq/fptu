@@ -1,9 +1,9 @@
 package com.fpt.pe.services;
 
-import com.fpt.pe.controllers.ProductController.BlindBoxRequest;
-import com.fpt.pe.controllers.ProductController.BlindBoxResponse;
-import com.fpt.pe.controllers.ProductController.BlindBoxUpdateRequest;
 import com.fpt.pe.models.BlindBox;
+import com.fpt.pe.models.BlindBox.BlindBoxRequest;
+import com.fpt.pe.models.BlindBox.BlindBoxResponse;
+import com.fpt.pe.models.BlindBox.BlindBoxUpdateRequest;
 import com.fpt.pe.repositories.CategoryRepository;
 import com.fpt.pe.repositories.ProductRepository;
 import java.util.Date;
