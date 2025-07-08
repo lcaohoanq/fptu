@@ -40,7 +40,7 @@ function App() {
         />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route
             path="/infor-cars"
             element={<BlindBoxManagement user={user} />}
