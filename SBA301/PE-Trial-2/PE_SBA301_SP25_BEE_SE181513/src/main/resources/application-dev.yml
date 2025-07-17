@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://${SQL_SERVER_HOST}:${SQL_SERVER_PORT};databaseName=Sum2025BlindBoxesDB;trustServerCertificate=true
-    username: ${SQL_SERVER_USER}
-    password: ${SQL_SERVER_PASS}
+    url: jdbc:sqlserver://localhost:1433;databaseName=Sum2025BlindBoxesDB;trustServerCertificate=true
+    username: sa
+    password: 12345
 
   jpa:
     hibernate:

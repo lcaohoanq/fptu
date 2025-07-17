@@ -31,9 +31,6 @@ public class JwtTokenUtils {
     @Value("${jwt.expiration}")
     private int expiration; //save to an environment variable
 
-    @Value("${jwt.expiration-refresh-token}")
-    private int expirationRefreshToken;
-
     @Value("${jwt.secretKey}")
     private String secretKey;
 

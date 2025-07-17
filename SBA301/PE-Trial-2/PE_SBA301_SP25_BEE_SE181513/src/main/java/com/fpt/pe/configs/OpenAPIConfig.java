@@ -36,15 +36,4 @@ import org.springframework.context.annotation.Configuration;
     bearerFormat = "JWT"
 )
 public class OpenAPIConfig {
-
-
-    @Bean
-    public OpenAPI customOpenAPI() {
-        return new OpenAPI()
-            .info(new io.swagger.v3.oas.models.info.Info()
-                      .title("FPT BE Service API")
-                      .version("1.0")
-                      .license(new License().name("MIT").url("https://opensource.org/licenses/MIT"))
-            );
-    }
 }

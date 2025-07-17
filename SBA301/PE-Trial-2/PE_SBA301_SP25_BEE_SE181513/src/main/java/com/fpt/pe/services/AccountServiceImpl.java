@@ -1,8 +1,8 @@
 package com.fpt.pe.services;
 
 import com.fpt.pe.components.JwtTokenUtils;
-import com.fpt.pe.controllers.AuthController.LoginDTO;
-import com.fpt.pe.controllers.AuthController.LoginRes;
+import com.fpt.pe.controllers.AccountController.LoginDTO;
+import com.fpt.pe.controllers.AccountController.LoginRes;
 import com.fpt.pe.models.AccountMember;
 import com.fpt.pe.models.AccountMember.Role;
 import com.fpt.pe.repositories.AccountRepository;

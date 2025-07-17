@@ -6,6 +6,8 @@ import com.fpt.pe.apis.MyApiResponse;
 import com.fpt.pe.models.Car;
 import com.fpt.pe.models.Country;
 import com.fpt.pe.services.CarService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
@@ -28,10 +30,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RequestMapping("/api/info-cars")
+@RequestMapping("/api/infocars")
 @RestController
 @RequiredArgsConstructor
-@Tag(name = "info-cars", description = "Car API")
+@Tag(name = "infocars", description = "Car API")
 public class CarController {
 
     public record CarRequest(
@@ -97,28 +99,57 @@ public class CarController {
     private final CarService carService;
 
     @GetMapping("")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Successful"),
+        @ApiResponse(responseCode = "401", description = "Unauthorized"),
+        @ApiResponse(responseCode = "403", description = "Forbidden"),
+    })
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_STAFF')")
     public ResponseEntity<?> findAll() {
         return MyApiResponse.success(carService.getAll());
     }
 
     @GetMapping("/{id}")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Successful"),
+        @ApiResponse(responseCode = "401", description = "Unauthorized"),
+        @ApiResponse(responseCode = "403", description = "Forbidden"),
+    })
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_STAFF')")
     public ResponseEntity<?> findById(@PathVariable Integer id) {
         return MyApiResponse.success(carService.getById(id));
     }
 
     @PostMapping("")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Login successful"),
+        @ApiResponse(responseCode = "401", description = "Unauthorized"),
+        @ApiResponse(responseCode = "403", description = "Forbidden"),
+    })
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_STAFF')")
     public ResponseEntity<?> create(@Valid @RequestBody CarController.CarRequest request) {
         return MyApiResponse.success(carService.create(request));
     }
 
     @PutMapping("/{id}")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Login successful"),
+        @ApiResponse(responseCode = "401", description = "Unauthorized"),
+        @ApiResponse(responseCode = "403", description = "Forbidden"),
+        @ApiResponse(responseCode = "404", description = "Account not found"),
+    })
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_STAFF')")
     public ResponseEntity<?> updatePartial(@PathVariable Integer id, @Valid @RequestBody CarController.CarUpdateRequest request) {
         return MyApiResponse.success(carService.updatePartial(id, request));
     }
 
     @DeleteMapping("/{id}")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Login successful"),
+        @ApiResponse(responseCode = "401", description = "Unauthorized"),
+        @ApiResponse(responseCode = "403", description = "Forbidden"),
+        @ApiResponse(responseCode = "404", description = "Account not found"),
+    })
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     public ResponseEntity<?> deleteById(@PathVariable Integer id) {
         carService.deleteById(id);
