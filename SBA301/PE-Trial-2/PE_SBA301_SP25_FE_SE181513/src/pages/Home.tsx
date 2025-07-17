@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Alert, Container, Table } from "react-bootstrap";
-import { blindBoxAPI } from "../apis/api.config";
+import { carAPI } from "../apis/api.config";
 import type { Car } from "../types";
 
 const Home = () => {
-  const [blindBoxes, setBlindBoxes] = useState<Car[]>([]);
+  const [cares, setCares] = useState<Car[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -15,8 +15,8 @@ const Home = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const blindBoxData = await blindBoxAPI.getAll();
-      setBlindBoxes(blindBoxData);
+      const carData = await carAPI.getAll();
+      setCares(carData);
     } catch (err: any) {
       setError("Failed to fetch data");
     } finally {
@@ -46,15 +46,15 @@ const Home = () => {
           </tr>
         </thead>
         <tbody>
-          {blindBoxes.map((blindBox) => (
-            <tr key={blindBox.id}>
-              <td>{blindBox.id}</td>
-              <td>{blindBox.name}</td>
-              <td>${blindBox.price}</td>
-              <td>{new Date(blindBox.createdAt).toLocaleDateString()}</td>
-              <td>{new Date(blindBox.updatedAt).toLocaleDateString()}</td>
-              <td>{blindBox.stock}</td>
-              <td>{blindBox.country.name}</td>
+          {cares.map((car) => (
+            <tr key={car.id}>
+              <td>{car.id}</td>
+              <td>{car.name}</td>
+              <td>${car.price}</td>
+              <td>{new Date(car.createdAt).toLocaleDateString()}</td>
+              <td>{new Date(car.updatedAt).toLocaleDateString()}</td>
+              <td>{car.stock}</td>
+              <td>{car.country.name}</td>
             </tr>
           ))}
         </tbody>

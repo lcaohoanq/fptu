@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, Modal, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import { authAPI } from "../apis/api.config";
 import type { LoginRequest } from "../types";
 

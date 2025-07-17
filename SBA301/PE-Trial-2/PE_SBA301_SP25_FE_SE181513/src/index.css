@@ -1,0 +1,24 @@
+/* Toast notifications styling */
+.react-hot-toast-container {
+  z-index: 9999 !important;
+}
+
+/* Ensure toasts appear above Bootstrap modals */
+div[data-react-hot-toast] {
+  z-index: 9999 !important;
+}
+
+/* Additional styling for better visibility */
+.toast {
+  z-index: 9999 !important;
+  position: relative !important;
+}
+
+/* Ensure modal doesn't interfere with toast positioning */
+.modal {
+  z-index: 1055 !important;
+}
+
+.modal-backdrop {
+  z-index: 1050 !important;
+}
