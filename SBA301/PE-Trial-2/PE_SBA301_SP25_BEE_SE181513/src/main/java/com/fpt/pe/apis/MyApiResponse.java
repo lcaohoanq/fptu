@@ -32,7 +32,6 @@ public sealed interface MyApiResponse<T>
         @Override public Instant getTimestamp() { return timestamp; }
     }
 
-    // ✅ Enhanced Error record with path tracking
     record Error<T>(
         int statusCode,
         String message,
@@ -45,7 +44,6 @@ public sealed interface MyApiResponse<T>
         @Override public Instant getTimestamp() { return timestamp; }
     }
 
-    // ✅ Enhanced ValidationError record with path tracking
     record ValidationError<T>(
         int statusCode,
         String message,
@@ -58,7 +56,6 @@ public sealed interface MyApiResponse<T>
         @Override public Instant getTimestamp() { return timestamp; }
     }
 
-    // ✅ Helper method to get current request path
     private static String getCurrentPath() {
         try {
             ServletRequestAttributes attributes =
@@ -69,7 +66,6 @@ public sealed interface MyApiResponse<T>
         }
     }
 
-    // ✅ Helper methods (updated to include path)
     static <T> ResponseEntity<MyApiResponse<T>> success(T data) {
         return ResponseEntity.ok(new Success<>(
             200, "Success", data, Instant.now()
@@ -139,7 +135,6 @@ public sealed interface MyApiResponse<T>
             ));
     }
 
-    // ✅ Overloaded methods for explicit path specification
     static <T> ResponseEntity<MyApiResponse<T>> badRequest(String reason, String path) {
         return ResponseEntity.badRequest().body(new Error<>(
             400, "Bad Request", reason, path, Instant.now()
