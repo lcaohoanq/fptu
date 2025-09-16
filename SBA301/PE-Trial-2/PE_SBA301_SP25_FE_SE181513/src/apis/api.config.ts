@@ -1,5 +1,6 @@
 import axios from "axios";
 import toast from "react-hot-toast";
+import { toastConfig } from "../config/toastConfig";
 import type {
   Car,
   CreateCarRequest,
@@ -45,65 +46,17 @@ api.interceptors.response.use(
       // Show individual field errors with better formatting
       Object.entries(fieldErrors).forEach(([field, message]) => {
         const fieldName = field.charAt(0).toUpperCase() + field.slice(1);
-        toast.error(`${fieldName}: ${message}`, {
-          duration: 6000,
-          style: {
-            background: "#ef4444",
-            color: "#fff",
-            zIndex: 9999,
-            maxWidth: "400px",
-            padding: "16px",
-            borderRadius: "8px",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-          },
-          position: "top-right",
-        });
+        toast.error(`${fieldName}: ${message}`, toastConfig.errorLong);
       });
     } else if (error.response?.data?.message) {
       // Show general error message
-      toast.error(error.response.data.message, {
-        duration: 4000,
-        style: {
-          background: "#ef4444",
-          color: "#fff",
-          zIndex: 9999,
-          maxWidth: "400px",
-          padding: "16px",
-          borderRadius: "8px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-        },
-        position: "top-right",
-      });
+      toast.error(error.response.data.message, toastConfig.error);
     } else if (error.message) {
       // Show network or other errors
-      toast.error(error.message, {
-        duration: 4000,
-        style: {
-          background: "#ef4444",
-          color: "#fff",
-          zIndex: 9999,
-          maxWidth: "400px",
-          padding: "16px",
-          borderRadius: "8px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-        },
-        position: "top-right",
-      });
+      toast.error(error.message, toastConfig.error);
     } else {
       // Fallback error message
-      toast.error("An unexpected error occurred", {
-        duration: 4000,
-        style: {
-          background: "#ef4444",
-          color: "#fff",
-          zIndex: 9999,
-          maxWidth: "400px",
-          padding: "16px",
-          borderRadius: "8px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-        },
-        position: "top-right",
-      });
+      toast.error("An unexpected error occurred", toastConfig.error);
     }
 
     return Promise.reject(error);
@@ -125,19 +78,7 @@ export const carAPI = {
 
   create: async (car: CreateCarRequest): Promise<Car> => {
     const response = await api.post(API_CONFIG.API_PATH.INFOS_CARS, car);
-    toast.success("Blind box created successfully!", {
-      duration: 3000,
-      style: {
-        background: "#10b981",
-        color: "#fff",
-        zIndex: 9999,
-        maxWidth: "400px",
-        padding: "16px",
-        borderRadius: "8px",
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-      },
-      position: "top-right",
-    });
+    toast.success("Blind box created successfully!", toastConfig.success);
     return response.data.data;
   },
 
@@ -146,37 +87,13 @@ export const carAPI = {
       `${API_CONFIG.API_PATH.INFOS_CARS}/${id}`,
       car
     );
-    toast.success("Blind box updated successfully!", {
-      duration: 3000,
-      style: {
-        background: "#10b981",
-        color: "#fff",
-        zIndex: 9999,
-        maxWidth: "400px",
-        padding: "16px",
-        borderRadius: "8px",
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-      },
-      position: "top-right",
-    });
+    toast.success("Blind box updated successfully!", toastConfig.success);
     return response.data.data;
   },
 
   delete: async (id: number): Promise<void> => {
     await api.delete(`${API_CONFIG.API_PATH.INFOS_CARS}/${id}`);
-    toast.success("Blind box deleted successfully!", {
-      duration: 3000,
-      style: {
-        background: "#10b981",
-        color: "#fff",
-        zIndex: 9999,
-        maxWidth: "400px",
-        padding: "16px",
-        borderRadius: "8px",
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-      },
-      position: "top-right",
-    });
+    toast.success("Blind box deleted successfully!", toastConfig.success);
   },
 };
 

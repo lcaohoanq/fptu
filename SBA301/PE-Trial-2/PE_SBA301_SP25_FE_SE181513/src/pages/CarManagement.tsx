@@ -227,12 +227,12 @@ const CreateCarModal: React.FC<{
               onChange={(e) =>
                 setFormData({ ...formData, stock: parseInt(e.target.value) })
               }
-              min={1}
+              min={5}
               max={100}
               required
             />
             <Form.Text className="text-muted">
-              Stock must be between 1 and 100
+              Stock must be between 5 and 100
             </Form.Text>
           </Form.Group>
 
@@ -353,12 +353,12 @@ const UpdateCarModal: React.FC<{
               onChange={(e) =>
                 setFormData({ ...formData, stock: parseInt(e.target.value) })
               }
-              min={1}
+              min={5}
               max={100}
               required
             />
             <Form.Text className="text-muted">
-              Stock must be between 1 and 100
+              Stock must be between 5 and 100
             </Form.Text>
           </Form.Group>
 

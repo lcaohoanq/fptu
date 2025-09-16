@@ -4,7 +4,6 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import NavigationBar from "./components/NavigationBar";
 import CarManagement from "./pages/CarManagement";
-import Home from "./pages/Home";
 
 function App() {
   const [user, setUser] = useState<any>(null);
