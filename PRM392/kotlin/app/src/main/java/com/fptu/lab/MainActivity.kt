@@ -45,6 +45,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.fptu.lab.lab2.Lab2_Bai1_Preview
+import com.fptu.lab.lab2.Lab2_Bai2_Preview
 import com.fptu.lab.ui.theme.labTheme
 
 class MainActivity : ComponentActivity() {
@@ -53,29 +55,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            labTheme {
-                Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
-                    TopAppBar(
-                        title = { Text("Linear Layouts in Jetpack Compose") },
-                        colors = TopAppBarDefaults.topAppBarColors(
-                            containerColor = Color.Red,
-                            titleContentColor = Color.White
-
-                        )
-                    )
-
-                }) { innerPadding ->
-                    Text(
-                        text = "Hello World!",
-                        fontSize = 30.sp,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(innerPadding)
-                            .background(Color.Cyan),
-                        color = Color.White
-                    )
-                }
-            }
+            Lab2_Bai1_Preview()
         }
     }
 }
