@@ -47,6 +47,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fptu.lab.lab2.Lab2_Bai1_Preview
 import com.fptu.lab.lab2.Lab2_Bai2_Preview
+import com.fptu.lab.lab3.Lab3_Bai1_Preview
+import com.fptu.lab.lab3.Lab3_Bai2_Preview
+import com.fptu.lab.lab4.Lab4Screen
 import com.fptu.lab.ui.theme.labTheme
 
 class MainActivity : ComponentActivity() {
@@ -55,7 +58,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Lab2_Bai1_Preview()
+            Lab4Screen()
         }
     }
 }

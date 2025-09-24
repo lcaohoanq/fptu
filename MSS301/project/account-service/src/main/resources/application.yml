@@ -1,0 +1,42 @@
+api:
+  prefix: /api
+
+spring:
+  application:
+    name: accountservice
+
+  profiles:
+    active: h2
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    try-it-out-enabled: true
+    filter: true
+    doc-expansion: none
+    enabled: true
+    path: /swagger-ui.html
+
+# JWT configuration
+jwt:
+  expiration: ${JWT_EXPIRATION:86400} #1 day = 1 * 24 * 60 * 60
+  expiration-refresh-token: ${JWT_REFRESH_TOKEN_EXPIRATION:5184000} #60 days = 60 * 24 * 60 * 60
+  secretKey: ${JWT_SECRET_KEY:LuuCaoHoangLuuCaoHoangLuuCaoHoangLuuCaoHoangLuuCaoHoang}
+
+
+
+# Optional: Management endpoints for monitoring logs
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,loggers
+  endpoint:
+    loggers:
+      access: unrestricted
+
+server:
+  port: 8080
