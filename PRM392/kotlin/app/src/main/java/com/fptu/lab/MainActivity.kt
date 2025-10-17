@@ -60,11 +60,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            // Switch to Lab9App to test the Recipe Search application
-            Lab9App()
-            
-            // Uncomment below to go back to the previous menu
-            // MenuDemoApp()
+            Lab3_Bai2_Preview()
         }
     }
 }
