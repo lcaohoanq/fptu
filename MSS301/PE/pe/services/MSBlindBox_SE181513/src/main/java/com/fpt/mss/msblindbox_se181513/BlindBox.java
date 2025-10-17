@@ -1,4 +1,4 @@
-package com.fpt.mss.msbrand_se181513;
+package com.fpt.mss.msblindbox_se181513;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,7 +38,7 @@ public class BlindBox {
     private Integer stock;
 
     @ManyToOne
-    @JoinColumn(name = "brand_id", nullable = false)
-    private Brand brand;
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
 }
