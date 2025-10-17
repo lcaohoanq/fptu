@@ -6,7 +6,7 @@ api:
 
 spring:
   application:
-    name: orchidservice
+    name: orchid-service
 
   profiles:
     active: h2
@@ -46,3 +46,11 @@ management:
   endpoint:
     loggers:
       access: unrestricted
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+#    instance-id: lch-orchid-service
+

@@ -3,12 +3,14 @@ api:
 
 spring:
   application:
-    name: accountservice
+    name: account-service
 
   profiles:
     active: h2
 
   cloud:
+    compatibility-verifier:
+      enabled: false
     discovery:
       enabled: true
       eureka:
@@ -48,3 +50,10 @@ management:
 
 server:
   port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

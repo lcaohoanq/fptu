@@ -6,7 +6,7 @@ api:
 
 spring:
   application:
-    name: orderservice
+    name: order-service
 
   profiles:
     active: h2

@@ -50,6 +50,8 @@ import com.fptu.lab.lab2.Lab2_Bai2_Preview
 import com.fptu.lab.lab3.Lab3_Bai1_Preview
 import com.fptu.lab.lab3.Lab3_Bai2_Preview
 import com.fptu.lab.lab4.Lab4Screen
+import com.fptu.lab.lab5.MenuDemoApp
+import com.fptu.lab.lab9.Lab9App
 import com.fptu.lab.ui.theme.labTheme
 
 class MainActivity : ComponentActivity() {
@@ -58,7 +60,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Lab4Screen()
+            // Switch to Lab9App to test the Recipe Search application
+            Lab9App()
+            
+            // Uncomment below to go back to the previous menu
+            // MenuDemoApp()
         }
     }
 }
