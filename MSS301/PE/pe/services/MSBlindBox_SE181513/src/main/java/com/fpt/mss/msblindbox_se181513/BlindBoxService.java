@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface BlindBoxService {
 
-    List<BlindBox> getAll();
-
+    List<BlindBoxResponse> getAll();
+    BlindBoxResponse create(BlindBoxRequest request);
+    BlindBoxResponse update(Integer id, BlindBoxRequest request);
+    void delete(Integer id);
 }

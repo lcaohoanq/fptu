@@ -5,34 +5,30 @@ spring:
     name: gateway-server
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
       routes:
         # Auth service routes (public - no JWT validation needed)
         - id: auth-service
-          uri: lb://auth-server
+          uri: http://localhost:4007
           predicates:
             - Path=/api/auth/**
           filters:
             - RewritePath=/api/auth/(?<segment>.*), /api/auth/$\{segment}
 
         # User service routes (protected - JWT validation required)
-        - id: user-service
-          uri: lb://user-service
+        - id: brand-service
+          uri: http://localhost:4005
           predicates:
-            - Path=/api/users/**
+            - Path=/api/brand/**
           filters:
-            - RewritePath=/api/users/(?<segment>.*), /api/users/$\{segment}
+            - RewritePath=/api/brand/(?<segment>.*), /api/brand/$\{segment}
 
         # Product service routes (protected - JWT validation required)
-        - id: product-service
-          uri: lb://product-service
+        - id: blindboxes-service
+          uri: http://localhost:4006
           predicates:
-            - Path=/api/products/**
+            - Path=/api/blindboxes/**
           filters:
-            - RewritePath=/api/products/(?<segment>.*), /api/products/$\{segment}
+            - RewritePath=/api/blindboxes/(?<segment>.*), /api/blindboxes/$\{segment}
 
 server:
   port: 4000

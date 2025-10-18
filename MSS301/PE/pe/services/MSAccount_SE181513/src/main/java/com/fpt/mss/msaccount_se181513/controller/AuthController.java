@@ -27,7 +27,7 @@ public class AuthController {
         @Valid @RequestBody LoginRequest loginRequest,
         HttpServletRequest request
     ) {
-        log.info("Login attempt for user: {}", loginRequest.getUsername());
+        log.info("Login attempt for user: {}", loginRequest.getEmail());
         LoginResponse response = authService.login(loginRequest, request);
         return MyApiResponse.success(response);
     }

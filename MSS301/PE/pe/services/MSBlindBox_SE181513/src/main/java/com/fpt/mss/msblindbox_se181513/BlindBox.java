@@ -41,4 +41,16 @@ public class BlindBox {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
+    public static BlindBoxResponse toResponse(BlindBox blindBox) {
+        return BlindBoxResponse.builder()
+                .id(blindBox.getId())
+                .name(blindBox.getName())
+                .rarity(blindBox.getRarity())
+                .price(blindBox.getPrice())
+                .releaseDate(blindBox.getReleaseDate())
+                .stock(blindBox.getStock())
+                .categoryName(blindBox.getCategory().getName())
+                .build();
+    }
+
 }

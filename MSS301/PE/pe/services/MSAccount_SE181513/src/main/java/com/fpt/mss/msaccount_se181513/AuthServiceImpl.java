@@ -5,11 +5,9 @@ import com.fpt.mss.msaccount_se181513.dto.LoginRequest;
 import com.fpt.mss.msaccount_se181513.dto.LoginResponse;
 import com.fpt.mss.msaccount_se181513.dto.UserResponse;
 import jakarta.servlet.http.HttpServletRequest;
-import java.time.ZonedDateTime;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -32,14 +30,18 @@ public class AuthServiceImpl implements AuthService{
 
     @Override
     public LoginResponse login(LoginRequest loginRequest, HttpServletRequest request) {
-        log.info("🔐 Starting login process for user: {}", loginRequest.getUsername());
-
-
-        var user = accountRepository.findByEmail(loginRequest.getUsername()).orElseThrow(
+        log.info("🔐 Starting login process for user: {}", loginRequest.getEmail());
+        var user = accountRepository.findByEmail(loginRequest.getEmail()).orElseThrow(
             () -> new BadCredentialsException("Invalid credentials")
         );
+
+        if(!user.isActive()) {
+            log.warn("❌ Attempt to login to inactive account: {}", loginRequest.getEmail());
+            throw new BadCredentialsException("Account is inactive");
+        }
+
         if (!passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-            log.warn("❌ Invalid password for user: {}", loginRequest.getUsername());
+            log.warn("❌ Invalid password for user: {}", loginRequest.getEmail());
             throw new BadCredentialsException("Invalid credentials");
         }
 
