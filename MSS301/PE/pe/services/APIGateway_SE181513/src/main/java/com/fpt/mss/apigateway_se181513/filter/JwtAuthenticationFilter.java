@@ -26,7 +26,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
         String path = request.getURI().getPath();
 
         // Skip authentication for auth endpoints and actuator
-        if (isPublicPath(path)) {
+        if (isPublicPath(request)) {
             return chain.filter(exchange);
         }
 
@@ -75,16 +75,31 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
         }
     }
 
-    private boolean isPublicPath(String path) {
+    private boolean isPublicPath(ServerHttpRequest request) {
+        String path = request.getURI().getPath();
+        String method = request.getMethod().name();
+        
         // Public auth endpoints that don't require authentication
-        return path.equals("/api/auth/login") ||
-               path.equals("/api/auth/register") ||
-               path.equals("/api/auth/refresh") ||
-               path.equals("/api/auth/validate") ||
-               path.equals("/api/auth/activate") ||
-               path.startsWith("/api/auth/reset-password/") ||
-               // Other public paths
-               path.startsWith("/actuator/") ||
+        if (path.equals("/api/auth/login") ||
+            path.equals("/api/auth/register") ||
+            path.equals("/api/auth/refresh") ||
+            path.equals("/api/auth/validate") ||
+            path.equals("/api/auth/activate") ||
+            path.startsWith("/api/auth/reset-password/")) {
+            return true;
+        }
+        
+        // Public GET endpoints (browsing products/brands)
+        if ("GET".equals(method)) {
+            if (path.startsWith("/api/blindboxes") ||
+                path.startsWith("/api/brand") ||
+                path.startsWith("/api/categories")) {
+                return true;
+            }
+        }
+        
+        // Other public paths
+        return path.startsWith("/actuator/") ||
                path.startsWith("/swagger-ui/") ||
                path.startsWith("/v3/api-docs/") ||
                path.startsWith("/webjars/") ||

@@ -1,5 +1,6 @@
 package com.fpt.mss.msblindbox_se181513;
 
+import com.fpt.mss.msblindbox_se181513.annotations.RequireRole;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ public class BlindBoxController {
     }
 
     @PostMapping
+    @RequireRole(Role.ADMIN)
     public ResponseEntity<?> create(
             @Valid @RequestBody BlindBoxRequest request
     ) {
@@ -25,18 +27,18 @@ public class BlindBoxController {
     }
 
     @PutMapping("/{id}")
+    @RequireRole(Role.ADMIN)
     public ResponseEntity<?> update(
             @Valid @RequestBody BlindBoxRequest request,
             @PathVariable Integer id
     ) {
-        // For simplicity, reusing create method for update in this example
-        // In a real scenario, you would have a separate update method in the service
         return ResponseEntity.ok(blindBoxService.update(id, request));
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
+    @RequireRole(Role.ADMIN)
     public ResponseEntity<?> delete(
-            @RequestParam Integer id
+            @PathVariable Integer id
     ) {
         blindBoxService.delete(id);
         return ResponseEntity.ok().build();
