@@ -12,6 +12,7 @@ spring:
           predicates:
             - Path=/api/auth/**
           filters:
+            - AddRequestHeader=X-From-Gateway, true
             - RewritePath=/api/auth/(?<segment>.*), /api/auth/$\{segment}
 
         # User service routes (protected - JWT validation required)
@@ -20,6 +21,7 @@ spring:
           predicates:
             - Path=/api/brand/**
           filters:
+            - AddRequestHeader=X-From-Gateway, true
             - RewritePath=/api/brand/(?<segment>.*), /api/brand/$\{segment}
 
         # Product service routes (protected - JWT validation required)
@@ -28,6 +30,7 @@ spring:
           predicates:
             - Path=/api/blindboxes/**
           filters:
+            - AddRequestHeader=X-From-Gateway, true
             - RewritePath=/api/blindboxes/(?<segment>.*), /api/blindboxes/$\{segment}
 
 server:

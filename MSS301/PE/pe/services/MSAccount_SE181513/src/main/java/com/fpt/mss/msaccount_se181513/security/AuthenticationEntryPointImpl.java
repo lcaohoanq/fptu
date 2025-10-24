@@ -2,7 +2,7 @@
 package com.fpt.mss.msaccount_se181513.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fpt.mss.msaccount_se181513.configs.MyApiResponse;
+import com.fpt.mss.api.MyApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

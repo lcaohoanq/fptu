@@ -1,9 +1,8 @@
 package com.fpt.mss.msblindbox_se181513.aop;
 
-import com.fpt.mss.msblindbox_se181513.Role;
-import com.fpt.mss.msblindbox_se181513.annotations.RequireRole;
-import com.fpt.mss.msblindbox_se181513.configs.MyApiResponse;
-import com.fpt.mss.msblindbox_se181513.utils.PermissionUtils;
+import com.fpt.mss.annotations.RequireRole;
+import com.fpt.mss.enums.Role;
+import com.fpt.mss.api.MyApiResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -30,7 +29,7 @@ public class RoleCheckAspect {
         String role = request.getHeader("X-User-Role");
         Role required = requireRole.value();
 
-        if (!PermissionUtils.hasPermission(role, required)) {
+        if (!com.fpt.mss.utils.PermissionUtils.hasPermission(role, required)) {
             log.warn("❌ Access denied for role {} on {}", role, pjp.getSignature());
 //            return ResponseEntity.status(403).body("Access denied: " + required + " required");
             return MyApiResponse.forbidden("[ROLE_CHECK_ASPECT] ❌ Access denied for role " + role);

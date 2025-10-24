@@ -1,9 +1,9 @@
 package com.fpt.mss.msaccount_se181513.aop;
 
-import com.fpt.mss.msaccount_se181513.Role;
-import com.fpt.mss.msaccount_se181513.annotations.RequireRole;
-import com.fpt.mss.msaccount_se181513.configs.MyApiResponse;
-import com.fpt.mss.msaccount_se181513.utils.PermissionUtils;
+import com.fpt.mss.annotations.RequireRole;
+import com.fpt.mss.api.MyApiResponse;
+import com.fpt.mss.enums.Role;
+import com.fpt.mss.utils.PermissionUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;

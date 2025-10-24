@@ -12,12 +12,16 @@
 
 # Variables to store tokens (will be set manually after each request)
 # NOTE: The token below is MODERATOR role - use admin login to get ADMIN token
-@access-token = eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTU9ERVJBVE9SIiwidXNlcklkIjozLCJlbWFpbCI6Im1pY2hlbEBibGluZGJveGVzLnZuIiwidXNlcm5hbWUiOiJtb2RtaWNoZWwiLCJzdWIiOiJtb2RtaWNoZWwiLCJleHAiOjE3NjA3NjM1NjN9.0YM13l_yGIK7SWrRbq1I1tEzdni_cny06N0VGl7xnFw
+@access-token = eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjEsImVtYWlsIjoiYWRtaW5AYmxpbmRib3hlcy52biIsInVzZXJuYW1lIjoiYWRtaW5zeXMiLCJzdWIiOiJhZG1pbnN5cyIsImV4cCI6MTc2MTI3NjAwNH0.fNWKzNr4MJaSVT6_obLVfNrQJeXdwwMS0tvFMfpIzWY
 @refresh-token = eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ0b2tlblR5cGUiOiJyZWZyZXNoIiwidXNlcklkIjoxLCJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzYwMjUyMTUyfQ.6j_-0Z5IQGPERFaMGxFZOxVmCNPptWwQh-bT3wkxJHs
 
 # Public Endpoint
 ###
 GET {{product-service-url}}/api/blindboxes
+
+# Public Endpoint via Brand Service
+###
+GET {{brand-service-url}}/api/blindboxes
 
 # Public Endpoint via API Gateway
 ###
@@ -49,6 +53,18 @@ Content-Type: application/json
   "price": 100,
   "stock": 10,
   "categoryId": 1
+}
+
+### Create Blind Box via Gateway (Fail validation)
+###
+POST {{gateway-url}}/api/blindboxes
+Authorization: Bearer {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "",
+  "rarity": "",
+  "stock": 300
 }
 
 ### Update Blind Box (Direct to Service)
