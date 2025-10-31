@@ -1,8 +1,10 @@
 package com.fpt.mss.msblindbox_se181513.domain.blindbox;
 
 import com.fpt.mss.annotations.RequireRole;
+import com.fpt.mss.api.MyApiResponse;
 import com.fpt.mss.enums.Role;
 import jakarta.validation.Valid;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +17,8 @@ public class BlindBoxController {
     private final BlindBoxService blindBoxService;
 
     @GetMapping
-    public ResponseEntity<?> getAll(){
-        return ResponseEntity.ok(blindBoxService.getAll());
+    public ResponseEntity<MyApiResponse<List<BlindBoxResponse>>> getAll(){
+        return MyApiResponse.success(blindBoxService.getAll());
     }
 
     @PostMapping
@@ -24,7 +26,7 @@ public class BlindBoxController {
     public ResponseEntity<?> create(
             @Valid @RequestBody BlindBoxRequest request
     ) {
-        return ResponseEntity.ok(blindBoxService.create(request));
+        return MyApiResponse.created(blindBoxService.create(request));
     }
 
     @PutMapping("/{id}")
@@ -33,7 +35,7 @@ public class BlindBoxController {
             @Valid @RequestBody BlindBoxRequest request,
             @PathVariable Integer id
     ) {
-        return ResponseEntity.ok(blindBoxService.update(id, request));
+        return MyApiResponse.success(blindBoxService.update(id, request));
     }
 
     @DeleteMapping("/{id}")
@@ -42,6 +44,6 @@ public class BlindBoxController {
             @PathVariable Integer id
     ) {
         blindBoxService.delete(id);
-        return ResponseEntity.ok().build();
+        return MyApiResponse.noContent();
     }
 }

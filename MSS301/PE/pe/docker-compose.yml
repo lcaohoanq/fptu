@@ -47,7 +47,7 @@ services:
 
   blind-box:
     container_name: mss-pe-blind-box-service
-    image: lcaohoanq/mss-pe-blindbox:hehehe
+    image: lcaohoanq/mss-pe-blindbox:hehehe-new
     build:
       context: .
       dockerfile: Dockerfile
@@ -63,7 +63,7 @@ services:
 
   brand:
     container_name: mss-pe-brand-service
-    image: lcaohoanq/mss-pe-brand:hihihi
+    image: lcaohoanq/mss-pe-brand:hihihi-new
     build:
       context: .
       dockerfile: Dockerfile
@@ -79,7 +79,7 @@ services:
 
   account:
     container_name: mss-pe-account-service
-    image: lcaohoanq/mss-pe-account:hohoho
+    image: lcaohoanq/mss-pe-account:hohoho-new
     build:
       context: .
       dockerfile: Dockerfile

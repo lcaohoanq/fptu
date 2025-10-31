@@ -1,5 +1,6 @@
 package com.fpt.mss.msaccount_se181513.domain.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fpt.mss.enums.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,6 +39,7 @@ public class Account implements UserDetails {
     private String email;
 
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
 
     @Enumerated(EnumType.STRING)

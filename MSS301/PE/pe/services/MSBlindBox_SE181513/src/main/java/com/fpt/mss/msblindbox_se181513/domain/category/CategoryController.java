@@ -1,5 +1,6 @@
 package com.fpt.mss.msblindbox_se181513.domain.category;
 
+import com.fpt.mss.api.MyApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ public class CategoryController {
 
     @GetMapping
     public ResponseEntity<?> getAll() {
-        return ResponseEntity.ok(categoryRepository.findAll());
+        return MyApiResponse.success(categoryRepository.findAll());
     }
 
 }
