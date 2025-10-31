@@ -85,6 +85,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
             path.equals("/api/auth/refresh") ||
             path.equals("/api/auth/validate") ||
             path.equals("/api/auth/activate") ||
+            path.equals("/api/auth/users/test-only") ||
             path.startsWith("/api/auth/reset-password/")) {
             return true;
         }

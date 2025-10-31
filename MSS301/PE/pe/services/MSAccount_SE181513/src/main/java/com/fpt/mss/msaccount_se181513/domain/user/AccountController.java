@@ -27,5 +27,12 @@ public class AccountController {
         return MyApiResponse.success(users);
     }
 
+    @GetMapping("test-only")
+    public ResponseEntity<MyApiResponse<List<Account>>> getAllUsersTestOnly() {
+        log.info("Fetching all users");
+        var users = accountRepository.findAll();
+        return MyApiResponse.success(users);
+    }
+
 
 }

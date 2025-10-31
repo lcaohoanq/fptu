@@ -124,3 +124,8 @@ Content-Type: application/json
   "email": "{{member-email}}",
   "password": "{{admin-password}}"
 }
+
+### Test Only Endpoint (no auth) via Gateway by pass authentication middleware (WebSecurityConfig of AuthService and JwtAuthFilter of gateway)
+###
+GET {{gateway-url}}/api/auth/users/test-only
+Content-Type: application/json
