@@ -1,0 +1,94 @@
+networks:
+  mss-pe-server:
+    driver: bridge
+
+volumes:
+  postgres:
+
+services:
+
+  postgresql-hehehe:
+    container_name: pg_sql
+    image: docker.io/library/postgres:17.4
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ai_khoc_noi_dau_nay
+      POSTGRES_DB: mss_db
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U "${POSTGRES_USER:-admin}"' ]
+      start_period: 30s
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "5433:5432"
+    networks:
+      - mss-pe-server
+    restart: unless-stopped
+
+  gateway:
+    container_name: mss-pe-gateway-service
+    image: lcaohoanq/mss-pe-gateway
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SERVICE_PATH: services/APIGateway_SE181513
+        SERVICE_PORT: 4000
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "4000:4000"
+    networks:
+      - mss-pe-server
+
+  blind-box:
+    container_name: mss-pe-blind-box-service
+    image: lcaohoanq/mss-pe-blindbox:hehehe
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SERVICE_PATH: services/MSBlindBox_SE181513
+        SERVICE_PORT: 4006
+    ports:
+      - "4006:4006"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - mss-pe-server
+
+  brand:
+    container_name: mss-pe-brand-service
+    image: lcaohoanq/mss-pe-brand:hihihi
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SERVICE_PATH: services/MSBrand_SE181513
+        SERVICE_PORT: 4005
+    ports:
+      - "4005:4005"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - mss-pe-server
+
+  account:
+    container_name: mss-pe-account-service
+    image: lcaohoanq/mss-pe-account:hohoho
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SERVICE_PATH: services/MSAccount_SE181513
+        SERVICE_PORT: 4007
+    ports:
+      - "4007:4007"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - mss-pe-server

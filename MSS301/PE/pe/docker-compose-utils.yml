@@ -1,0 +1,118 @@
+services:
+
+  postgresql:
+    container_name: pg_sql
+    image: docker.io/library/postgres:17.4
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: mss_db
+      PGDATA: /data/postgres
+    volumes:
+      - postgres_data:/data/postgres # Renamed volume for clarity
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U "${POSTGRES_USER:-admin}"' ]
+      start_period: 30s
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "5432:5432"
+    networks:
+      - mss-pe-server
+    restart: unless-stopped
+
+  mongodb:
+    container_name: mongo_db
+    image: mongo:latest # For production, use a specific version like mongo:7.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: [ "CMD", "mongosh", "--eval", "db.adminCommand('ping')" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - mss-pe-server
+    restart: unless-stopped
+
+  cockroachdb:
+    container_name: cockroach_db
+    image: cockroachdb/cockroach:latest # For production, use a specific version like v23.2.0
+    # Command to start a single, insecure node (good for development)
+    command: start-single-node --insecure
+    volumes:
+      - cockroach_data:/cockroach/cockroach-data
+    ports:
+      - "26257:26257" # SQL port
+      - "8080:8080"   # DB Console (Web UI)
+    healthcheck:
+      test: [ "CMD", "cockroach", "node", "status", "--insecure" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - mss-pe-server
+    restart: unless-stopped
+
+  mysql:
+    container_name: mysql_db
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: mysql_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - mss-pe-server
+    restart: unless-stopped
+
+    # --- Service 5: Microsoft SQL Server (Newly Added) ---
+  mssql:
+    container_name: mssql_server
+    image: mcr.microsoft.com/mssql/server:2022-latest # See note below for Apple M1/M2/M3
+    environment:
+      ACCEPT_EULA: "Y" # Required by Microsoft
+      MSSQL_SA_PASSWORD: "admin" # Password for the 'sa' (system admin) user
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    healthcheck:
+      # This check uses the sqlcmd utility inside the container
+      test: [ "CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P \"${MSSQL_SA_PASSWORD}\" -Q \"SELECT 1\"" ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 45s # SQL Server can be slow to start up
+    networks:
+      - mss-pe-server
+    restart: unless-stopped
+
+volumes:
+  postgres_data: # Maps to the 'postgres_data' volume used by postgresql
+  mongo_data:    # Maps to the 'mongo_data' volume used by mongodb
+  cockroach_data: # Maps to the 'cockroach_data' volume used by cockroachdb
+  mysql_data:    # Maps to the 'mysql_data' volume used by mysql
+  mssql_data:    # Maps to the 'mssql_data' volume used by mssql
+
+networks:
+  mss-pe-server:
+      driver: bridge
