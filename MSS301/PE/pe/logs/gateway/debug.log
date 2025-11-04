@@ -1,0 +1,494 @@
+2025-11-04 09:11:57 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 60424 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:11:57 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:11:57 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:12:01 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 4.893 seconds (process running for 6.411)
+2025-11-04 09:21:25 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 71717 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:21:25 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:21:25 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:21:29 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 5.135 seconds (process running for 7.135)
+2025-11-04 09:21:47 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login?username=admin&password=admin123
+2025-11-04 09:21:47 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:21:55 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login?username=admin&password=admin123
+2025-11-04 09:21:55 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:22:32 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login?username=admin%40blindboxes.vn&password=%402
+2025-11-04 09:22:32 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:22:49 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login?username=admin%40blindboxes.vn&password=%402
+2025-11-04 09:22:49 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:25:53 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 77555 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:25:53 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:25:53 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:25:57 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 4.28 seconds (process running for 5.659)
+2025-11-04 09:26:00 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 77894 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:26:00 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:26:00 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:26:04 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 78046 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:26:04 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:26:04 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:26:16 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:26:16 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:26:21 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:26:21 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:26:25 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:26:25 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:26:25 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 09:26:25 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:26:35 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:26:35 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:26:35 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 09:26:35 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:26:38 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 09:26:38 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:26:41 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 09:26:41 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:26:45 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 09:26:45 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:28:36 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:28:36 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:28:36 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 09:28:36 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:28:42 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 09:28:42 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:28:58 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 09:28:58 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:28:58 [reactor-http-epoll-3] WARN  c.f.m.a.f.JwtAuthenticationFilter - ⚠ Missing or invalid Authorization header for path: /api/blindboxes
+2025-11-04 09:32:53 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:32:53 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:32:53 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 09:32:53 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:32:54 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 09:32:54 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:33:02 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 09:33:02 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:33:02 [reactor-http-epoll-1] WARN  c.f.m.a.f.JwtAuthenticationFilter - ⚠ Missing or invalid Authorization header for path: /api/blindboxes
+2025-11-04 09:33:41 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 86580 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:33:41 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:33:41 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:33:44 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 3.362 seconds (process running for 4.361)
+2025-11-04 09:33:46 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 86831 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:33:46 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:33:46 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:34:02 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 87553 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:34:02 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:34:02 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:34:20 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:34:20 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:34:21 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 09:34:21 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:34:23 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 09:34:23 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:34:30 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 09:34:30 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:34:30 [reactor-http-epoll-3] WARN  c.f.m.a.f.JwtAuthenticationFilter - ⚠ Missing or invalid Authorization header for path: /api/blindboxes
+2025-11-04 09:48:13 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:48:13 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:48:45 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:48:45 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:49:20 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 105350 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:49:20 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:49:20 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:49:22 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 2.617 seconds (process running for 3.611)
+2025-11-04 09:49:26 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:49:26 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:50:10 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 106502 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:50:10 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:50:10 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:50:14 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 5.063 seconds (process running for 6.322)
+2025-11-04 09:50:19 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 106936 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:50:19 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:50:19 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:50:25 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 107220 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:50:25 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:50:25 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:50:31 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:50:31 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:50:32 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:50:32 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:50:33 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:50:33 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:51:10 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 108293 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:51:10 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:51:10 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:51:12 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 2.622 seconds (process running for 3.435)
+2025-11-04 09:51:14 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:51:14 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:51:15 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:51:15 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:53:39 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 111123 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:53:39 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:53:39 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:53:42 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 3.244 seconds (process running for 4.397)
+2025-11-04 09:54:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 09:54:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 09:54:51 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 09:54:51 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:54:51 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 09:54:51 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:54:55 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 09:54:55 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:54:55 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 09:54:55 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:55:03 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 09:55:03 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:55:03 [reactor-http-epoll-2] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: adminsys with role: ADMIN accessing path: /api/blindboxes
+2025-11-04 09:55:17 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 09:55:17 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 09:55:17 [reactor-http-epoll-2] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: adminsys with role: ADMIN accessing path: /api/blindboxes
+2025-11-04 10:00:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:00:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:07 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:01:07 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:07 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:01:07 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:07 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:01:07 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:07 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:01:07 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:15 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:01:15 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:15 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:01:15 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:24 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:01:24 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:24 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:01:24 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:37 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:01:37 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:01:37 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:01:37 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:03:37 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:03:37 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:03:37 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:03:37 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:03:38 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:03:38 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:03:38 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:03:38 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:16 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 122819 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 10:04:16 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 10:04:16 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 10:04:20 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 3.705 seconds (process running for 4.702)
+2025-11-04 10:04:29 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 123346 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 10:04:29 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 10:04:29 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 10:04:38 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:04:38 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:04:38 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:38 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:38 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:04:38 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:04:38 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:04:38 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:38 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:04:38 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:38 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:04:38 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:04:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 10:04:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:49 [reactor-http-epoll-2] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: adminsys with role: ADMIN accessing path: /api/blindboxes
+2025-11-04 10:04:50 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 10:04:50 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:50 [reactor-http-epoll-3] WARN  c.f.m.a.f.JwtAuthenticationFilter - ⚠ Missing or invalid Authorization header for path: /api/blindboxes
+2025-11-04 10:04:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:04:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:50 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:04:50 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:04:50 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:04:50 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:50 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:04:50 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:04:54 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:04:54 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:54 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:04:54 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:54 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:04:54 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:54 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:04:54 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:04:54 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:04:54 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:54 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:04:54 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:04:54 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:04:54 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:04:54 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:04:54 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:04 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:05:04 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:04 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:04 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:04 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:05:04 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:04 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:04 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:05:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:05:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:09 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:05:09 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/3
+2025-11-04 10:05:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:09 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:05:09 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:09 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:09 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/3
+2025-11-04 10:05:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:16 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/3
+2025-11-04 10:05:16 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:29 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:05:29 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:29 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:29 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:29 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:05:29 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:29 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:29 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:32 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:05:32 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:32 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:05:32 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:32 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:32 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:32 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:05:32 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:32 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:05:32 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:32 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:32 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:41 [reactor-http-epoll-2] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: adminsys with role: ADMIN accessing path: /api/blindboxes
+2025-11-04 10:05:41 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 10:05:41 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:41 [reactor-http-epoll-1] WARN  c.f.m.a.f.JwtAuthenticationFilter - ⚠ Missing or invalid Authorization header for path: /api/blindboxes
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:41 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:45 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: DELETE http://localhost:4000/api/blindboxes/5
+2025-11-04 10:05:45 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:45 [reactor-http-epoll-2] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: adminsys with role: ADMIN accessing path: /api/blindboxes/5
+2025-11-04 10:05:45 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: DELETE http://localhost:4000/api/blindboxes/5
+2025-11-04 10:05:45 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:45 [reactor-http-epoll-3] WARN  c.f.m.a.f.JwtAuthenticationFilter - ⚠ Missing or invalid Authorization header for path: /api/blindboxes/5
+2025-11-04 10:05:48 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:05:48 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:48 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:48 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:48 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:05:48 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:48 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:48 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:05:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:05:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:50 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:05:50 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:50 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:05:50 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:50 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:50 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:05:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:05:50 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:50 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:05:50 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:05:50 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:05:50 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:02 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 126463 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 10:07:02 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 10:07:02 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 10:07:05 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 3.483 seconds (process running for 4.376)
+2025-11-04 10:07:08 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 126698 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 10:07:08 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 10:07:08 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-04 10:07:46 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:07:46 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:46 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:07:46 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:46 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:07:46 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:46 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:46 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:46 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:07:46 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:46 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:07:46 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:46 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:07:46 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:46 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:46 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:47 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:07:47 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:47 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:47 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:47 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:07:47 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:47 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:47 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:49 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:07:49 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:49 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/3
+2025-11-04 10:07:49 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:49 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:07:49 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:07:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:49 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/3
+2025-11-04 10:07:49 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:07:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:49 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:51 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:07:51 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:51 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:51 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:51 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:07:51 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:51 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:51 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:53 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/3
+2025-11-04 10:07:53 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:53 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:07:53 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:53 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:07:53 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:53 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:53 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:53 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/3
+2025-11-04 10:07:53 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:53 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:07:53 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:53 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:07:53 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:53 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:53 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:55 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:07:55 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:55 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:55 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:55 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:07:55 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:55 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:55 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:56 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:07:56 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:56 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:07:56 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:07:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:07:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:07:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:07:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:07:56 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:03 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 10:08:03 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:03 [reactor-http-epoll-4] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: adminsys with role: ADMIN accessing path: /api/blindboxes
+2025-11-04 10:08:03 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 10:08:03 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:03 [reactor-http-epoll-1] WARN  c.f.m.a.f.JwtAuthenticationFilter - ⚠ Missing or invalid Authorization header for path: /api/blindboxes
+2025-11-04 10:08:03 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:08:03 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:03 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:03 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:03 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:08:03 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:03 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:03 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:06 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:08:06 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:06 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:08:06 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:06 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:08:06 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:06 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:08:06 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:06 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:06 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:06 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:08:06 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:06 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:08:06 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:06 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:06 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: PUT http://localhost:4000/api/blindboxes/4
+2025-11-04 10:08:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:09 [reactor-http-epoll-2] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: adminsys with role: ADMIN accessing path: /api/blindboxes/4
+2025-11-04 10:08:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: PUT http://localhost:4000/api/blindboxes/4
+2025-11-04 10:08:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:09 [reactor-http-epoll-2] WARN  c.f.m.a.f.JwtAuthenticationFilter - ⚠ Missing or invalid Authorization header for path: /api/blindboxes/4
+2025-11-04 10:08:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:08:09 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:09 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:08:09 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:09 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:10 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:08:10 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:10 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:08:10 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:10 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:08:10 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:10 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/4
+2025-11-04 10:08:10 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:10 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:10 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:10 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:08:10 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:10 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:08:10 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:10 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:10 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:13 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:08:13 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:13 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:13 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:13 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:08:13 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:13 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:13 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:24 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 10:08:24 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 10:08:25 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:08:25 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:25 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:25 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:25 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-04 10:08:25 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:25 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:25 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:26 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:08:26 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:26 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:08:26 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:26 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:26 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:26 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/categories
+2025-11-04 10:08:26 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:26 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes/brands
+2025-11-04 10:08:26 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:26 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/brands
+2025-11-04 10:08:26 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:brand-service - Route Uri:http://localhost:4005
+2025-11-04 10:08:33 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-04 10:08:33 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-04 10:08:33 [reactor-http-epoll-3] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: johndoe with role: MEMBER accessing path: /api/blindboxes
+2025-11-04 10:09:52 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 10:09:52 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 10:11:10 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 10:11:10 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-04 10:11:14 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-04 10:11:14 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007

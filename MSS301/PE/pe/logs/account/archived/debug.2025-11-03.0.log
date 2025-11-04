@@ -1,0 +1,25 @@
+2025-11-03 21:14:06 [main] INFO  c.f.m.m.MsAccountSe181513Application - Starting MsAccountSe181513Application using Java 21.0.7 with PID 54084 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSAccount_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:14:06 [main] DEBUG c.f.m.m.MsAccountSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:14:06 [main] INFO  c.f.m.m.MsAccountSe181513Application - The following 1 profile is active: "test"
+2025-11-03 21:14:10 [main] INFO  c.f.m.m.MsAccountSe181513Application - Started MsAccountSe181513Application in 5.403 seconds (process running for 6.605)
+2025-11-03 21:14:47 [http-nio-4007-exec-1] INFO  c.f.m.m.domain.auth.AuthController - Login attempt for user: michel@blindboxes.vn
+2025-11-03 21:14:47 [http-nio-4007-exec-1] INFO  c.f.m.m.domain.auth.AuthServiceImpl - 🔐 Starting login process for user: michel@blindboxes.vn
+2025-11-03 21:15:11 [http-nio-4007-exec-2] INFO  c.f.m.m.d.user.AccountController - Fetching all users
+2025-11-03 21:49:25 [main] INFO  c.f.m.m.MsAccountSe181513Application - Starting MsAccountSe181513Application using Java 21.0.7 with PID 80368 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSAccount_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:49:25 [main] DEBUG c.f.m.m.MsAccountSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:49:25 [main] INFO  c.f.m.m.MsAccountSe181513Application - The following 1 profile is active: "test"
+2025-11-03 21:52:31 [main] INFO  c.f.m.m.MsAccountSe181513Application - Starting MsAccountSe181513Application using Java 21.0.7 with PID 83207 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSAccount_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:52:31 [main] DEBUG c.f.m.m.MsAccountSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:52:31 [main] INFO  c.f.m.m.MsAccountSe181513Application - The following 1 profile is active: "test"
+2025-11-03 21:53:30 [main] INFO  c.f.m.m.MsAccountSe181513Application - Starting MsAccountSe181513Application using Java 21.0.7 with PID 84073 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSAccount_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:53:30 [main] DEBUG c.f.m.m.MsAccountSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:53:30 [main] INFO  c.f.m.m.MsAccountSe181513Application - The following 1 profile is active: "test"
+2025-11-03 21:53:33 [main] INFO  c.f.m.m.MsAccountSe181513Application - Started MsAccountSe181513Application in 3.757 seconds (process running for 4.522)
+2025-11-03 21:54:04 [http-nio-4007-exec-1] INFO  c.f.m.m.domain.auth.AuthController - Login attempt for user: michel@blindboxes.vn
+2025-11-03 21:54:04 [http-nio-4007-exec-1] INFO  c.f.m.m.domain.auth.AuthServiceImpl - 🔐 Starting login process for user: michel@blindboxes.vn
+2025-11-03 21:55:11 [http-nio-4007-exec-3] INFO  c.f.m.m.domain.auth.AuthController - Login attempt for user: michel@blindboxes.vn
+2025-11-03 21:55:11 [http-nio-4007-exec-3] INFO  c.f.m.m.domain.auth.AuthServiceImpl - 🔐 Starting login process for user: michel@blindboxes.vn
+2025-11-03 22:02:49 [main] INFO  c.f.m.m.MsAccountSe181513Application - Starting MsAccountSe181513Application using Java 21.0.7 with PID 94000 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSAccount_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 22:02:49 [main] DEBUG c.f.m.m.MsAccountSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 22:02:49 [main] INFO  c.f.m.m.MsAccountSe181513Application - The following 1 profile is active: "test"
+2025-11-03 22:02:53 [main] INFO  c.f.m.m.MsAccountSe181513Application - Started MsAccountSe181513Application in 3.832 seconds (process running for 4.797)

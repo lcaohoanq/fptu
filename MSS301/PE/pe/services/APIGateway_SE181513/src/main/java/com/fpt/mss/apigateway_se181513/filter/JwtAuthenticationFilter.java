@@ -32,7 +32,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
 
         // Extract Authorization header
         String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
-        
+
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             log.warn("⚠ Missing or invalid Authorization header for path: {}", path);
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
@@ -56,15 +56,19 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
             String email = jwtUtil.extractEmail(token);
 
             // Add user information to request headers for downstream services
-            ServerHttpRequest modifiedRequest = request.mutate()
-                .header("X-User-Id", String.valueOf(userId))
-                .header("X-User-Name", username)
-                .header("X-User-Role", role)
-                .header("X-User-Email", email)
-                .build();
+            ServerHttpRequest modifiedRequest =
+                    request.mutate()
+                            .header("X-User-Id", String.valueOf(userId))
+                            .header("X-User-Name", username)
+                            .header("X-User-Role", role)
+                            .header("X-User-Email", email)
+                            .build();
 
-            log.debug("JWT validation successful for user: {} with role: {} accessing path: {}", 
-                username, role, path);
+            log.debug(
+                    "JWT validation successful for user: {} with role: {} accessing path: {}",
+                    username,
+                    role,
+                    path);
 
             return chain.filter(exchange.mutate().request(modifiedRequest).build());
 
@@ -78,34 +82,39 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
     private boolean isPublicPath(ServerHttpRequest request) {
         String path = request.getURI().getPath();
         String method = request.getMethod().name();
-        
-        // Public auth endpoints that don't require authentication
-        if (path.equals("/api/auth/login") ||
-            path.equals("/api/auth/register") ||
-            path.equals("/api/auth/refresh") ||
-            path.equals("/api/auth/validate") ||
-            path.equals("/api/auth/activate") ||
-            path.equals("/api/auth/users/test-only") ||
-            path.startsWith("/api/auth/reset-password/")) {
+
+        // ✅ ALWAYS allow OPTIONS requests (CORS preflight)
+        if ("OPTIONS".equals(method)) {
             return true;
         }
-        
+
+        // Public auth endpoints that don't require authentication
+        if (path.equals("/api/auth/login")
+                || path.equals("/api/auth/register")
+                || path.equals("/api/auth/refresh")
+                || path.equals("/api/auth/validate")
+                || path.equals("/api/auth/activate")
+                || path.equals("/api/auth/users/test-only")
+                || path.startsWith("/api/auth/reset-password/")) {
+            return true;
+        }
+
         // Public GET endpoints (browsing products/brands)
         if ("GET".equals(method)) {
-            if (path.startsWith("/api/blindboxes") ||
-                path.startsWith("/api/brand") ||
-                path.startsWith("/api/categories")) {
+            if (path.startsWith("/api/blindboxes")
+                    || path.startsWith("/api/brand")
+                    || path.startsWith("/api/categories")) {
                 return true;
             }
         }
-        
+
         // Other public paths
-        return path.startsWith("/actuator/") ||
-               path.startsWith("/swagger-ui/") ||
-               path.startsWith("/v3/api-docs/") ||
-               path.startsWith("/webjars/") ||
-               path.equals("/") ||
-               path.startsWith("/favicon.ico");
+        return path.startsWith("/actuator/")
+                || path.startsWith("/swagger-ui/")
+                || path.startsWith("/v3/api-docs/")
+                || path.startsWith("/webjars/")
+                || path.equals("/")
+                || path.startsWith("/favicon.ico");
     }
 
     @Override

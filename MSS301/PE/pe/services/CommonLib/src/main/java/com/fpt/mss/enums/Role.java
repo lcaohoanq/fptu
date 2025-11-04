@@ -12,5 +12,4 @@ public enum Role {
     MEMBER(4);
 
     private final int value;
-
 }

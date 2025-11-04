@@ -1,3 +1,11 @@
+# Proxy API requests to backend
+[[redirects]]
+  from = "/api/*"
+  to = "https://mss.taskgenix.website/api/:splat"
+  status = 200
+  force = true
+
+# SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"

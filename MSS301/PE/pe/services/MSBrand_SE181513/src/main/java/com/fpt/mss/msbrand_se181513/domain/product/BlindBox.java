@@ -1,5 +1,6 @@
 package com.fpt.mss.msbrand_se181513.domain.product;
 
+import com.fpt.mss.dto.BlindBoxResponse;
 import com.fpt.mss.msbrand_se181513.domain.brand.Brand;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,16 +43,17 @@ public class BlindBox {
     @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
 
+    private Integer categoryId;
+
     public static BlindBoxResponse toResponse(BlindBox blindBox) {
         return BlindBoxResponse.builder()
-            .id(blindBox.getId())
-            .name(blindBox.getName())
-            .rarity(blindBox.getRarity())
-            .price(blindBox.getPrice())
-            .releaseDate(blindBox.getReleaseDate())
-            .stock(blindBox.getStock())
-            .brandName(blindBox.getBrand().getName())
-            .build();
+                .id(blindBox.getId())
+                .name(blindBox.getName())
+                .rarity(blindBox.getRarity())
+                .price(blindBox.getPrice())
+                .releaseDate(blindBox.getReleaseDate())
+                .stock(blindBox.getStock())
+                .brandName(blindBox.getBrand().getName())
+                .build();
     }
-
 }

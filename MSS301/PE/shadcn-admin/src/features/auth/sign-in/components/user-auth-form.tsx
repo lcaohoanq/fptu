@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Link, useNavigate } from '@tanstack/react-router'
+import api from '@/config/api'
 import { Loader2, LogIn } from 'lucide-react'
 import { toast } from 'sonner'
 import { IconFacebook, IconGithub } from '@/assets/brand-icons'
@@ -51,34 +52,51 @@ export function UserAuthForm({
     },
   })
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
+  async function onSubmit(data: z.infer<typeof formSchema>) {
     setIsLoading(true)
+    try {
+      // Make API call
+      const response = await api.post('/auth/login', {
+        email: data.email,
+        password: data.password,
+      })
 
-    toast.promise(sleep(2000), {
-      loading: 'Signing in...',
-      success: () => {
-        setIsLoading(false)
+      // Backend response structure: { type, message, data: { accessToken, refreshToken, user, ... } }
+      const responseData = response.data?.data
 
-        // Mock successful authentication with expiry computed at success time
-        const mockUser = {
-          accountNo: 'ACC001',
-          email: data.email,
-          role: ['user'],
-          exp: Date.now() + 24 * 60 * 60 * 1000, // 24 hours from now
-        }
+      if (!responseData || !responseData.user) {
+        throw new Error('Invalid response from server')
+      }
 
-        // Set user and access token
-        auth.setUser(mockUser)
-        auth.setAccessToken('mock-access-token')
+      // Extract user and tokens from the response
+      const { user, accessToken } = responseData
 
-        // Redirect to the stored location or default to dashboard
-        const targetPath = redirectTo || '/'
-        navigate({ to: targetPath, replace: true })
+      // Store user info and tokens
+      auth.setUser(user)
+      auth.setAccessToken(accessToken)
 
-        return `Welcome back, ${data.email}!`
-      },
-      error: 'Error',
-    })
+      toast.success(`Welcome back, ${data.email}!`)
+
+      // Small delay before redirect for UX
+      await sleep(500)
+
+      // Redirect to the stored location or default to dashboard
+      const targetPath = redirectTo || '/'
+      navigate({ to: targetPath, replace: true })
+    } catch (error: unknown) {
+      const err = error as {
+        response?: { data?: { message?: string; error?: string } }
+        message?: string
+      }
+      const errorMessage =
+        err.response?.data?.message ||
+        err.response?.data?.error ||
+        err.message ||
+        'Failed to sign in. Please check your credentials.'
+      toast.error(errorMessage)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (

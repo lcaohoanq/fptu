@@ -12,12 +12,13 @@ import reactor.core.publisher.Mono;
 
 @Component
 @Slf4j
-public class LoggingFilter  implements GlobalFilter, Ordered {
+public class LoggingFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         var request = exchange.getRequest();
-        System.out.println("🌐 [Gateway] Incoming request: " + request.getMethod() + " " + request.getURI());
+        System.out.println(
+                "🌐 [Gateway] Incoming request: " + request.getMethod() + " " + request.getURI());
         log.info("🌐 [Gateway] Incoming request: {} {}", request.getMethod(), request.getURI());
 
         Route route = exchange.getAttribute(ServerWebExchangeUtils.GATEWAY_ROUTE_ATTR);

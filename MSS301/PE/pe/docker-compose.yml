@@ -2,32 +2,79 @@ networks:
   mss-pe-server:
     driver: bridge
 
-volumes:
-  postgres:
+#volumes:
+#  postgres_hehe:
+#  postgres_hihi:
+#  postgres_hoho:
+
 
 services:
 
-  postgresql-hehehe:
-    container_name: pg_sql
-    image: docker.io/library/postgres:17.4
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: ai_khoc_noi_dau_nay
-      POSTGRES_DB: mss_db
-      PGDATA: /data/postgres
-    volumes:
-      - postgres:/data/postgres
-    healthcheck:
-      test: [ 'CMD-SHELL', 'pg_isready -U "${POSTGRES_USER:-admin}"' ]
-      start_period: 30s
-      interval: 10s
-      timeout: 10s
-      retries: 5
-    ports:
-      - "5433:5432"
-    networks:
-      - mss-pe-server
-    restart: unless-stopped
+#  postgresql-hehehe:
+#    container_name: pg_sql
+#    image: docker.io/library/postgres:17.4
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: ai_khoc_noi_dau_nay
+#      POSTGRES_DB: mss-blindbox
+#      PGDATA: /data/postgres
+#    volumes:
+#      - postgres_hehe:/data/postgres
+#    healthcheck:
+#      test: [ 'CMD-SHELL', 'pg_isready -U "${POSTGRES_USER:-admin}"' ]
+#      start_period: 30s
+#      interval: 10s
+#      timeout: 10s
+#      retries: 5
+#    ports:
+#      - "5433:5432"
+#    networks:
+#      - mss-pe-server
+#    restart: unless-stopped
+#
+#  postgresql-hihihi:
+#    container_name: pg_sql_hihihi
+#    image: docker.io/library/postgres:17.4
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: ai_khoc_noi_dau_nay
+#      POSTGRES_DB: mss-brand
+#      PGDATA: /data/postgres
+#    volumes:
+#      - postgres_hihi:/data/postgres
+#    healthcheck:
+#      test: [ 'CMD-SHELL', 'pg_isready -U "${POSTGRES_USER:-admin}"' ]
+#      start_period: 30s
+#      interval: 10s
+#      timeout: 10s
+#      retries: 5
+#    ports:
+#      - "5434:5432"
+#    networks:
+#      - mss-pe-server
+#    restart: unless-stopped
+#
+#  postgresql-hohoho:
+#    container_name: pg_sql_hohoho
+#    image: docker.io/library/postgres:17.4
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: ai_khoc_noi_dau_nay
+#      POSTGRES_DB: mss-account
+#      PGDATA: /data/postgres
+#    volumes:
+#      - postgres_hoho:/data/postgres
+#    healthcheck:
+#      test: [ 'CMD-SHELL', 'pg_isready -U "${POSTGRES_USER:-admin}"' ]
+#      start_period: 30s
+#      interval: 10s
+#      timeout: 10s
+#      retries: 5
+#    ports:
+#      - "5435:5432"
+#    networks:
+#      - mss-pe-server
+#    restart: unless-stopped
 
   gateway:
     container_name: mss-pe-gateway-service
@@ -57,7 +104,7 @@ services:
     ports:
       - "4006:4006"
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=test
     networks:
       - mss-pe-server
 
@@ -73,7 +120,7 @@ services:
     ports:
       - "4005:4005"
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=test
     networks:
       - mss-pe-server
 
@@ -89,6 +136,17 @@ services:
     ports:
       - "4007:4007"
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=test
     networks:
       - mss-pe-server
+
+#  vite-prod:
+#    build:
+#      context: web-spa-react
+#      dockerfile: Dockerfile.prod
+#    ports:
+#      - "5173:80"
+#    environment:
+#      - NODE_ENV=production
+#    networks:
+#      - mss-pe-server

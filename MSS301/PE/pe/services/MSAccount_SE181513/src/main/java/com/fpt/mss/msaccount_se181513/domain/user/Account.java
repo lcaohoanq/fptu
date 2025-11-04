@@ -10,15 +10,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.util.Collection;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "accounts")
@@ -26,7 +21,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Account implements UserDetails {
+public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,11 +42,4 @@ public class Account implements UserDetails {
 
     @Column(columnDefinition = "boolean default true")
     private boolean isActive;
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        String formattedRole = this.role.name().toUpperCase();
-        return List.of(new SimpleGrantedAuthority(formattedRole));
-    }
-
 }

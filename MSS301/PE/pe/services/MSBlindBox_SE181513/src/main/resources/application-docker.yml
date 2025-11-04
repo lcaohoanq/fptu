@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgresql-hehehe:5432/mss-blindbox
+    url: jdbc:postgresql://localhost:5433/mss-blindbox
     username: postgres
     password: ai_khoc_noi_dau_nay
 

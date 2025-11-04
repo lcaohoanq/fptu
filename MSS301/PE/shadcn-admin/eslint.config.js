@@ -30,7 +30,7 @@ export default defineConfig(
         { allowConstantExport: true },
       ],
       'no-console': 'error',
-      'no-unused-vars': 'off',
+      'no-unused-vars': 'warn',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {

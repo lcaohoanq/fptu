@@ -23,10 +23,9 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name", length = 100)
+    @Column(length = 100)
     private String name;
 
     @Column(name = "country_of_origin", length = 100)
     private String countryOfOrigin;
-
 }

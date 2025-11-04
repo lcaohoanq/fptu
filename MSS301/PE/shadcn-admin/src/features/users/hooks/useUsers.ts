@@ -11,13 +11,13 @@ export const USER_QUERY_KEYS = {
 }
 
 export const useUsers = () => {
-  return useQuery({
+  return useQuery<User[]>({
     queryKey: USER_QUERY_KEYS.lists(),
     queryFn: fetchUsers,
   })
 }
 
 export const fetchUsers = async (): Promise<User[]> => {
-  const response = await api.get('/api/users')
-  return response.data
+  const response = await api.get('/auth/users/test-only')
+  return response.data.data || []
 }

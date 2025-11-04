@@ -31,12 +31,16 @@ RUN mvn dependency:go-offline -B
 # 3. Copy all source code
 COPY services/ ./services/
 
-# 4. Build the specific service
-RUN mvn clean package -pl ${SERVICE_PATH} -am -DskipTests
+# 4. Build the specific service (only if not already built)
+# If JAR exists, skip build; otherwise build
+RUN if [ ! -f ${SERVICE_PATH}/target/*.jar ]; then \
+    mvn clean package -pl ${SERVICE_PATH} -am -DskipTests; \
+    fi
 
 # 5. Extract layers from the JAR
 RUN mkdir -p extracted && \
-    java -Djarmode=layertools -jar ${SERVICE_PATH}/target/*.jar extract --destination extracted
+    jar_file=$(ls ${SERVICE_PATH}/target/*.jar 2>/dev/null | grep -v '.original$' | head -n1) && \
+    java -Djarmode=layertools -jar "$jar_file" extract --destination extracted
 
 # =====================================================================
 # Stage 2: Runtime image (Focus on Size & Security)

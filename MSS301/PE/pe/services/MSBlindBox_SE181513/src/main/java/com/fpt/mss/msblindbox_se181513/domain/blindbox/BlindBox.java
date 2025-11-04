@@ -1,5 +1,6 @@
 package com.fpt.mss.msblindbox_se181513.domain.blindbox;
 
+import com.fpt.mss.dto.BlindBoxResponse;
 import com.fpt.mss.msblindbox_se181513.domain.category.Category;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,6 +43,8 @@ public class BlindBox {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
+    private Integer brandId;
+
     public static BlindBoxResponse toResponse(BlindBox blindBox) {
         return BlindBoxResponse.builder()
                 .id(blindBox.getId())
@@ -50,8 +53,25 @@ public class BlindBox {
                 .price(blindBox.getPrice())
                 .releaseDate(blindBox.getReleaseDate())
                 .stock(blindBox.getStock())
+                .categoryId(blindBox.getCategory().getId())
                 .categoryName(blindBox.getCategory().getName())
+                .brandId(blindBox.getBrandId())
+                .brandName(null) // Will be populated by service layer if needed
                 .build();
     }
-
+    
+    public static BlindBoxResponse toResponse(BlindBox blindBox, String brandName) {
+        return BlindBoxResponse.builder()
+                .id(blindBox.getId())
+                .name(blindBox.getName())
+                .rarity(blindBox.getRarity())
+                .price(blindBox.getPrice())
+                .releaseDate(blindBox.getReleaseDate())
+                .stock(blindBox.getStock())
+                .categoryId(blindBox.getCategory().getId())
+                .categoryName(blindBox.getCategory().getName())
+                .brandId(blindBox.getBrandId())
+                .brandName(brandName)
+                .build();
+    }
 }

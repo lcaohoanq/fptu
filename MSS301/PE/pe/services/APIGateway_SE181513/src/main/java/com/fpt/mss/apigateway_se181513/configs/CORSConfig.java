@@ -18,11 +18,24 @@ public class CORSConfig {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.setAllowedOriginPatterns(
-            Arrays.asList("http://localhost:5173", "https://mss-fe.vercel.app/"));
-        corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
+                Arrays.asList(
+                        "http://localhost:*", // All localhost ports (dev & docker)
+                        "http://127.0.0.1:*", // IPv4 loopback
+                        "http://[::1]:*", // IPv6 loopback
+                        "https://mss-fe.taskgenix.website",
+                        "https://mss-fe.vercel.app",
+                        "https://mss.taskgenix.website"));
+        corsConfig.setAllowedMethods(
+                Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"));
         corsConfig.setAllowedHeaders(List.of("*"));
         corsConfig.setAllowCredentials(true);
         corsConfig.setMaxAge(3600L);
+        corsConfig.setExposedHeaders(
+                Arrays.asList(
+                        "Access-Control-Allow-Origin",
+                        "Access-Control-Allow-Credentials",
+                        "Authorization",
+                        "Content-Type"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfig);

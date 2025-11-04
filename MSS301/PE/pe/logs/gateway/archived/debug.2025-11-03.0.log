@@ -1,0 +1,59 @@
+2025-11-03 21:14:16 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 54506 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:14:16 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:14:16 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 21:14:18 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 2.727 seconds (process running for 3.743)
+2025-11-03 21:14:47 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-03 21:14:47 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-03 21:15:11 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/auth/users/test-only
+2025-11-03 21:15:11 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-03 21:18:26 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-03 21:18:26 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-03 21:27:47 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 64581 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:27:47 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:27:47 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 21:27:49 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 2.986 seconds (process running for 3.74)
+2025-11-03 21:45:24 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 76721 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:45:24 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:45:24 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 21:48:21 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 79156 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:48:21 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:48:21 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 21:48:37 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 79557 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:48:37 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:48:37 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 21:49:34 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 80692 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 21:49:34 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 21:49:34 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 21:53:46 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: GET http://localhost:4000/api/blindboxes
+2025-11-03 21:53:46 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-03 21:54:04 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-03 21:54:04 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-03 21:54:49 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-03 21:54:49 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-03 21:54:49 [reactor-http-epoll-4] WARN  c.f.m.a.utils.JwtUtil - JWT token has expired: JWT expired at 2025-10-24T03:20:04Z. Current time: 2025-11-03T14:54:49Z, a difference of 905685931 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-11-03 21:54:49 [reactor-http-epoll-4] WARN  c.f.m.a.f.JwtAuthenticationFilter - Invalid JWT token for path: /api/blindboxes
+2025-11-03 21:55:01 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-03 21:55:01 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-03 21:55:01 [reactor-http-epoll-1] WARN  c.f.m.a.utils.JwtUtil - JWT token has expired: JWT expired at 2025-10-24T03:20:04Z. Current time: 2025-11-03T14:55:01Z, a difference of 905697331 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-11-03 21:55:01 [reactor-http-epoll-1] WARN  c.f.m.a.f.JwtAuthenticationFilter - Invalid JWT token for path: /api/blindboxes
+2025-11-03 21:55:11 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/auth/login
+2025-11-03 21:55:11 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:auth-service - Route Uri:http://localhost:4007
+2025-11-03 21:55:43 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-03 21:55:43 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-03 21:55:43 [reactor-http-epoll-3] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: modmichel with role: MODERATOR accessing path: /api/blindboxes
+2025-11-03 21:56:17 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-03 21:56:17 [reactor-http-epoll-4] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-03 21:56:17 [reactor-http-epoll-4] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: modmichel with role: MODERATOR accessing path: /api/blindboxes
+2025-11-03 21:56:27 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-03 21:56:27 [reactor-http-epoll-1] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-03 21:56:27 [reactor-http-epoll-1] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: modmichel with role: MODERATOR accessing path: /api/blindboxes
+2025-11-03 21:56:29 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: POST http://localhost:4000/api/blindboxes
+2025-11-03 21:56:29 [reactor-http-epoll-2] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-03 21:56:29 [reactor-http-epoll-2] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: modmichel with role: MODERATOR accessing path: /api/blindboxes
+2025-11-03 21:56:47 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - 🌐 [Gateway] Incoming request: DELETE http://localhost:4000/api/blindboxes/3
+2025-11-03 21:56:47 [reactor-http-epoll-3] INFO  c.f.m.a.filter.LoggingFilter - ➡ Routing to - Route ID:blindboxes-service - Route Uri:http://localhost:4006
+2025-11-03 21:56:47 [reactor-http-epoll-3] DEBUG c.f.m.a.f.JwtAuthenticationFilter - JWT validation successful for user: modmichel with role: MODERATOR accessing path: /api/blindboxes/3
+2025-11-03 22:02:40 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 93689 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-03 22:02:40 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-03 22:02:40 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 22:02:42 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 3.172 seconds (process running for 4.306)

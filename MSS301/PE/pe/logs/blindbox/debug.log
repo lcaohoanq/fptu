@@ -1,0 +1,208 @@
+2025-11-04 09:11:52 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Starting MsBlindBoxSe181513Application using Java 21.0.7 with PID 60193 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBlindBox_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:11:52 [main] DEBUG c.f.m.m.MsBlindBoxSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:11:52 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:13:04 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Starting MsBlindBoxSe181513Application using Java 21.0.7 with PID 61899 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBlindBox_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:13:04 [main] DEBUG c.f.m.m.MsBlindBoxSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:13:04 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:13:08 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Started MsBlindBoxSe181513Application in 4.112 seconds (process running for 5.081)
+2025-11-04 09:21:15 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Starting MsBlindBoxSe181513Application using Java 21.0.7 with PID 71316 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBlindBox_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:21:15 [main] DEBUG c.f.m.m.MsBlindBoxSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:21:15 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:21:23 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Started MsBlindBoxSe181513Application in 8.334 seconds (process running for 9.62)
+2025-11-04 09:25:24 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Starting MsBlindBoxSe181513Application using Java 21.0.7 with PID 76223 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBlindBox_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:25:24 [main] DEBUG c.f.m.m.MsBlindBoxSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:25:24 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:25:29 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Started MsBlindBoxSe181513Application in 5.677 seconds (process running for 6.847)
+2025-11-04 09:25:43 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Starting MsBlindBoxSe181513Application using Java 21.0.7 with PID 77091 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBlindBox_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:25:43 [main] DEBUG c.f.m.m.MsBlindBoxSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:25:43 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:33:49 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Starting MsBlindBoxSe181513Application using Java 21.0.7 with PID 86947 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBlindBox_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:33:49 [main] DEBUG c.f.m.m.MsBlindBoxSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:33:49 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:33:56 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Started MsBlindBoxSe181513Application in 6.954 seconds (process running for 8.104)
+2025-11-04 09:50:22 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Starting MsBlindBoxSe181513Application using Java 21.0.7 with PID 107073 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBlindBox_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:50:22 [main] DEBUG c.f.m.m.MsBlindBoxSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:50:22 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:50:28 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Started MsBlindBoxSe181513Application in 6.238 seconds (process running for 7.317)
+2025-11-04 10:04:22 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Starting MsBlindBoxSe181513Application using Java 21.0.7 with PID 123036 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBlindBox_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 10:04:22 [main] DEBUG c.f.m.m.MsBlindBoxSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 10:04:22 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - The following 1 profile is active: "test"
+2025-11-04 10:04:27 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Started MsBlindBoxSe181513Application in 5.084 seconds (process running for 5.984)
+2025-11-04 10:04:38 [http-nio-4006-exec-1] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:04:38 [http-nio-4006-exec-3] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:04:50 [http-nio-4006-exec-5] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Syncing create to Brand service for BlindBox ID: 4
+2025-11-04 10:04:50 [http-nio-4006-exec-5] ERROR c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Error while syncing create to Brand service: [401 Unauthorized] during [POST] to [http://localhost:4000/api/blindboxes] [BrandClient#create(BlindBoxRequest)]: []
+2025-11-04 10:04:54 [http-nio-4006-exec-9] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:04:54 [http-nio-4006-exec-2] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:05:09 [http-nio-4006-exec-7] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:05:09 [http-nio-4006-exec-9] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:05:32 [http-nio-4006-exec-6] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:05:32 [http-nio-4006-exec-8] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:05:41 [http-nio-4006-exec-7] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Syncing create to Brand service for BlindBox ID: 5
+2025-11-04 10:05:41 [http-nio-4006-exec-7] ERROR c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Error while syncing create to Brand service: [401 Unauthorized] during [POST] to [http://localhost:4000/api/blindboxes] [BrandClient#create(BlindBoxRequest)]: []
+2025-11-04 10:05:45 [http-nio-4006-exec-4] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Syncing delete to Brand service for BlindBox ID: 5
+2025-11-04 10:05:45 [http-nio-4006-exec-4] ERROR c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Error while syncing delete to Brand service: [401 Unauthorized] during [DELETE] to [http://localhost:4000/api/blindboxes/5] [BrandClient#delete(Integer)]: []
+2025-11-04 10:05:50 [http-nio-4006-exec-10] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:05:50 [http-nio-4006-exec-2] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:07:35 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Starting MsBlindBoxSe181513Application using Java 21.0.7 with PID 127569 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBlindBox_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 10:07:35 [main] DEBUG c.f.m.m.MsBlindBoxSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 10:07:35 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - The following 1 profile is active: "test"
+2025-11-04 10:07:38 [main] INFO  c.f.m.m.MsBlindBoxSe181513Application - Started MsBlindBoxSe181513Application in 4.032 seconds (process running for 4.83)
+2025-11-04 10:07:46 [http-nio-4006-exec-3] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:07:46 [http-nio-4006-exec-2] ERROR c.f.m.m.e.GlobalExceptionHandler - IllegalArgumentException: 
+java.lang.IllegalArgumentException: Blind box not found
+	at com.fpt.mss.msblindbox_se181513.domain.blindbox.BlindBoxServiceImpl.lambda$getById$1(BlindBoxServiceImpl.java:65)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.fpt.mss.msblindbox_se181513.domain.blindbox.BlindBoxServiceImpl.getById(BlindBoxServiceImpl.java:65)
+	at com.fpt.mss.msblindbox_se181513.domain.blindbox.BlindBoxController.getById(BlindBoxController.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at com.fpt.mss.msblindbox_se181513.domain.blindbox.BlindBoxController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.fpt.mss.msblindbox_se181513.filter.GatewayOnlyFilter.doFilter(GatewayOnlyFilter.java:31)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ForwardedHeaderFilter.doFilterInternal(ForwardedHeaderFilter.java:173)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-04 10:07:46 [http-nio-4006-exec-5] ERROR c.f.m.m.e.GlobalExceptionHandler - IllegalArgumentException: 
+java.lang.IllegalArgumentException: Blind box not found
+	at com.fpt.mss.msblindbox_se181513.domain.blindbox.BlindBoxServiceImpl.lambda$getById$1(BlindBoxServiceImpl.java:65)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.fpt.mss.msblindbox_se181513.domain.blindbox.BlindBoxServiceImpl.getById(BlindBoxServiceImpl.java:65)
+	at com.fpt.mss.msblindbox_se181513.domain.blindbox.BlindBoxController.getById(BlindBoxController.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at com.fpt.mss.msblindbox_se181513.domain.blindbox.BlindBoxController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.fpt.mss.msblindbox_se181513.filter.GatewayOnlyFilter.doFilter(GatewayOnlyFilter.java:31)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ForwardedHeaderFilter.doFilterInternal(ForwardedHeaderFilter.java:173)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-04 10:07:46 [http-nio-4006-exec-6] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:07:49 [http-nio-4006-exec-1] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:07:49 [http-nio-4006-exec-5] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:07:53 [http-nio-4006-exec-9] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:07:53 [http-nio-4006-exec-2] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:07:56 [http-nio-4006-exec-8] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:07:56 [http-nio-4006-exec-7] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:08:03 [http-nio-4006-exec-10] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Syncing create to Brand service for BlindBox ID: 4
+2025-11-04 10:08:03 [http-nio-4006-exec-10] ERROR c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Error while syncing create to Brand service: [401 Unauthorized] during [POST] to [http://localhost:4000/api/blindboxes] [BrandClient#create(BlindBoxRequest)]: []
+2025-11-04 10:08:06 [http-nio-4006-exec-5] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:08:06 [http-nio-4006-exec-3] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:08:09 [http-nio-4006-exec-7] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Syncing update to Brand service for BlindBox ID: 4
+2025-11-04 10:08:09 [http-nio-4006-exec-7] ERROR c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Error while syncing update to Brand service: [401 Unauthorized] during [PUT] to [http://localhost:4000/api/blindboxes/4] [BrandClient#update(Integer,BlindBoxRequest)]: []
+2025-11-04 10:08:10 [http-nio-4006-exec-1] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:08:10 [http-nio-4006-exec-6] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:08:26 [http-nio-4006-exec-5] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service
+2025-11-04 10:08:26 [http-nio-4006-exec-8] INFO  c.f.m.m.d.b.BlindBoxServiceImpl - [BlindBoxService] Fetching all brands from Brand service

@@ -1,0 +1,31 @@
+2025-11-04 09:13:16 [main] INFO  c.f.m.m.MsBrandSe181513Application - Starting MsBrandSe181513Application using Java 21.0.7 with PID 62204 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBrand_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:13:16 [main] DEBUG c.f.m.m.MsBrandSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:13:16 [main] INFO  c.f.m.m.MsBrandSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:13:19 [main] INFO  c.f.m.m.MsBrandSe181513Application - Started MsBrandSe181513Application in 3.924 seconds (process running for 4.999)
+2025-11-04 09:21:18 [main] INFO  c.f.m.m.MsBrandSe181513Application - Starting MsBrandSe181513Application using Java 21.0.7 with PID 71420 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBrand_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:21:18 [main] DEBUG c.f.m.m.MsBrandSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:21:18 [main] INFO  c.f.m.m.MsBrandSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:21:26 [main] INFO  c.f.m.m.MsBrandSe181513Application - Started MsBrandSe181513Application in 8.645 seconds (process running for 10.046)
+2025-11-04 09:25:37 [main] INFO  c.f.m.m.MsBrandSe181513Application - Starting MsBrandSe181513Application using Java 21.0.7 with PID 76853 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBrand_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:25:37 [main] DEBUG c.f.m.m.MsBrandSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:25:37 [main] INFO  c.f.m.m.MsBrandSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:25:42 [main] INFO  c.f.m.m.MsBrandSe181513Application - Started MsBrandSe181513Application in 5.601 seconds (process running for 6.605)
+2025-11-04 09:25:48 [main] INFO  c.f.m.m.MsBrandSe181513Application - Starting MsBrandSe181513Application using Java 21.0.7 with PID 77326 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBrand_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:25:48 [main] DEBUG c.f.m.m.MsBrandSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:25:48 [main] INFO  c.f.m.m.MsBrandSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:33:52 [main] INFO  c.f.m.m.MsBrandSe181513Application - Starting MsBrandSe181513Application using Java 21.0.7 with PID 87117 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBrand_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:33:52 [main] DEBUG c.f.m.m.MsBrandSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:33:52 [main] INFO  c.f.m.m.MsBrandSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:33:58 [main] INFO  c.f.m.m.MsBrandSe181513Application - Started MsBrandSe181513Application in 6.1 seconds (process running for 7.483)
+2025-11-04 09:50:03 [main] INFO  c.f.m.m.MsBrandSe181513Application - Starting MsBrandSe181513Application using Java 21.0.7 with PID 106256 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBrand_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 09:50:03 [main] DEBUG c.f.m.m.MsBrandSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 09:50:03 [main] INFO  c.f.m.m.MsBrandSe181513Application - The following 1 profile is active: "test"
+2025-11-04 09:50:08 [main] INFO  c.f.m.m.MsBrandSe181513Application - Started MsBrandSe181513Application in 5.533 seconds (process running for 6.427)
+2025-11-04 10:04:26 [main] INFO  c.f.m.m.MsBrandSe181513Application - Starting MsBrandSe181513Application using Java 21.0.7 with PID 123170 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBrand_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 10:04:26 [main] DEBUG c.f.m.m.MsBrandSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 10:04:26 [main] INFO  c.f.m.m.MsBrandSe181513Application - The following 1 profile is active: "test"
+2025-11-04 10:04:31 [main] INFO  c.f.m.m.MsBrandSe181513Application - Started MsBrandSe181513Application in 5.377 seconds (process running for 6.497)
+2025-11-04 10:07:12 [main] INFO  c.f.m.m.MsBrandSe181513Application - Starting MsBrandSe181513Application using Java 21.0.7 with PID 126918 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe/services/MSBrand_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/FPTU/MSS301/PE/pe)
+2025-11-04 10:07:12 [main] DEBUG c.f.m.m.MsBrandSe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-04 10:07:12 [main] INFO  c.f.m.m.MsBrandSe181513Application - The following 1 profile is active: "test"
+2025-11-04 10:07:16 [main] INFO  c.f.m.m.MsBrandSe181513Application - Started MsBrandSe181513Application in 3.883 seconds (process running for 4.987)

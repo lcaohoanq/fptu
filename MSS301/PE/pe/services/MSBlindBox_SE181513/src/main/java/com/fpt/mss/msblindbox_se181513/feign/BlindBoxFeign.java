@@ -12,21 +12,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(
-    name = "blindbox-service",
-    url = "http://localhost:4005/api/blindboxes",
-    configuration = FeignConfig.class
-)
+        name = "blindbox-service",
+        url = "http://localhost:4005/api/blindboxes",
+        configuration = FeignConfig.class)
 public interface BlindBoxFeign {
 
     @PostMapping
-    ResponseEntity<?> create(@Valid @RequestBody BlindBoxRequest request) ;
+    ResponseEntity<?> create(@Valid @RequestBody BlindBoxRequest request);
 
     @PutMapping("/{id}")
-    ResponseEntity<?> update(
-        @Valid @RequestBody BlindBoxRequest request,
-        @PathVariable Integer id);
+    ResponseEntity<?> update(@Valid @RequestBody BlindBoxRequest request, @PathVariable Integer id);
 
     @DeleteMapping("/{id}")
-    ResponseEntity<?> delete(@PathVariable Integer id) ;
-
+    ResponseEntity<?> delete(@PathVariable Integer id);
 }

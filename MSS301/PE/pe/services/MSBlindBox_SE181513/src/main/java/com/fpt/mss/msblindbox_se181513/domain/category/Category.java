@@ -33,5 +33,4 @@ public class Category {
 
     @Column(length = 100)
     private String priceRange;
-
 }
